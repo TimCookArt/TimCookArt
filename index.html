@@ -7,39 +7,92 @@
 		<link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
 		<style type="text/css">
 *{ box-sizing: border-box }
+.index{
+	background-image: url( "images/2456107.jpg" );
+	background-repeat: no-repeat;
+	background-position: center 4em;
+	background-size: 32em 32em;
+	clear: both;
+	line-height: 1.25;
+	max-width: 40em;
+	margin: auto;
+	text-align: center
+}
+.title{
+	color: #FFFF00;
+	font-family: 'EB Garamond';
+	font-size: 4.5em;
+	margin-bottom: 0;
+	padding-bottom: 0.5em;
+	text-align: center;
+	text-shadow: -2px 2px #191970, 2px -2px #191970, -2px -2px #191970, 2px 2px #191970, -2px 0 #191970, 0 2px #191970, 2px 0 #191970, 0 -2px #191970
+}
+.subtitle{
+	font-family: 'Aguafina Script';
+	font-size: 3em;
+	font-weight: normal;
+	margin-top: 0;
+	padding-bottom: 0.25em;
+	padding-top: 0em;
+	text-align: center;
+	width: 9em;
+	position: absolute;
+	left: calc( 50% - 4.5em );
+	top: 1.75em
+}
 .byline1{
+	color: #FFFFFF;
+	text-shadow: 0 0 8px #000000, -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.byline2{
 	background: -webkit-linear-gradient( #8080FF, #FFC0FF );
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	position: absolute;
-	top: 2.5em
 }
-.byline2{
-	color: #FFFFFF;
-	text-shadow: 0 0 8px #000000, -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-	position: absolute;
-	top: 2.5em
+table.book{
+	border-collapse: collapse;
+	display: block;
+	left: 0;
+	margin: auto;
+	padding: 0;
+	width: 30em;
+	height: 15em
 }
-.closebtn{
-	position: absolute;
-	top: 0;
-	right: 10px;
-	color: white;
-	font-size: 35px;
-	font-weight: bolder;
-	cursor: pointer
+a.link{ text-decoration: none }
+.amazon{
+	display: inline-block;
+	margin: 0;
+	position: relative;
+	width: 5em;
+	bottom: 0
 }
-.col{ float: left; padding: 10px }
-.col img{ cursor: pointer; opacity: 0.75 }
-.col img:hover{ opacity: 1 }
-.container{
-	background-color: rgba( 0, 0, 0, 0.5 );
-	display: none;
-	left: 1em;
-	max-height: 75%;
+small{ font-variant: small-caps }
+.tiny{
+	color: #C0C0C0;
+	font-family: arial, sans-serif;
+	font-size: x-small;
+	text-align: center
+}
+
+ul.menu{
+	background-color: rgba( 0, 0, 0, 0.1 );
+	margin: 0;
+	list-style-type: none;
 	position: absolute;
+	right: 2.5em;
 	top: 1em;
-	z-index: 1
+	width: 4.5em
+}
+ul.menu li:hover{
+	text-shadow: 0 0 10px #0080FF
+}
+ul.menu li{
+	cursor: default;
+	font-size: 3em;
+	position: relative;
+	right: 0.8em;
+	text-align: center;
+	width: 1.5em
 }
 .drawing{
 	display: inline-block;
@@ -48,13 +101,7 @@
 	left: 0;
 	top: 0
 }
-.index{
-	clear: both;
-	line-height: 1.25;
-	max-width: 30em;
-	margin: auto;
-	text-align: center
-}
+li:hover .navbar{ display: block }
 .navbar{
 	background-color: rgba( 0, 0, 0, 0.1 );
 	background-image: radial-gradient( at top left, rgba( 0, 0, 0, 0.25 ), rgba( 255, 0, 0, 0 ) 75% );
@@ -70,93 +117,39 @@
 	width: 15em
 }
 .row:after{ content: ""; display: table; clear: both }
-.tiny{
-	color: #C0C0C0;
-	font-family: arial, sans-serif;
-	font-size: x-small;
-	text-align: center
+p.nav{ margin: 0; padding-left: 0.5em }
+.col{ float: left; padding: 10px }
+.col img{ cursor: pointer; height: 6em; opacity: 0.75 }
+.col img:hover{ opacity: 1 }
+.container{
+	background-color: rgba( 0, 0, 0, 0.5 );
+	display: none;
+	left: 1em;
+	max-height: 75%;
+	position: absolute;
+	top: 1em;
+	z-index: 1
+}
+.closebtn{
+	position: absolute;
+	top: 0;
+	right: 10px;
+	color: white;
+	font-size: 35px;
+	font-weight: bolder;
+	cursor: pointer
 }
 #imgtext{ position: absolute; top: 5px; left: 10px; color: white; font-size: 20px }
-a.link{ text-decoration: none }
-h1{
-	color: #FFFF00;
-	font-family: 'EB Garamond';
-	font-size: 4.5em;
-	margin-bottom: 0;
-	text-align: center;
-	text-shadow: -2px 2px #191970, 2px -2px #191970, -2px -2px #191970, 2px 2px #191970, -2px 0 #191970, 0 2px #191970, 2px 0 #191970, 0 -2px #191970;
-	width: 6.8em
-}
-h2{
-	font-family: 'Aguafina Script';
-	font-size: 3em;
-	font-weight: normal;
-	margin-top: 0;
-	padding-bottom: 0.25em;
-	padding-top: 0.1em;
-	width: 10em
-}
-ul.menu li{
-	cursor: default;
-	font-size: 3em;
-	position: relative;
-	right: 0.8em;
-	text-align: center;
-	width: 1.5em
-}
-ul.menu li:hover{
-	text-shadow: 0 0 10px #0080FF
-}
-ul.menu li:hover .navbar{ display: inline-block }
-p.nav{ margin: 0; padding-left: 0.5em }
-small{ font-variant: small-caps }
-ul.menu{
-	background-color: rgba( 0, 0, 0, 0.1 );
-	margin: 0;
-	list-style-type: none;
-	position: absolute;
-	right: 2.5em;
-	top: 1em;
-	width: 4.5em
-}
-.amazon{
-	display: inline-block;
-	margin: 0;
-	position: relative;
-	width: 5em;
-	bottom: 0
-}
-table.book{
-	border-collapse: collapse;
-	display: block;
-	left: 0;
-	padding: 0;
-	position: relative;
-	width: 30em;
-	height: 15em
-}
 		</style>
 	</head>
 	<body style="margin: 0">
 		<div class="index">
-			<h1>TimCookArt</h1>
-			<h2 class="byline2">Evocative, Romantic Imagery</h2>
-			<h2 class="byline1">Evocative, Romantic Imagery</h2>
-			<h4><img src="images/signature.jpg" width=437 height=84 alt="[signature] Tim Cook" title="Tim Cook signature"></h4>
-			<p><small>
-			Note:  some content on this site may be inappropriate for work
-			environments (NSFW) or general audiences in some jurisdictions.
-			</small></p>
-			<div class="tiny">
-				<a href="mailto:TimCookArtLLC@gmail.com" alt="e-mail"><img src="images/ico-email.png"></a>
-				<a href="http://empyrean.deviantart.com" alt="deviantArt"><img src="images/ico-da.png"></a>
-				<a href="https://www.etsy.com/shop/TimCookArt" alt="Etsy"><img src="images/ico-etsy.png"></a>
-				<a href="http://www.facebook.com/TimCookArt" alt="Facebook"><img src="images/ico-face.png"></a>
-				<a href="http://www.pinterest.com/z993126" alt="Pinterest"><img src="images/ico-pin.png"></a>
-				<a href="http://www.twitter.com/TCookTwit" alt="Twitter"><img src="images/ico-twit.png"></a>
-				<a href="http://www.paypal.me/TimCookArt" alt="Paypal"><img src="images/ico-paypal.png"></a>
+			<div class="title" style="margin: auto">TimCookArt</div>
+			<div>
+				<div class="subtitle byline1">Evocative, Romantic Imagery</div>
+				<div class="subtitle byline2">Evocative, Romantic Imagery</div>
 			</div>
-
+			<div><img src="images/signature.png"  style=" width: 18em; margin-bottom: 15em" alt="[signature] Tim Cook" title="Tim Cook signature"></div>
 			<table class="book"><tr>
 				<td>
 					<a href="https://www.amazon.com/Mermaids-coloring-book-Timothy-Cook/dp/1533468958/">
@@ -177,30 +170,57 @@ table.book{
 					</a>
 				</td>
 			</tr></table>
+			<p style="margin: auto; max-width: 30em"><small>
+			Note:  some content on this site may be inappropriate for work
+			environments (NSFW) or general audiences in some jurisdictions.
+			</small></p>
+			<div class="tiny">
+				<a href="mailto:TimCookArtLLC@gmail.com" alt="e-mail"><img src="images/ico-email.png"></a>
+				<a href="http://empyrean.deviantart.com" alt="deviantArt"><img src="images/ico-da.png"></a>
+				<a href="https://www.etsy.com/shop/TimCookArt" alt="Etsy"><img src="images/ico-etsy.png"></a>
+				<a href="http://www.facebook.com/TimCookArt" alt="Facebook"><img src="images/ico-face.png"></a>
+				<a href="http://www.twitter.com/TCookTwit" alt="Twitter"><img src="images/ico-twit.png"></a>
+				<a href="http://www.paypal.me/TimCookArt" alt="Paypal"><img src="images/ico-paypal.png"></a>
+			</div>
 		</div>
 
-		<ul class="menu" onmouseover="document.getElementsByClassName('index')[0].style.filter='blur(3px)'" onmouseout="document.getElementsByClassName('index')[0].style.filter='blur(0px)'">
+		<ul class="menu"
+			onmouseover="document.getElementsByClassName('index')[0].style.filter='blur(3px)'"
+			onmouseout= "document.getElementsByClassName('index')[0].style.filter='blur(0px)'">
 			<li>&#x1F9DC;<div class="drawing">&#x1F3A8;</div><div class="navbar"><div class="row"><p class="nav">Merfolk</p>
+				<div class="col"><img src="images/2453364.jpg" alt="Mermaid 1" onclick="myFunction(this);"></div>
+				<div class="col"><img src="images/2455494.jpg" alt="Mermaid 2" onclick="myFunction(this);"></div>
+				<div class="col"><img src="images/2455811.jpg" alt="Mermaid 3" onclick="myFunction(this);"></div>
+				<div class="col"><img src="images/2455940.jpg" alt="Mermaids"  onclick="myFunction(this);"></div>
 			</div></div></li>
 			<li>&#x1FA70;<div class="drawing">&#x1F3A8;</div><div class="navbar"><div class="row"><p class="nav">Ballet</p>
-				<div class="col"><img src="images/2459084.png" alt="Ballet 1" style="height: 6em" onclick="myFunction(this);"></div>
-				<div class="col"><img src="images/2459114.png" alt="Ballet 2" style="height: 6em" onclick="myFunction(this);"></div>
+				<div class="col"><img src="images/2459084.png" alt="Ballet 1"       onclick="myFunction(this);"></div>
+				<div class="col"><img src="images/2459114.png" alt="Ballet 2"       onclick="myFunction(this);"></div>
+				<div class="col"><img src="images/2454926.jpg" alt="Ballet 3"       onclick="myFunction(this);"></div>
+				<div class="col"><img src="images/2455070.jpg" alt="Rose ballerina" onclick="myFunction(this);"></div>
 			</div></div></li>
 			<li>&#x1F5FA;<div class="drawing">&#x1F3A8;</div><div class="navbar"><div class="row"><p class="nav">Maps</p>
+				<div class="col"><img src="images/2454564.jpg" alt="Map 1" onclick="myFunction(this);"></div>
+				<div class="col"><img src="images/2456049.png" alt="Map 2" onclick="myFunction(this);"></div>
 			</div></div></li>
 			<li>&#x1F457;<div class="drawing">&#x1F3A8;</div><div class="navbar"><div class="row"><p class="nav">Fashion design</p>
+				<div class="col"><img src="images/2455513.jpg" alt="Fashion 1" onclick="myFunction(this);"></div>
 			</div></div></li>
 			<li>&#x1F4A0;<div class="drawing">&#x1F3A8;</div><div class="navbar"><div class="row"><p class="nav">Logo design</p>
 			</div></div></li>
 			<li>&#x267E;<div class="drawing">&#x1F3A8;</div><div class="navbar"><div class="row"><p class="nav">Other drawings</p>
-			</div></div></li>
-			<li>&#x1F4DD;<div class="navbar"><div class="row"><p class="nav">Writing</p>
+				<div class="col"><img src="images/2451852.jpg" alt="the Lady of Shallott" onclick="myFunction(this);"></div>
 			</div></div></li>
 			<li>&#x1F4BB;<div class="navbar"><div class="row"><p class="nav">Computer-generated images</p>
+				<div class="col"><img src="images/2452923.jpg" alt="Dryad"     onclick="myFunction(this);"></div>
+				<div class="col"><img src="images/2453047.jpg" alt="Dragon"    onclick="myFunction(this);"></div>
+				<div class="col"><img src="images/2453147.jpg" alt="Blue Mars" onclick="myFunction(this);"></div>
 			</div></div></li>
 			<li>&#x1F4F8;<div class="navbar"><div class="row"><p class="nav">Photography</p>
-			</div></div></li>
-			<li>&#x1F464;<div class="navbar"><div class="row"><p class="nav">About the artist</p>
+				<div class="col"><img src="images/2452140.jpg" alt="Sunset"    onclick="myFunction(this);"></div>
+				<div class="col"><img src="images/2452633.jpg" alt="Sunrise"   onclick="myFunction(this);"></div>
+				<div class="col"><img src="images/2452793.jpg" alt="Lightning" onclick="myFunction(this);"></div>
+				<div class="col"><img src="images/2452982.jpg" alt="Moon"      onclick="myFunction(this);"></div>
 			</div></div></li>
 		</ul>
 		<div class="container">
@@ -208,6 +228,7 @@ table.book{
 			<image id="expandedImg" style="border: 1px solid red; padding: 2em">
 			<div id="imgtext"></div>
 		</div>
+
 	</body>
 	<script>
 function myFunction( imgs ){
