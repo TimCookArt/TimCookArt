@@ -7,10 +7,11 @@
 		<link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
 		<style type="text/css">
 *{ box-sizing: border-box }
+/**** Header styling ****/
 .index{
 	background-image: url( "images/2456107.jpg" );
-	background-repeat: no-repeat;
 	background-position: center 4em;
+	background-repeat: no-repeat;
 	background-size: 32em 32em;
 	clear: both;
 	line-height: 1.25;
@@ -25,65 +26,83 @@
 	margin-bottom: 0;
 	padding-bottom: 0.5em;
 	text-align: center;
-	text-shadow: -2px 2px #191970, 2px -2px #191970, -2px -2px #191970, 2px 2px #191970, -2px 0 #191970, 0 2px #191970, 2px 0 #191970, 0 -2px #191970
+	text-shadow:
+		-2px +2px #191970,
+		+2px -2px #191970,
+		-2px -2px #191970,
+		+2px +2px #191970,
+		-2px +0px #191970,
+		+0px +2px #191970,
+		+2px +0px #191970,
+		+0px -2px #191970
 }
 .subtitle{
 	font-family: 'Aguafina Script';
 	font-size: 3em;
 	font-weight: normal;
+	left: calc( 50% - 4.5em );
 	margin-top: 0;
 	padding-bottom: 0.25em;
 	padding-top: 0em;
-	text-align: center;
-	width: 9em;
 	position: absolute;
-	left: calc( 50% - 4.5em );
-	top: 1.75em
+	text-align: center;
+	top: 1.75em;
+	width: 9em
 }
 .byline1{
 	color: #FFFFFF;
 	text-shadow: 0 0 8px #000000, -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 .byline2{
-	background: -webkit-linear-gradient( #8080FF, #FFC0FF );
-	-webkit-background-clip: text;
+	background: linear-gradient( #8080FF, #FFC0FF );
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+/**** Front content styling ****/
 table.book{
 	border-collapse: collapse;
 	display: block;
+	height: 15em;
 	left: 0;
 	margin: auto;
 	padding: 0;
-	width: 30em;
-	height: 15em
+	width: 30em
 }
-a.link{ text-decoration: none }
+a.link{
+	text-decoration: none
+}
+td:hover{
+	background: rgba( 0, 64, 255, 0.1 );
+	box-shadow: 0 0 8px rgba( 0, 64, 255, 0.5 )
+}
 .amazon{
+	bottom: 0;
 	display: inline-block;
 	margin: 0;
 	position: relative;
-	width: 5em;
-	bottom: 0
+	width: 5em
 }
-small{ font-variant: small-caps }
+small{
+	font-variant: small-caps
+}
 .tiny{
 	color: #C0C0C0;
 	font-family: arial, sans-serif;
 	font-size: x-small;
 	text-align: center
 }
-
+/**** Menu bar styling ****/
 ul.menu{
 	background-color: rgba( 0, 0, 0, 0.1 );
-	margin: 0;
 	list-style-type: none;
+	margin: 0;
 	position: absolute;
 	right: 2.5em;
 	top: 1em;
 	width: 4.5em
 }
 ul.menu li:hover{
+	color: #FFFFFF;
 	text-shadow: 0 0 10px #0080FF
 }
 ul.menu li{
@@ -96,50 +115,91 @@ ul.menu li{
 }
 .drawing{
 	display: inline-block;
-	position: absolute;
 	font-size: 0.3em;
 	left: 0;
+	position: absolute;
 	top: 0
 }
-li:hover .navbar{ display: block }
+/**** Thumbnail menu styling ****/
 .navbar{
-	background-color: rgba( 0, 0, 0, 0.1 );
-	background-image: radial-gradient( at top left, rgba( 0, 0, 0, 0.25 ), rgba( 255, 0, 0, 0 ) 75% );
-	border-top: 2px solid black;
+	background-color: rgba( 0, 0, 0, 0.8 );
 	display: none;
-	font-size: 0.5em;
+	font-size: 1.5em;
+	max-width: calc( device-width / 3 );
 	overflow: hidden;
 	position: absolute;
 	right: 3em;
 	text-align: left;
 	top: 0;
-	max-width: calc( device-width / 3 );
-	width: 15em
+	width: 20em
 }
-.row:after{ content: ""; display: table; clear: both }
-p.nav{ margin: 0; padding-left: 0.5em }
-.col{ float: left; padding: 10px }
-.col img{ cursor: pointer; height: 6em; opacity: 0.75 }
-.col img:hover{ opacity: 1 }
-.container{
-	background-color: rgba( 0, 0, 0, 0.5 );
-	display: none;
-	left: 1em;
-	max-height: 75%;
-	position: absolute;
-	top: 1em;
+p.nav{
+	color: #FFFFFF;
+	margin: 0;
+	padding-left: 0.5em
+}
+.grid{
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	grid-gap: 10px;
+	padding: 10px;
+	margin-left: 10px;
+	margin-right: 10px
+}
+.grid img{
+	cursor: pointer;
+	height: 5em;
+	margin: auto;
+	opacity: 0.75
+}
+.grid img:hover{
+	opacity: 1
+}
+/**** Image presentation styling ****/
+.modal{
+	background-color: rgba( 0, 0, 0, 0.8);
+	display:none;
+	height: 100%;
+	left: 0;
+	padding-top: 50px;
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	width: 100%;
 	z-index: 1
 }
-.closebtn{
-	position: absolute;
-	top: 0;
-	right: 10px;
+.modal-content{
+	display: block;
+	margin: auto;
+	max-width: 700px
+}
+#caption{
+	display: block;
 	color: white;
+	font-size: 20px;
+	left: 10px;
+	position: absolute;
+	top: 5px
+}
+.closebtn{
+	color: white;
+	cursor: pointer;
 	font-size: 35px;
 	font-weight: bolder;
-	cursor: pointer
+	position: absolute;
+	right: 10px;
+	top: 10px
 }
-#imgtext{ position: absolute; top: 5px; left: 10px; color: white; font-size: 20px }
+@media only screen and ( max-width: 700px ){
+	.modal-content{ width: 100% }
+}
+#imgtext{
+	color: white;
+	font-size: 20px;
+	left: 10px;
+	position: absolute;
+	top: 5px
+}
 		</style>
 	</head>
 	<body style="margin: 0">
@@ -183,60 +243,92 @@ p.nav{ margin: 0; padding-left: 0.5em }
 				<a href="http://www.paypal.me/TimCookArt" alt="Paypal"><img src="images/ico-paypal.png"></a>
 			</div>
 		</div>
-
+<!-- TO DO - thumbnails in evenly-spaced grid?
+ -->
 		<ul class="menu"
 			onmouseover="document.getElementsByClassName('index')[0].style.filter='blur(3px)'"
 			onmouseout= "document.getElementsByClassName('index')[0].style.filter='blur(0px)'">
-			<li>&#x1F9DC;<div class="drawing">&#x1F3A8;</div><div class="navbar"><div class="row"><p class="nav">Merfolk</p>
-				<div class="col"><img src="images/2453364.jpg" alt="Mermaid 1" onclick="myFunction(this);"></div>
-				<div class="col"><img src="images/2455494.jpg" alt="Mermaid 2" onclick="myFunction(this);"></div>
-				<div class="col"><img src="images/2455811.jpg" alt="Mermaid 3" onclick="myFunction(this);"></div>
-				<div class="col"><img src="images/2455940.jpg" alt="Mermaids"  onclick="myFunction(this);"></div>
-			</div></div></li>
-			<li>&#x1FA70;<div class="drawing">&#x1F3A8;</div><div class="navbar"><div class="row"><p class="nav">Ballet</p>
-				<div class="col"><img src="images/2459084.png" alt="Ballet 1"       onclick="myFunction(this);"></div>
-				<div class="col"><img src="images/2459114.png" alt="Ballet 2"       onclick="myFunction(this);"></div>
-				<div class="col"><img src="images/2454926.jpg" alt="Ballet 3"       onclick="myFunction(this);"></div>
-				<div class="col"><img src="images/2455070.jpg" alt="Rose ballerina" onclick="myFunction(this);"></div>
-			</div></div></li>
-			<li>&#x1F5FA;<div class="drawing">&#x1F3A8;</div><div class="navbar"><div class="row"><p class="nav">Maps</p>
-				<div class="col"><img src="images/2454564.jpg" alt="Map 1" onclick="myFunction(this);"></div>
-				<div class="col"><img src="images/2456049.png" alt="Map 2" onclick="myFunction(this);"></div>
-			</div></div></li>
-			<li>&#x1F457;<div class="drawing">&#x1F3A8;</div><div class="navbar"><div class="row"><p class="nav">Fashion design</p>
-				<div class="col"><img src="images/2455513.jpg" alt="Fashion 1" onclick="myFunction(this);"></div>
-			</div></div></li>
-			<li>&#x1F4A0;<div class="drawing">&#x1F3A8;</div><div class="navbar"><div class="row"><p class="nav">Logo design</p>
-			</div></div></li>
-			<li>&#x267E;<div class="drawing">&#x1F3A8;</div><div class="navbar"><div class="row"><p class="nav">Other drawings</p>
-				<div class="col"><img src="images/2451852.jpg" alt="the Lady of Shallott" onclick="myFunction(this);"></div>
-			</div></div></li>
-			<li>&#x1F4BB;<div class="navbar"><div class="row"><p class="nav">Computer-generated images</p>
-				<div class="col"><img src="images/2452923.jpg" alt="Dryad"     onclick="myFunction(this);"></div>
-				<div class="col"><img src="images/2453047.jpg" alt="Dragon"    onclick="myFunction(this);"></div>
-				<div class="col"><img src="images/2453147.jpg" alt="Blue Mars" onclick="myFunction(this);"></div>
-			</div></div></li>
-			<li>&#x1F4F8;<div class="navbar"><div class="row"><p class="nav">Photography</p>
-				<div class="col"><img src="images/2452140.jpg" alt="Sunset"    onclick="myFunction(this);"></div>
-				<div class="col"><img src="images/2452633.jpg" alt="Sunrise"   onclick="myFunction(this);"></div>
-				<div class="col"><img src="images/2452793.jpg" alt="Lightning" onclick="myFunction(this);"></div>
-				<div class="col"><img src="images/2452982.jpg" alt="Moon"      onclick="myFunction(this);"></div>
-			</div></div></li>
-		</ul>
-		<div class="container">
-			<span onclick="this.parentElement.style.display='none';document.getElementsByClassName('index')[0].style.filter='blur(0px)'" class="closebtn">&times;</span>
-			<image id="expandedImg" style="border: 1px solid red; padding: 2em">
-			<div id="imgtext"></div>
-		</div>
+			<li><span id="menuButton1">&#x1F9DC;</span><div class="drawing">&#x1F3A8;</div></li>
 
+			<div id="menuContent1" class="navbar"><p class="nav">Merfolk</p>
+			<div class="grid">
+				<img src="images/2453364.jpg" alt="Mermaid &amp; dolphin" onclick="showImg(this);">
+				<img src="images/2455494.jpg" alt="A mermaid's choice" onclick="showImg(this);">
+				<img src="images/2455811.jpg" alt="Tanemura-style mermaid" onclick="showImg(this);">
+				<img src="images/2455940.jpg" alt="Diving mermaids"  onclick="showImg(this);">
+			</div>
+			</div>
+
+			<li><span id="menuButton2">&#x1FA70;</span><div class="drawing">&#x1F3A8;</div></li>
+
+			<div id="menuContent2" class="navbar"><p class="nav">Ballet</p>
+			<div class="grid">
+				<img src="images/2459084.png" alt="Petals in light" onclick="showImg(this);">
+				<img src="images/2459114.png" alt="Angel Feather" onclick="showImg(this);">
+				<img src="images/2454926.jpg" alt="Ballerina studies" onclick="showImg(this);">
+				<img src="images/2455070.jpg" alt="Rose ballerina" onclick="showImg(this);">
+			</div>
+			</div>
+
+			<li>&#x1F5FA;<div class="drawing">&#x1F3A8;</div><div class="navbar"><p class="nav">Maps</p>
+				<div class="col"><img src="images/2454564.jpg" alt="Map 1" onclick="showImg(this);"></div>
+				<div class="col"><img src="images/2456049.png" alt="Map 2" onclick="showImg(this);"></div>
+			</div></li>
+			<li>&#x1F457;<div class="drawing">&#x1F3A8;</div><div class="navbar"><p class="nav">Fashion design</p>
+				<div class="col"><img src="images/2455513.jpg" alt="Formal gown 1" onclick="showImg(this);"></div>
+			</div></li>
+			<li>&#x1F4A0;<div class="drawing">&#x1F3A8;</div><div class="navbar"><p class="nav">Logo design</p>
+			</div></li>
+			<li>&#x267E;<div class="drawing">&#x1F3A8;</div><div class="navbar"><p class="nav">Other drawings</p>
+				<div class="col"><img src="images/2451852.jpg" alt="the Lady of Shallott" onclick="showImg(this);"></div>
+			</div></li>
+			<li>&#x1F4BB;<div class="navbar"><p class="nav">Computer-generated images</p>
+				<div class="col"><img src="images/2452923.jpg" alt="Winter dryad" onclick="showImg(this);"></div>
+				<div class="col"><img src="images/2453047.jpg" alt="Dragon"    onclick="showImg(this);"></div>
+				<div class="col"><img src="images/2453147.jpg" alt="Blue Mars" onclick="showImg(this);"></div>
+			</div></li>
+			<li>&#x1F4F8;<div class="navbar"><p class="nav">Photography</p>
+				<div class="col"><img src="images/2452140.jpg" alt="Sunset"    onclick="showImg(this);"></div>
+				<div class="col"><img src="images/2452633.jpg" alt="Sunrise"   onclick="showImg(this);"></div>
+				<div class="col"><img src="images/2452793.jpg" alt="Lightning" onclick="showImg(this);"></div>
+				<div class="col"><img src="images/2452982.jpg" alt="Red Moon"  onclick="showImg(this);"></div>
+			</div></li>
+		</ul>
+
+		<div id="myModal" class="modal">
+			<span class="closebtn">&times;</span>
+			<image class="modal-content" id="imgX">
+			<div id="caption"></div>
+		</div>
 	</body>
 	<script>
-function myFunction( imgs ){
-	var expandImg = document.getElementById( "expandedImg" );
-	expandImg.src = imgs.src;
-	document.getElementById( "imgtext" ).innerHTML = imgs.alt;
-	expandImg.parentElement.style.display = "block";
+function showImg( imgs ){
+	document.getElementById( "imgX" ).src = imgs.src;
+	document.getElementById( "caption" ).innerHTML = imgs.alt;
+	document.getElementById( "myModal" ).style.display = "block";
 	document.getElementsByClassName( "index" )[0].style.filter =  "blur( 5px )";
 }
+document.getElementsByClassName( "closebtn" )[0].onclick = function(){
+	document.getElementById( "myModal" ).style.display = "none";
+	document.getElementsByClassName( "index" )[0].style.filter =  "blur( 0px )";
+}
+
+var menu1 = document.getElementById( "menuContent1" );
+document.addEventListener( "click", function( event ){
+	if( document.getElementById( "menuButton1" ).contains( event.target ) ){
+		menu1.style.display = menu1.style.display === "block" ? "none" : "block";
+	}else{
+		menu1.style.display = menu1.contains( event.target ) ? "block" : "none";
+	}
+});
+
+var menu2 = document.getElementById( "menuContent2" );
+document.addEventListener( "click", function( event ){
+	if( document.getElementById( "menuButton2" ).contains( event.target ) ){
+		menu2.style.display = menu2.style.display === "block" ? "none" : "block";
+	}else{
+		menu2.style.display = menu2.contains( event.target ) ? "block" : "none";
+	}
+});
 	</script>
 </html>
