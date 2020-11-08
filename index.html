@@ -130,8 +130,7 @@ ul.menu li{
 	position: absolute;
 	right: 3em;
 	text-align: left;
-	top: 0;
-	width: 20em
+	top: 0
 }
 p.nav{
 	color: #FFFFFF;
@@ -140,8 +139,8 @@ p.nav{
 }
 .grid{
 	display: grid;
-	grid-template-columns: 25% 25% 25% 25%;
-	grid-gap: 10px;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 30px;
 	padding: 10px;
 	margin-left: 10px;
 	margin-right: 10px
@@ -243,13 +242,11 @@ p.nav{
 				<a href="http://www.paypal.me/TimCookArt" alt="Paypal"><img src="images/ico-paypal.png"></a>
 			</div>
 		</div>
-<!-- TO DO - thumbnails in evenly-spaced grid?
- -->
 		<ul class="menu"
 			onmouseover="document.getElementsByClassName('index')[0].style.filter='blur(3px)'"
 			onmouseout= "document.getElementsByClassName('index')[0].style.filter='blur(0px)'">
-			<li><span id="menuButton1">&#x1F9DC;</span><div class="drawing">&#x1F3A8;</div></li>
 
+			<li><span id="menuButton1">&#x1F9DC;</span><div class="drawing">&#x1F3A8;</div></li>
 			<div id="menuContent1" class="navbar"><p class="nav">Merfolk</p>
 			<div class="grid">
 				<img src="images/2453364.jpg" alt="Mermaid &amp; dolphin" onclick="showImg(this);">
@@ -260,7 +257,6 @@ p.nav{
 			</div>
 
 			<li><span id="menuButton2">&#x1FA70;</span><div class="drawing">&#x1F3A8;</div></li>
-
 			<div id="menuContent2" class="navbar"><p class="nav">Ballet</p>
 			<div class="grid">
 				<img src="images/2459084.png" alt="Petals in light" onclick="showImg(this);">
@@ -270,29 +266,52 @@ p.nav{
 			</div>
 			</div>
 
-			<li>&#x1F5FA;<div class="drawing">&#x1F3A8;</div><div class="navbar"><p class="nav">Maps</p>
-				<div class="col"><img src="images/2454564.jpg" alt="Map 1" onclick="showImg(this);"></div>
-				<div class="col"><img src="images/2456049.png" alt="Map 2" onclick="showImg(this);"></div>
-			</div></li>
-			<li>&#x1F457;<div class="drawing">&#x1F3A8;</div><div class="navbar"><p class="nav">Fashion design</p>
-				<div class="col"><img src="images/2455513.jpg" alt="Formal gown 1" onclick="showImg(this);"></div>
-			</div></li>
-			<li>&#x1F4A0;<div class="drawing">&#x1F3A8;</div><div class="navbar"><p class="nav">Logo design</p>
-			</div></li>
-			<li>&#x267E;<div class="drawing">&#x1F3A8;</div><div class="navbar"><p class="nav">Other drawings</p>
-				<div class="col"><img src="images/2451852.jpg" alt="the Lady of Shallott" onclick="showImg(this);"></div>
-			</div></li>
-			<li>&#x1F4BB;<div class="navbar"><p class="nav">Computer-generated images</p>
-				<div class="col"><img src="images/2452923.jpg" alt="Winter dryad" onclick="showImg(this);"></div>
-				<div class="col"><img src="images/2453047.jpg" alt="Dragon"    onclick="showImg(this);"></div>
-				<div class="col"><img src="images/2453147.jpg" alt="Blue Mars" onclick="showImg(this);"></div>
-			</div></li>
-			<li>&#x1F4F8;<div class="navbar"><p class="nav">Photography</p>
-				<div class="col"><img src="images/2452140.jpg" alt="Sunset"    onclick="showImg(this);"></div>
-				<div class="col"><img src="images/2452633.jpg" alt="Sunrise"   onclick="showImg(this);"></div>
-				<div class="col"><img src="images/2452793.jpg" alt="Lightning" onclick="showImg(this);"></div>
-				<div class="col"><img src="images/2452982.jpg" alt="Red Moon"  onclick="showImg(this);"></div>
-			</div></li>
+			<li><span id="menuButton3">&#x1F5FA;</span><div class="drawing">&#x1F3A8;</div></li>
+			<div id="menuContent3" class="navbar"><p class="nav">Maps</p>
+			<div class="grid">
+				<img src="images/2454564.jpg" alt="Map 1" onclick="showImg(this);">
+				<img src="images/2456049.png" alt="Map 2" onclick="showImg(this);">
+			</div>
+			</div>
+
+			<li><span id="menuButton4">&#x1F457;</span><div class="drawing">&#x1F3A8;</div></li>
+			<div id="menuContent4" class="navbar"><p class="nav">Fashion design</p>
+			<div class="grid">
+				<img src="images/2455513.jpg" alt="Ball gown 1" onclick="showImg(this);">
+			</div>
+			</div>
+
+			<li><span id="menuButton5">&#x1F4A0;</span><div class="drawing">&#x1F3A8;</div></li>
+			<div id="menuContent5" class="navbar"><p class="nav">Logo design</p>
+			<div class="grid">
+			</div>
+			</div>
+
+			<li><span id="menuButton6">&#x267E;</span><div class="drawing">&#x1F3A8;</div></li>
+			<div id="menuContent6" class="navbar"><p class="nav">Other drawings</p>
+			<div class="grid">
+				<img src="images/2451852.jpg" alt="the Lady of Shallott" onclick="showImg(this);">
+			</div>
+			</div>
+
+			<li><span id="menuButton7">&#x1F4BB;</span></li>
+			<div id="menuContent7" class="navbar"><p class="nav">Computer-generated images</p>
+			<div class="grid">
+				<img src="images/2452923.jpg" alt="Winter dryad" onclick="showImg(this);">
+				<img src="images/2453047.jpg" alt="Dragon"    onclick="showImg(this);">
+				<img src="images/2453147.jpg" alt="Blue Mars" onclick="showImg(this);">
+			</div>
+			</div>
+
+			<li><span id="menuButton8">&#x1F4F8;</span></li>
+			<div id="menuContent8" class="navbar"><p class="nav">Photography</p>
+			<div class="grid">
+				<img src="images/2452140.jpg" alt="Sunset"    onclick="showImg(this);">
+				<img src="images/2452633.jpg" alt="Sunrise"   onclick="showImg(this);">
+				<img src="images/2452793.jpg" alt="Lightning" onclick="showImg(this);">
+				<img src="images/2452982.jpg" alt="Red Moon"  onclick="showImg(this);">
+			</div>
+			</div>
 		</ul>
 
 		<div id="myModal" class="modal">
@@ -314,21 +333,20 @@ document.getElementsByClassName( "closebtn" )[0].onclick = function(){
 }
 
 var menu1 = document.getElementById( "menuContent1" );
-document.addEventListener( "click", function( event ){
-	if( document.getElementById( "menuButton1" ).contains( event.target ) ){
-		menu1.style.display = menu1.style.display === "block" ? "none" : "block";
-	}else{
-		menu1.style.display = menu1.contains( event.target ) ? "block" : "none";
-	}
-});
-
 var menu2 = document.getElementById( "menuContent2" );
-document.addEventListener( "click", function( event ){
-	if( document.getElementById( "menuButton2" ).contains( event.target ) ){
-		menu2.style.display = menu2.style.display === "block" ? "none" : "block";
-	}else{
-		menu2.style.display = menu2.contains( event.target ) ? "block" : "none";
-	}
-});
+var menu3 = document.getElementById( "menuContent3" );
+var menu4 = document.getElementById( "menuContent4" );
+var menu5 = document.getElementById( "menuContent5" );
+var menu6 = document.getElementById( "menuContent6" );
+var menu7 = document.getElementById( "menuContent7" );
+var menu8 = document.getElementById( "menuContent8" );
+document.addEventListener( "click", function( event ){ if( document.getElementById( "menuButton1" ).contains( event.target ) ){ menu1.style.display = menu1.style.display === "block" ? "none" : "block"; }else{ menu1.style.display = menu1.contains( event.target ) ? "block" : "none"; } });
+document.addEventListener( "click", function( event ){ if( document.getElementById( "menuButton2" ).contains( event.target ) ){ menu2.style.display = menu2.style.display === "block" ? "none" : "block"; }else{ menu2.style.display = menu2.contains( event.target ) ? "block" : "none"; } });
+document.addEventListener( "click", function( event ){ if( document.getElementById( "menuButton3" ).contains( event.target ) ){ menu3.style.display = menu3.style.display === "block" ? "none" : "block"; }else{ menu3.style.display = menu3.contains( event.target ) ? "block" : "none"; } });
+document.addEventListener( "click", function( event ){ if( document.getElementById( "menuButton4" ).contains( event.target ) ){ menu4.style.display = menu4.style.display === "block" ? "none" : "block"; }else{ menu4.style.display = menu4.contains( event.target ) ? "block" : "none"; } });
+document.addEventListener( "click", function( event ){ if( document.getElementById( "menuButton5" ).contains( event.target ) ){ menu5.style.display = menu5.style.display === "block" ? "none" : "block"; }else{ menu5.style.display = menu5.contains( event.target ) ? "block" : "none"; } });
+document.addEventListener( "click", function( event ){ if( document.getElementById( "menuButton6" ).contains( event.target ) ){ menu6.style.display = menu6.style.display === "block" ? "none" : "block"; }else{ menu6.style.display = menu6.contains( event.target ) ? "block" : "none"; } });
+document.addEventListener( "click", function( event ){ if( document.getElementById( "menuButton7" ).contains( event.target ) ){ menu7.style.display = menu7.style.display === "block" ? "none" : "block"; }else{ menu7.style.display = menu7.contains( event.target ) ? "block" : "none"; } });
+document.addEventListener( "click", function( event ){ if( document.getElementById( "menuButton8" ).contains( event.target ) ){ menu8.style.display = menu8.style.display === "block" ? "none" : "block"; }else{ menu8.style.display = menu8.contains( event.target ) ? "block" : "none"; } });
 	</script>
 </html>
