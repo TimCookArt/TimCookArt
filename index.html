@@ -246,7 +246,7 @@ p.nav{
 			onmouseover="document.getElementsByClassName('index')[0].style.filter='blur(3px)'"
 			onmouseout= "document.getElementsByClassName('index')[0].style.filter='blur(0px)'">
 
-			<li><span id="menuButton1">&#x1F9DC;</span><div class="drawing">&#x1F3A8;</div></li>
+			<li><span id="menuButton1" class="button">&#x1F9DC;</span><div class="drawing">&#x1F3A8;</div></li>
 			<div id="menuContent1" class="navbar"><p class="nav">Merfolk</p>
 			<div class="grid">
 				<img src="images/2453364.jpg" alt="Mermaid &amp; dolphin" onclick="showImg(this);">
@@ -256,7 +256,7 @@ p.nav{
 			</div>
 			</div>
 
-			<li><span id="menuButton2">&#x1FA70;</span><div class="drawing">&#x1F3A8;</div></li>
+			<li><span id="menuButton2" class="button">&#x1FA70;</span><div class="drawing">&#x1F3A8;</div></li>
 			<div id="menuContent2" class="navbar"><p class="nav">Ballet</p>
 			<div class="grid">
 				<img src="images/2459084.png" alt="Petals in light" onclick="showImg(this);">
@@ -266,7 +266,7 @@ p.nav{
 			</div>
 			</div>
 
-			<li><span id="menuButton3">&#x1F5FA;</span><div class="drawing">&#x1F3A8;</div></li>
+			<li><span id="menuButton3" class="button">&#x1F5FA;</span><div class="drawing">&#x1F3A8;</div></li>
 			<div id="menuContent3" class="navbar"><p class="nav">Maps</p>
 			<div class="grid">
 				<img src="images/2454564.jpg" alt="Map 1" onclick="showImg(this);">
@@ -274,27 +274,27 @@ p.nav{
 			</div>
 			</div>
 
-			<li><span id="menuButton4">&#x1F457;</span><div class="drawing">&#x1F3A8;</div></li>
+			<li><span id="menuButton4" class="button">&#x1F457;</span><div class="drawing">&#x1F3A8;</div></li>
 			<div id="menuContent4" class="navbar"><p class="nav">Fashion design</p>
 			<div class="grid">
 				<img src="images/2455513.jpg" alt="Ball gown 1" onclick="showImg(this);">
 			</div>
 			</div>
 
-			<li><span id="menuButton5">&#x1F4A0;</span><div class="drawing">&#x1F3A8;</div></li>
+			<li><span id="menuButton5" class="button">&#x1F4A0;</span><div class="drawing">&#x1F3A8;</div></li>
 			<div id="menuContent5" class="navbar"><p class="nav">Logo design</p>
 			<div class="grid">
 			</div>
 			</div>
 
-			<li><span id="menuButton6">&#x267E;</span><div class="drawing">&#x1F3A8;</div></li>
+			<li><span id="menuButton6" class="button">&#x267E;</span><div class="drawing">&#x1F3A8;</div></li>
 			<div id="menuContent6" class="navbar"><p class="nav">Other drawings</p>
 			<div class="grid">
 				<img src="images/2451852.jpg" alt="the Lady of Shallott" onclick="showImg(this);">
 			</div>
 			</div>
 
-			<li><span id="menuButton7">&#x1F4BB;</span></li>
+			<li><span id="menuButton7" class="button">&#x1F4BB;</span></li>
 			<div id="menuContent7" class="navbar"><p class="nav">Computer-generated images</p>
 			<div class="grid">
 				<img src="images/2452923.jpg" alt="Winter dryad" onclick="showImg(this);">
@@ -303,7 +303,7 @@ p.nav{
 			</div>
 			</div>
 
-			<li><span id="menuButton8">&#x1F4F8;</span></li>
+			<li><span id="menuButton8" class="button">&#x1F4F8;</span></li>
 			<div id="menuContent8" class="navbar"><p class="nav">Photography</p>
 			<div class="grid">
 				<img src="images/2452140.jpg" alt="Sunset"    onclick="showImg(this);">
@@ -332,7 +332,17 @@ document.getElementsByClassName( "closebtn" )[0].onclick = function(){
 	document.getElementsByClassName( "index" )[0].style.filter =  "blur( 0px )";
 }
 
-var menu1 = document.getElementById( "menuContent1" );
+var menus = document.getElementsByClassName( "navbar" ), menu;
+document.addEventListener( "click", function( event ){
+	for( var i = 0; menu = menus[i]; i++ ){
+		if( document.getElementsByClassName( "button" )[i].contains( event.target ) ){
+			menu.style.display = menu.style.display === "block" ? "none" : "block";
+		}else{
+			menu.style.display = menu.contains( event.target ) ? "block" : "none";
+		}
+	}
+});
+/*var menu1 = document.getElementById( "menuContent1" );
 var menu2 = document.getElementById( "menuContent2" );
 var menu3 = document.getElementById( "menuContent3" );
 var menu4 = document.getElementById( "menuContent4" );
@@ -348,5 +358,6 @@ document.addEventListener( "click", function( event ){ if( document.getElementBy
 document.addEventListener( "click", function( event ){ if( document.getElementById( "menuButton6" ).contains( event.target ) ){ menu6.style.display = menu6.style.display === "block" ? "none" : "block"; }else{ menu6.style.display = menu6.contains( event.target ) ? "block" : "none"; } });
 document.addEventListener( "click", function( event ){ if( document.getElementById( "menuButton7" ).contains( event.target ) ){ menu7.style.display = menu7.style.display === "block" ? "none" : "block"; }else{ menu7.style.display = menu7.contains( event.target ) ? "block" : "none"; } });
 document.addEventListener( "click", function( event ){ if( document.getElementById( "menuButton8" ).contains( event.target ) ){ menu8.style.display = menu8.style.display === "block" ? "none" : "block"; }else{ menu8.style.display = menu8.contains( event.target ) ? "block" : "none"; } });
+*/
 	</script>
 </html>
