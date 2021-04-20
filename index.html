@@ -162,7 +162,7 @@ p.nav{
 	display:none;
 	height: 100%;
 	left: 0;
-	padding-top: 50px;
+	padding-top: 45px;
 	overflow: auto;
 	position: fixed;
 	top: 0;
@@ -170,36 +170,30 @@ p.nav{
 	z-index: 1
 }
 .modal-content{
+	box-shadow: 0 0 6px #000000;
 	display: block;
 	margin: auto;
-	max-width: 700px
+	max-height: 90%;
+	max-width: 90%
 }
 #caption{
 	display: block;
 	color: white;
 	font-size: 20px;
-	left: 10px;
+	font-weight: bolder;
+	margin: auto;
 	position: absolute;
-	top: 5px
+	text-align: center;
+	text-shadow: 0 0 6px #000000;
+	top: 10px;
+	width: 100%
 }
 .closebtn{
-	color: white;
 	cursor: pointer;
-	font-size: 35px;
-	font-weight: bolder;
-	position: absolute;
-	right: 10px;
-	top: 10px
-}
-@media only screen and ( max-width: 700px ){
-	.modal-content{ width: 100% }
-}
-#imgtext{
-	color: white;
-	font-size: 20px;
-	left: 10px;
-	position: absolute;
-	top: 5px
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	width: 100%
 }
 		</style>
 	</head>
@@ -305,6 +299,7 @@ p.nav{
 			<div class="grid">
 				<img src="images/logo - CommUNITY Iowa.png" onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="CommUNITY Iowa">
 				<img src="images/logo - Kenopsia.png"       onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Kenopsia">
+				<img src="images/2459319.png"               onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:   30px    0px" alt="Leafwalker Family Emblem">
 				<img src="images/logo - PCC.png"            onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Planetary Circumnavigation Club">
 				<img src="images/logo - Saorsa.png"         onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Saorsa">
 				<img src="images/logo - TA.png"             onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Trinity Advent">
@@ -324,6 +319,8 @@ p.nav{
 				<img src="images/2459102.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Akemi Whitacre XIII">
 				<img src="images/2459163.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Arashi">
 				<img src="images/2459165.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Leaf-Catching">
+				<img src="images/2459208.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Aeolian (WLOP fanart)">
+				<img src="images/2459302.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -15px    0px" alt="Akemi &amp; Naryana">
 			</div>
 			</div>
 
@@ -352,7 +349,7 @@ p.nav{
 		</ul>
 
 		<div id="myModal" class="modal">
-			<span class="closebtn">&times;</span>
+			<span class="closebtn"></span>
 			<image class="modal-content" id="imgX">
 			<div id="caption"></div>
 		</div>
@@ -362,12 +359,9 @@ function showImg( imgs ){
 	document.getElementById( "imgX" ).src = imgs.src;
 	document.getElementById( "caption" ).innerHTML = imgs.alt;
 	document.getElementById( "myModal" ).style.display = "block";
-	//document.getElementsByClassName( "index" )[0].style.filter = "blur( 5px )";
-	//document.getElementsByClassName( "index" )[0].display =  "none";
 }
 document.getElementsByClassName( "closebtn" )[0].onclick = function(){
 	document.getElementById( "myModal" ).style.display = "none";
-	//document.getElementsByClassName( "index" )[0].style.filter = "blur( 0px )";
 }
 
 var menus = document.getElementsByClassName( "navbar" ), menu;
