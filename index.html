@@ -93,26 +93,12 @@ small{
 	font-size: small
 }
 /**** Menu bar styling ****/
-ul.menu{
-	background-color: rgba( 0, 0, 0, 0.1 );
-	list-style-type: none;
-	margin: 0;
-	position: absolute;
-	right: 2.5em;
-	top: 3em;
-	width: 4.5em
-}
 ul.menu li:hover{
 	color: #FFFFFF;
 	text-shadow: 0 0 10px #0080FF
 }
 ul.menu li{
-	cursor: default;
-	font-size: 3em;
-	position: relative;
-	right: 0.8em;
-	text-align: center;
-	width: 1.5em
+	cursor: default
 }
 .menuIcon{
 	font-size: 0.3em;
@@ -123,18 +109,39 @@ ul.menu li{
 .commission{
 	box-shadow: 0 0 8px rgba( 0, 128, 0, 0.75 );
 }
+/**** New menu bar styling ****/
+.footmenu{
+	background-color: rgba( 0, 0, 0, 0.25 );
+	bottom: 0px;
+	left: 0px;
+	position: absolute;
+	width: 100%
+}
+.footmenu a{
+	text-decoration: none
+}
+.footmenu ul{
+	display: flex;
+	font-family: 'Oswald';
+	justify-content: space-between;
+	list-style: none;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	padding-left: 2em;
+	padding-right: 2em
+}
 /**** Thumbnail menu styling ****/
 .navbar{
 	background-color: rgba( 192, 212, 255, 0.8 );
 	box-shadow: 0 0 8px rgba( 0, 64, 255, 0.5 );
 	display: none;
 	font-size: 1.5em;
-	max-width: calc( device-width / 3 );
+	width: calc( 100% - 1em );
 	overflow: hidden;
 	position: absolute;
-	right: 3em;
+	left: 0.5em;
 	text-align: left;
-	top: 0
+	bottom: 2.5em
 }
 p.nav{
 	color: #0040FF;
@@ -248,12 +255,13 @@ p.nav{
 			environments (NSFW) or general audiences in some jurisdictions.
 			</small></p>
 		</div>
-		<p  style="right: 0em; position: absolute; letter-spacing: 0.5em; top: 4em; writing-mode: vertical-rl"><small>Click an icon to access sample art</small></p>
-		<ul class="menu"
+
+		<div class="footmenu"
 			onmouseover="document.getElementsByClassName('index')[0].style.filter='blur(3px)'"
 			onmouseout= "document.getElementsByClassName('index')[0].style.filter='blur(0px)'">
-
-			<li><span id="menuButton1" class="button" alt="Merfolk">&#x1F9DC;<div class="menuIcon">&#x270F;</div></span></li>
+			<p style="font-family: 'Oswald'; letter-spacing: 1em; margin: 0; text-align: center">ART SAMPLES</p>
+			<ul class="menu">
+			<li><span id="menuButton1" class="button" alt="Merfolk">Merfolk</span></li>
 			<div id="menuContent1" class="navbar"><p class="nav">Merfolk</p>
 			<div class="grid">
 				<img src="images/2453364.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Mermaid &amp; dolphin">
@@ -269,8 +277,7 @@ p.nav{
 				<img src="images/2457170.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -40px" alt="Mermaid">
 			</div>
 			</div>
-
-			<li><span id="menuButton2" class="button" alt="Ballet">&#x1FA70;<div class="menuIcon">&#x270F;</div></span></li>
+			<li><span id="menuButton2" class="button" alt="Ballet">Ballet</span></li>
 			<div id="menuContent2" class="navbar"><p class="nav">Ballet</p>
 			<div class="grid">
 				<img src="images/2454926.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Ballerina studies">
@@ -280,8 +287,7 @@ p.nav{
 				<img src="images/2459358.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -30px" alt="Steampunk Ballerina">
 			</div>
 			</div>
-
-			<li><span id="menuButton3" class="button" alt="Maps">&#x1F5FA;<div class="menuIcon">&#x270F;</div></span></li>
+			<li><span id="menuButton3" class="button" alt="Maps">Maps</span></li>
 			<div id="menuContent3" class="navbar"><p class="nav">Maps</p>
 			<div class="grid">
 				<img src="images/2454564.jpg" onclick="showImg(this);" loading="lazy" alt="Map 1">
@@ -290,8 +296,7 @@ p.nav{
 				<img src="images/2459032.jpg" onclick="showImg(this);" loading="lazy" alt="Tamriel">
 			</div>
 			</div>
-
-			<li><span id="menuButton4" class="button" alt="Fashion design">&#x1F457;<div class="menuIcon">&#x270F;</div></span></li>
+			<li><span id="menuButton4" class="button" alt="Fashion Design">Fashion Design</span></li>
 			<div id="menuContent4" class="navbar"><p class="nav">Fashion design</p>
 			<div class="grid">
 				<img src="images/2455513.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Ball gown 1">
@@ -303,9 +308,8 @@ p.nav{
 				<img src="images/2459292.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Aisling Duval">
 			</div>
 			</div>
-
-			<li><span id="menuButton5" class="button" alt="Logo design">&#x1F4A0;<div style="color: white; position: absolute; left: 20%; top: 10%">&#x2112;</div><div class="menuIcon">&#x270F;</div></span></li>
-			<div id="menuContent5" class="navbar"><p class="nav">Logo design</p>
+			<li><span id="menuButton5" class="button" alt="Logos">Logos</span></li>
+			<div id="menuContent5" class="navbar"><p class="nav">Logos</p>
 			<div class="grid">
 				<img src="images/logo - CommUNITY Iowa.png" onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="CommUNITY Iowa" class="commission">
 				<img src="images/logo - Kenopsia.png"       onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Kenopsia" class="commission">
@@ -315,9 +319,8 @@ p.nav{
 				<img src="images/logo - TA.png"             onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Trinity Advent" class="commission">
 			</div>
 			</div>
-
-			<li><span id="menuButton6" class="button" alt="Other drawings">&#x267E;<div class="menuIcon">&#x270F;</div></span></li>
-			<div id="menuContent6" class="navbar"><p class="nav">Other drawings</p>
+			<li><span id="menuButton6" class="button" alt="Other drawings">Other Drawings</span></li>
+			<div id="menuContent6" class="navbar"><p class="nav">Other Drawings</p>
 			<div class="grid">
 				<img src="images/2451852.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -20px" alt="the Lady of Shallott">
 				<img src="images/2457229.jpg" onclick="showImg(this);" loading="lazy" style="object-position:   -5px    0px" alt="Distances" class="commission">
@@ -333,8 +336,7 @@ p.nav{
 				<img src="images/2459302.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -15px    0px" alt="Akemi &amp; Naryana" class="commission">
 			</div>
 			</div>
-
-			<li><span id="menuButton7" class="button" alt="3DCGI">&#x1F4BB;<div class="menuIcon">&#x27C0;</div></span></li>
+			<li><span id="menuButton7" class="button" alt="3D CGI">3D CGI</span></li>
 			<div id="menuContent7" class="navbar"><p class="nav">Computer-generated images</p>
 			<div class="grid">
 				<img src="images/2452923.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Winter dryad">
@@ -344,25 +346,26 @@ p.nav{
 				<img src="images/2459057.png" onclick="showImg(this);" loading="lazy" style="object-position:    0px -110px" alt="Jottuz">
 			</div>
 			</div>
-
-			<li><span id="menuButton8" class="button" alt="Photography">&#x1F4F8;</span></li>
+			<li><span id="menuButton8" class="button" alt="Photography">Photography</span></li>
 			<div id="menuContent8" class="navbar"><p class="nav">Photography</p>
-			<div class="grid">
-				<img src="images/2452040b.jpg" onclick="showImg(this);" loading="lazy" alt="Batavia, IL">
-				<img src="images/2452140.jpg"  onclick="showImg(this);" loading="lazy" alt="Sunset">
-				<img src="images/2452633.jpg"  onclick="showImg(this);" loading="lazy" alt="Sunrise">
-				<img src="images/2452793.jpg"  onclick="showImg(this);" loading="lazy" alt="Lightning">
-				<img src="images/2452979.jpg"  onclick="showImg(this);" loading="lazy" alt="Snow">
-				<img src="images/2452982.jpg"  onclick="showImg(this);" loading="lazy" alt="Red Moon">
-			</div>
-			</div>
-		</ul>
+				<div class="grid">
+					<img src="images/2452040b.jpg" onclick="showImg(this);" loading="lazy" alt="Batavia, IL">
+					<img src="images/2452140.jpg"  onclick="showImg(this);" loading="lazy" alt="Sunset">
+					<img src="images/2452633.jpg"  onclick="showImg(this);" loading="lazy" alt="Sunrise">
+					<img src="images/2452793.jpg"  onclick="showImg(this);" loading="lazy" alt="Lightning">
+					<img src="images/2452979.jpg"  onclick="showImg(this);" loading="lazy" alt="Snow">
+					<img src="images/2452982.jpg"  onclick="showImg(this);" loading="lazy" alt="Red Moon">
+				</div>
+				</div>
+			</ul>
+		</div>
 
 		<div id="myModal" class="modal">
 			<span class="closebtn"></span>
 			<image class="modal-content" id="imgX">
 			<div id="caption"></div>
 		</div>
+
 	</body>
 	<script>
 function showImg( imgs ){
