@@ -8,67 +8,108 @@
 		<link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
 		<link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
 		<style type="text/css">
-*{ box-sizing: border-box }
-/**** Header styling ****/
-.index{
+*{
+	/*border: 1px solid rgba( 255, 0, 0, 0.25 );*/
+	box-sizing: border-box
+}
+/******************************* Primary styling ******************************/
+#background{
+	--w: calc( 25em + 20vw );
 	background-image: url( "images/2456107.jpg" );
 	background-position: center 4em;
 	background-repeat: no-repeat;
-	background-size: 32em 32em;
-	clear: both;
-	line-height: 1.25;
-	max-width: 40em;
-	margin: auto;
-	text-align: center
-}
-.title{
-	color: #FFFF00;
-	font-family: 'EB Garamond';
-	font-size: 4.5em;
-	margin-bottom: 0;
-	padding-bottom: 0.5em;
+	background-size: contain;
+	height: calc( var( --w ) );
+	left: calc( 50vw - var( --w ) / 2 );
+	position: fixed;
 	text-align: center;
+	top: 1.5em;
+	width: var( --w );
+}
+#title{
+	--s: MidnightBlue;
+	--w: calc( 5.5em + 1vw );
+	color: Yellow;
+	font-family: 'EB Garamond';
+	font-size: calc( 3.5em + 2vw );
+	left: calc( 50vw - var( --w ) / 2 );
+	position: fixed;
 	text-shadow:
-		-2px +2px #191970,
-		+2px -2px #191970,
-		-2px -2px #191970,
-		+2px +2px #191970,
-		-2px +0px #191970,
-		+0px +2px #191970,
-		+2px +0px #191970,
-		+0px -2px #191970
+		+2px -2px var( --s ), +2px +2px var( --s ), -2px -2px var( --s ), -2px +2px var( --s ),
+		+0px -2px var( --s ), +2px +0px var( --s ), +0px +2px var( --s ), -2px +0px var( --s );
+	width: var( --w )
 }
 .subtitle{
+	--w: calc( 9em + 1vw );
 	font-family: 'Aguafina Script';
-	font-size: 3em;
 	font-weight: normal;
-	left: calc( 50% - 4.5em );
-	margin-top: 0;
-	padding-bottom: 0.25em;
-	padding-top: 0em;
-	position: absolute;
-	text-align: center;
-	top: 1.7em;
-	width: 9em
+	font-size: calc( 2.0em + 2vw );
+	left: calc( 50vw - var( --w ) / 2 );
+	position: fixed;
+	top: calc( 2.15em - 1.25vw );
+	width: var( --w )
 }
-.byline1{
-	color: #FFFFFF;
-	text-shadow: 0 0 8px #000000, -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+#byline1{
+	--s: Black;
+	color: White;
+	text-shadow: 0 0 8px var( --s ), -2px 0 var( --s ), 0 2px var( --s ), 2px 0 var( --s ), 0 -2px var( --s );
 }
-.byline2{
+#byline2{
 	background: linear-gradient( #8080FF, #FFC0FF );
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
-/**** Front content styling ****/
-table.book{
+img#sig{
+	--w: calc( 15em + 10vw );
+	left: calc( 50vw - var( --w ) / 2 );
+	position: fixed;
+	top: calc( 7em + 4.5vw );
+	width: var( --w )
+}
+#about{
+	color: #000000;
+	font-family: 'Oswald', arial, sans-serif;
+	font-size: small;
+	left: 0.5em;
+	position: fixed;
+	top: 0.5em;
+	z-index: 1
+}
+#about p{
+	margin: 0
+}
+#bubbles{
+	position: fixed;
+	right: 0.5em;
+	top: 0.5em;
+	z-index: 1
+}
+#bubbles img{
+	height: 32px;
+	width: 32px
+}
+@media screen and ( max-width: 800px ){
+	#bubbles{ width: 34px }
+}
+#label{
+	--w: calc( 21em + 17.5vw );
+	background-color: rgba( 0, 0, 0, 0.2);
+	color: White;
+	font-family: 'Oswald';
+	left: calc( 50vw - var( --w ) / 2 );
+	position: fixed;
+	text-shadow: 0 0 6px Black;
+	top: calc( 21em + 13vw );
+	width: var( --w )
+}
+table#books{
+	--w: calc( 21em + 17.5vw );
 	border-collapse: collapse;
 	display: block;
-	height: 15em;
-	left: 0;
-	margin: auto;
-	padding: 0;
-	width: 30em
+	left: calc( 50vw - var( --w ) / 2 );
+	position: fixed;
+	top: calc( 23em + 13vw );
+	width: var( --w )
 }
 a.link{
 	text-decoration: none
@@ -80,19 +121,23 @@ td:hover{
 .amazon{
 	bottom: 0;
 	display: inline-block;
-	margin: 0;
+	padding-left: 20%;
+	padding-right: 20%;
 	position: relative;
-	width: 5em
+	height: 2em
 }
-small{
-	font-variant: small-caps
+.cover{
+	width: 85%
 }
-.tiny{
-	color: #000000;
-	font-family: 'Oswald', arial, sans-serif;
-	font-size: small
+#notice{
+	--w: calc( 15em + 15vw );
+	bottom: 3.5em;
+	font-variant: small-caps;
+	left: calc( 50vw - var( --w ) / 2 );
+	position: fixed;
+	width: var( --w )
 }
-/**** Menu bar styling ****/
+/****************************** Menu bar styling ******************************/
 ul.menu li:hover{
 	color: #FFFFFF;
 	text-shadow: 0 0 10px #0080FF
@@ -100,27 +145,20 @@ ul.menu li:hover{
 ul.menu li{
 	cursor: default
 }
-.menuIcon{
-	font-size: 0.3em;
-	left: 0;
-	position: absolute;
-	top: 0
-}
 .commission{
 	box-shadow: 0 0 8px rgba( 0, 128, 0, 0.75 );
 }
-/**** New menu bar styling ****/
-.footmenu{
+#footmenu{
 	background-color: rgba( 0, 0, 0, 0.25 );
 	bottom: 0px;
 	left: 0px;
-	position: absolute;
+	position: fixed;
 	width: 100%
 }
-.footmenu a{
+#footmenu a{
 	text-decoration: none
 }
-.footmenu ul{
+#footmenu ul{
 	display: flex;
 	font-family: 'Oswald';
 	justify-content: space-between;
@@ -130,7 +168,17 @@ ul.menu li{
 	padding-left: 2em;
 	padding-right: 2em
 }
-/**** Thumbnail menu styling ****/
+@media screen and ( max-width: 800px ){
+	#menuButton5::after{ content: "s" }
+	#menuButton8::after{ content: "s" }
+}
+@media screen and ( min-width: 800px ){
+	#menuButton4::after{ content: " Design" }
+	#menuButton5::after{ content: " Design" }
+	#menuButton6::after{ content: " Drawings" }
+	#menuButton8::after{ content: "graphy" }
+}
+/*************************** Thumbnail menu styling ***************************/
 .navbar{
 	background-color: rgba( 192, 212, 255, 0.8 );
 	box-shadow: 0 0 8px rgba( 0, 64, 255, 0.5 );
@@ -138,7 +186,7 @@ ul.menu li{
 	font-size: 1.5em;
 	width: calc( 100% - 1em );
 	overflow: hidden;
-	position: absolute;
+	position: fixed;
 	left: 0.5em;
 	text-align: left;
 	bottom: 2.5em
@@ -166,7 +214,11 @@ p.nav{
 .grid img:hover{
 	box-shadow: 0 0 15px rgb( 32, 96, 255 )
 }
-/**** Image presentation styling ****/
+@keyframes slider{
+	from { bottom: -500px }
+	to { bottom: 2.5em }
+}
+/************************* Image presentation styling *************************/
 .modal{
 	background-color: rgba( 32, 96, 255, 0.75);
 	display:none;
@@ -205,60 +257,103 @@ p.nav{
 	top: 0px;
 	width: 100%
 }
+/************************************* Grid ***********************************/
+.grid-container{
+	--a: calc( 100vw / 8 );
+	background-color: rgba( 0, 0, 128, 0.02 );
+	display: grid;
+	grid-gap: 0;
+	grid-template-columns:
+		var(--a) var(--a) var(--a) var(--a) var(--a) var(--a) var(--a) var(--a);
+	left: 0;
+	padding: 0;
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	z-index: 1
+}
+.grid-container > div{
+	border: 1px solid rgba( 0, 0, 128, 0.1 );
+	display: none;
+	height: calc( 100vh / 8 );
+	padding: 0;
+	font-size: 2em
+}
 		</style>
 	</head>
 	<body style="margin: 0">
-		<div class="tiny" style="position: absolute; top: 0.5em; left: 0.5em">
+
+	<div class="grid-container">
+		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+	</div>
+	
+		<div id="about">
+			<p>
 			Creating Coloring Books, Fine Art, and Graphic Design&ndash;Commissions Available!
+			</p>
+			<p>
+			Buy individual prints directly or from <a href="https://www.zazzle.com/store/z993126" alt="Zazzle">Zazzle</a>, and
+			digital media directly or from <a href="https://www.etsy.com/shop/TimCookArt" alt="Etsy">Etsy</a>.
+			</p>
 		</div>
-		<div style="position: absolute; top: 0.5em; right: 0.5em">
+		<div id="bubbles">
 			<a href="mailto:TimCookArtLLC@gmail.com"       alt="e-mail"><img src="images/ico-email.png"></a>
 			<a href="https://empyrean.deviantart.com"      alt="deviantArt"><img src="images/ico-da.png"></a>
 			<a href="https://www.etsy.com/shop/TimCookArt" alt="Etsy"><img src="images/ico-etsy.png"></a>
+			<a href="https://www.zazzle.com/store/z993126" alt="Zazzle"><img src="images/ico-zazzle.png"></a>
 			<a href="https://www.facebook.com/TimCookArt"  alt="Facebook"><img src="images/ico-face.png"></a>
 			<a href="https://www.twitter.com/TCookTwit"    alt="Twitter"><img src="images/ico-twit.png"></a>
 			<a href="https://www.paypal.me/TimCookArt"     alt="Paypal"><img src="images/ico-paypal.png"></a>
 			<a href="https://cash.app/$TimCookArt"         alt="Cash.App"><img src="images/ico-cashapp.png"></a>
 		</div>
-		<div class="index" id="index">
-			<div class="title" style="margin: auto">TimCookArt</div>
+
+		<div class="top">
+		<div id="background">
+			<div id="title">TimCookArt</div>
 			<div>
-				<div class="subtitle byline1">Evocative, Romantic Imagery</div>
-				<div class="subtitle byline2">Evocative, Romantic Imagery</div>
+				<div class="subtitle" id="byline1">Evocative, Romantic Imagery</div>
+				<div class="subtitle" id="byline2">Evocative, Romantic Imagery</div>
 			</div>
-			<div><img src="images/signature.png"  style=" width: 18em; margin-bottom: 15em" alt="[signature] Tim Cook" title="Tim Cook signature"></div>
-			<div style="width: 30em; margin: auto; font-family: 'Oswald'; color: white; text-shadow: 0 0 6px #000000; background-color: rgba( 0, 0, 0, 0.2)">
-					Coloring Books for Adults
-			</div>
-			<table class="book"><tr>
+			<div><img src="images/signature.png"  id="sig" alt="[signature] Tim Cook" title="Tim Cook signature"></div>
+			<div id="label">Coloring Books for Adults</div>
+			<table id="books"><tr>
 				<td>
 					<a href="https://www.amazon.com/Mermaids-coloring-book-Timothy-Cook/dp/1533468958/" alt="Mermaids:  a coloring book by Timothy R Cook">
-						<img src="images/cover1.jpg" style="height: 12em" title="Mermaids:  a coloring book by Timothy R Cook">
+						<img src="images/cover1.jpg" class="cover" title="Mermaids:  a coloring book by Timothy R Cook">
 						<img src="images/amazon.png" class="amazon">
 					</a>
 				</td>
 				<td>
 					<a href="https://www.amazon.com/Merfolk-coloring-book-Timothy-Cook/dp/1547101261/" alt="Merfolk:  a coloring book by Timothy R Cook">
-						<img src="images/cover2.jpg" style="height: 12em" title="Merfolk:  a coloring book by Timothy R Cook">
+						<img src="images/cover2.jpg" class="cover" title="Merfolk:  a coloring book by Timothy R Cook">
 						<img src="images/amazon.png" class="amazon">
 					</a>
 				</td>
 				<td>
 					<a href="https://www.amazon.com/Fantasy-Fashion-coloring-Timothy-Cook/dp/1987736885/" alt="Fantasy & Fashion:  a coloring book by Timothy R Cook">
-						<img src="images/cover3.jpg" style="height: 12em" title="Fantasy & Fashion:  a coloring book by Timothy R Cook">
+						<img src="images/cover3.jpg" class="cover" title="Fantasy & Fashion:  a coloring book by Timothy R Cook">
 						<img src="images/amazon.png" class="amazon">
 					</a>
 				</td>
 			</tr></table>
-			<p style="padding-bottom: 0.75em; margin: auto; max-width: 30em"><small>
+			<p id="notice">
 			Note:  some content on this site may be inappropriate for work
 			environments (NSFW) or general audiences in some jurisdictions.
-			</small></p>
+			</p>
+		</div>
 		</div>
 
-		<div class="footmenu"
-			onmouseover="document.getElementsByClassName('index')[0].style.filter='blur(3px)'"
-			onmouseout= "document.getElementsByClassName('index')[0].style.filter='blur(0px)'">
+		<div id="footmenu"
+			onmouseover="document.getElementsByClassName('top')[0].style.filter='blur(3px)'"
+			onmouseout= "document.getElementsByClassName('top')[0].style.filter='blur(0px)'">
+
 			<p style="font-family: 'Oswald'; letter-spacing: 1em; margin: 0; text-align: center">ART SAMPLES</p>
 			<ul class="menu">
 			<li><span id="menuButton1" class="button" alt="Merfolk">Merfolk</span></li>
@@ -296,8 +391,8 @@ p.nav{
 				<img src="images/2459032.jpg" onclick="showImg(this);" loading="lazy" alt="Tamriel">
 			</div>
 			</div>
-			<li><span id="menuButton4" class="button" alt="Fashion Design">Fashion Design</span></li>
-			<div id="menuContent4" class="navbar"><p class="nav">Fashion design</p>
+			<li><span id="menuButton4" class="button" alt="Fashion Design">Fashion</span></li>
+			<div id="menuContent4" class="navbar"><p class="nav">Fashion Design</p>
 			<div class="grid">
 				<img src="images/2455513.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Ball gown 1">
 				<img src="images/2458905.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Fashion design 2">
@@ -308,8 +403,8 @@ p.nav{
 				<img src="images/2459292.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Aisling Duval">
 			</div>
 			</div>
-			<li><span id="menuButton5" class="button" alt="Logos">Logos</span></li>
-			<div id="menuContent5" class="navbar"><p class="nav">Logos</p>
+			<li><span id="menuButton5" class="button" alt="Logos">Logo</span></li>
+			<div id="menuContent5" class="navbar"><p class="nav">Logo Design</p>
 			<div class="grid">
 				<img src="images/logo - CommUNITY Iowa.png" onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="CommUNITY Iowa" class="commission">
 				<img src="images/logo - Kenopsia.png"       onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Kenopsia" class="commission">
@@ -319,7 +414,7 @@ p.nav{
 				<img src="images/logo - TA.png"             onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Trinity Advent" class="commission">
 			</div>
 			</div>
-			<li><span id="menuButton6" class="button" alt="Other drawings">Other Drawings</span></li>
+			<li><span id="menuButton6" class="button" alt="Other drawings">Other</span></li>
 			<div id="menuContent6" class="navbar"><p class="nav">Other Drawings</p>
 			<div class="grid">
 				<img src="images/2451852.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -20px" alt="the Lady of Shallott">
@@ -346,7 +441,7 @@ p.nav{
 				<img src="images/2459057.png" onclick="showImg(this);" loading="lazy" style="object-position:    0px -110px" alt="Jottuz">
 			</div>
 			</div>
-			<li><span id="menuButton8" class="button" alt="Photography">Photography</span></li>
+			<li><span id="menuButton8" class="button" alt="Photography">Photo</span></li>
 			<div id="menuContent8" class="navbar"><p class="nav">Photography</p>
 				<div class="grid">
 					<img src="images/2452040b.jpg" onclick="showImg(this);" loading="lazy" alt="Batavia, IL">
@@ -384,6 +479,7 @@ document.addEventListener( "click", function( event ){
 			menu.style.display = menu.style.display === "block" ? "none" : "block";
 		}else{
 			menu.style.display = menu.contains( event.target ) ? "block" : "none";
+			menu.style.animation = "slider 1s";
 		}
 	}
 });
