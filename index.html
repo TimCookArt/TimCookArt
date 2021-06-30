@@ -136,6 +136,7 @@ td:hover{
 	font-variant: small-caps;
 	left: calc( 50vw - var( --w ) / 2 );
 	position: fixed;
+	text-shadow: 0 0 8px White, 0 0 4px White, 0 0 2px White;
 	width: var( --w )
 }
 /****************************** Menu bar styling ******************************/
@@ -481,11 +482,10 @@ document.addEventListener( "click", function( event ){
 	for( var i = 0; menu = menus[i]; i++ ){
 		if( document.getElementsByClassName( "button" )[i].contains( event.target ) ){
 			menu.style.display = menu.style.display === "block" ? "none" : "block";
-			menu.style.animation = "slider 0.6s";
 		}else{
 			menu.style.display = menu.contains( event.target ) ? "block" : "none";
-			menu.style.animation = "slider 0.6s";
 		}
+		menu.style.animation = "slider 0.6s";
 	}
 });
 	</script>
