@@ -315,7 +315,7 @@ p.nav{
 			<a href="https://cash.app/$TimCookArt"         alt="Cash.App"><img src="images/ico-cashapp.png"></a>
 		</div>
 
-		<div class="top">
+		<div class="top" style="height: 100vh">
 		<div id="background">
 			<div id="title">TimCookArt</div>
 			<div>
@@ -413,6 +413,7 @@ p.nav{
 				<img src="images/logo - PCC.png"            onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Planetary Circumnavigation Club">
 				<img src="images/logo - Saorsa.png"         onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Saorsa" class="commission">
 				<img src="images/logo - TA.png"             onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Trinity Advent" class="commission">
+				<img src="images/logo - TimCookArt.png"     onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="TimCookArt">
 			</div>
 			</div>
 			<li><span id="menuButton6" class="button" alt="Other drawings">Other</span></li>
@@ -478,9 +479,10 @@ document.addEventListener( "click", function( event ){
 	for( var i = 0; menu = menus[i]; i++ ){
 		if( document.getElementsByClassName( "button" )[i].contains( event.target ) ){
 			menu.style.display = menu.style.display === "block" ? "none" : "block";
+			menu.style.animation = "slider 0.6s";
 		}else{
 			menu.style.display = menu.contains( event.target ) ? "block" : "none";
-			menu.style.animation = "slider 1s";
+			menu.style.animation = "slider 0.6s";
 		}
 	}
 });
