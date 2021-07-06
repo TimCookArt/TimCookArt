@@ -87,7 +87,7 @@ img#sig{
 	left: calc( 50vw - var( --w ) / 2 );
 	position: fixed;
 	text-shadow: 0 0 6px Black;
-	top: calc( 22em + 13vw );
+	bottom: calc( 20.5em + 6.5vw );
 	width: var( --w )
 }
 table#books{
@@ -96,7 +96,7 @@ table#books{
 	display: block;
 	left: calc( 50vw - var( --w ) / 2 );
 	position: fixed;
-	top: calc( 24em + 13vw );
+	bottom: 10em;
 	width: var( --w )
 }
 a.link{
@@ -119,7 +119,7 @@ td:hover{
 }
 #notice{
 	--w: calc( 15em + 15vw );
-	bottom: 3.5em;
+	bottom: 2.5em;
 	font-variant: small-caps;
 	left: calc( 50vw - var( --w ) / 2 );
 	position: fixed;
@@ -150,17 +150,6 @@ ul.menu li:hover{
 ul.menu li{
 	cursor: default
 }
-.commission{
-	box-shadow: 0 0 10px rgba( 0, 128, 0, 0.85 );
-}
-.commission2::after{
-	background-color: Yellow;
-	border: 1px solid Red;
-	content: "Test";
-	left: 0px;
-	position: absolute;
-	top: 0px
-}
 #MainMenu{
 	background-color: rgba( 0, 0, 0, 0.25 );
 	left: 0px;
@@ -183,13 +172,12 @@ ul.menu li{
 }
 @media screen and ( max-width: 800px ){
 	#menuButton5::after{ content: "s" }
-	#menuButton8::after{ content: "s" }
+	#menuButton7::after{ content: "s" }
 }
 @media screen and ( min-width: 800px ){
 	#menuButton4::after{ content: " Design" }
 	#menuButton5::after{ content: " Design" }
-	#menuButton6::after{ content: " Drawings" }
-	#menuButton8::after{ content: "graphy" }
+	#menuButton7::after{ content: "graphy" }
 }
 /************************** Thumbnails Menu styling ***************************/
 .ThumbNav{
@@ -197,12 +185,13 @@ ul.menu li{
 	box-shadow: 0 0 8px rgba( 0, 64, 255, 0.5 );
 	display: none;
 	font-size: 1.5em;
-	width: calc( 100% - 1em );
-	overflow: auto;
-	position: fixed;
 	left: 0.5em;
+	max-height: 90%;
+	overflow-y: auto;
+	position: fixed;
 	text-align: left;
-	top: 2.5em
+	top: 2.5em;
+	width: calc( 100% - 1em )
 }
 p.Section{
 	color: #0040FF;
@@ -212,14 +201,14 @@ p.Section{
 .ThumbGrid{
 	display: grid;
 	grid-gap: 1em;
-	grid-template-columns: repeat( auto-fit, minmax( 6em, 1fr ) );
+	grid-template-columns: repeat( auto-fit, minmax( calc( 5em + 1vw ), 1fr ) );
 	padding: 10px;
 	position: relative;
 	margin-left: 10px;
 	margin-right: 10px
 }
 .ThumbGrid img{
-	--x: calc( 3.5em + 3.5vw );
+	--x: calc( 3.5em + 2.5vw );
 	cursor: pointer;
 	height: var( --x );
 	margin: auto;
@@ -390,10 +379,11 @@ p.Section{
 					</a>
 				</td>
 			</tr></table>
-			<p id="notice">
-			Note:  some content on this site may be inappropriate for work
-			environments (NSFW) or general audiences in some jurisdictions.
-			</p>
+			<div id="notice">
+				<p>&copy;2021 Tim Cook Art | Mt. Pleasant, IA</p>
+				<p>Note:  some content on this site may be inappropriate for work
+				environments (NSFW) or general audiences in some jurisdictions.</p>
+			</div>
 		</div>
 		</div>
 
@@ -403,10 +393,31 @@ p.Section{
 
 			<p style="font-family: 'Oswald'; letter-spacing: 1em; margin: 0; text-align: center">ART SAMPLES</p>
 			<ul class="menu">
-			<li><span id="menuButton1" class="button" alt="Merfolk">Merfolk</span></li>
-			<div id="menuContent1" class="ThumbNav"><p class="Section">Merfolk</p>
+			<li><span id="menuButton1" class="button" alt="Commissions">Commissions</span></li>
+			<div id="menuContent1" class="ThumbNav"><p class="Section">Commissioned Works</p>
 			<div class="ThumbGrid">
+				<img src="images/2457229.jpg" onclick="showImg(this);" loading="lazy" style="object-position:   -5px    0px" alt="Distances">
+				<img src="images/2457240.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -20px    0px" alt="Meadow cherubs">
+				<img src="images/2457292.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Flowering mind">
+				<img src="images/2459114.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -30px" alt="Angel Feather">
+				<img src="images/2459163.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Arashi">
+				<img src="images/2459165.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Leaf-Catching">
+				<img src="images/2459302.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -15px    0px" alt="Akemi &amp; Naryana">
+				<img src="images/logo - CommUNITY Iowa.png" onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="CommUNITY Iowa logo">
+				<img src="images/logo - Bibliocar.png"      onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Bibliocar logo">
+				<img src="images/logo - Kenopsia.png"       onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Kenopsia logo">
+				<img src="images/logo - Saorsa.png"         onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Saorsa logo">
+				<img src="images/logo - TA.png"             onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Trinity Advent logo">
+			</div>
+			</div>
+
+			<li><span id="menuButton2" class="button" alt="Drawings">Drawings</span></li>
+			<div id="menuContent2" class="ThumbNav"><p class="Section">Drawings</p>
+			<div class="ThumbGrid">
+				<img src="images/2451852.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -20px" alt="the Lady of Shalott">
 				<img src="images/2453364.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Mermaid &amp; dolphin">
+				<img src="images/2454926.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Ballerina studies">
+				<img src="images/2455070.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Rose ballerina">
 				<img src="images/2455494.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="A mermaid's choice">
 				<img src="images/2455811.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Tanemura-style mermaid">
 				<img src="images/2455940.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Diving mermaids">
@@ -417,16 +428,14 @@ p.Section{
 				<img src="images/2457010.jpg" onclick="showImg(this);" loading="lazy" style="object-position: -100px    0px" alt="Trident">
 				<img src="images/2457168.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Merman">
 				<img src="images/2457170.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -40px" alt="Mermaid">
-			</div>
-			</div>
-			<li><span id="menuButton2" class="button" alt="Ballet">Ballet</span></li>
-			<div id="menuContent2" class="ThumbNav"><p class="Section">Ballet</p>
-			<div class="ThumbGrid">
-				<img src="images/2454926.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Ballerina studies">
-				<img src="images/2455070.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Rose ballerina">
+				<img src="images/2458031.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Dryad">
+				<img src="images/2458376.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Akemi &amp; Cutter">
+				<img src="images/2459072.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="DeviantArt 20th Birthday">
 				<img src="images/2459084.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -18px" alt="Petals in light">
-				<img src="images/2459114.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -30px" alt="Angel Feather" class="commission">
+				<img src="images/2459102.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Akemi Whitacre XIII">
+				<img src="images/2459208.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Aeolian (WLOP fanart)">
 				<img src="images/2459358.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -30px" alt="Steampunk Ballerina">
+				<img src="images/2459380.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Batavia travel poster">
 			</div>
 			</div>
 			<li><span id="menuButton3" class="button" alt="Maps">Maps</span></li>
@@ -453,36 +462,18 @@ p.Section{
 			<li><span id="menuButton5" class="button" alt="Logos">Logo</span></li>
 			<div id="menuContent5" class="ThumbNav"><p class="Section">Logo Design</p>
 			<div class="ThumbGrid">
-				<img src="images/logo - CommUNITY Iowa.png" onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="CommUNITY Iowa" class="commission">
-				<img src="images/logo - Bibliocar.png"      onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Bibliocar" class="commission">
-				<img src="images/logo - Kenopsia.png"       onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Kenopsia" class="commission">
+				<img src="images/logo - CommUNITY Iowa.png" onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="CommUNITY Iowa">
+				<img src="images/logo - Bibliocar.png"      onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Bibliocar">
+				<img src="images/logo - Kenopsia.png"       onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Kenopsia">
 				<img src="images/2459319.png"               onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:   30px    0px" alt="Leafwalker Family Emblem">
 				<img src="images/logo - PCC.png"            onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Planetary Circumnavigation Club">
-				<img src="images/logo - Saorsa.png"         onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Saorsa" class="commission">
-				<img src="images/logo - TA.png"             onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Trinity Advent" class="commission">
+				<img src="images/logo - Saorsa.png"         onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Saorsa">
+				<img src="images/logo - TA.png"             onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px  -15px" alt="Trinity Advent">
 				<img src="images/logo - TimCookArt.png"     onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="TimCookArt">
 			</div>
 			</div>
-			<li><span id="menuButton6" class="button" alt="Other drawings">Other</span></li>
-			<div id="menuContent6" class="ThumbNav"><p class="Section">Other Drawings</p>
-			<div class="ThumbGrid">
-				<img src="images/2451852.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -20px" alt="the Lady of Shalott">
-				<img src="images/2457229.jpg" onclick="showImg(this);" loading="lazy" style="object-position:   -5px    0px" alt="Distances" class="commission">
-				<img src="images/2457240.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -20px    0px" alt="Meadow cherubs" class="commission">
-				<img src="images/2457292.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Flowering mind" class="commission">
-				<img src="images/2458031.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Dryad">
-				<img src="images/2458376.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Akemi &amp; Cutter">
-				<img src="images/2459072.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="DeviantArt 20th Birthday">
-				<img src="images/2459102.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Akemi Whitacre XIII">
-				<img src="images/2459163.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Arashi" class="commission">
-				<img src="images/2459165.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Leaf-Catching" class="commission">
-				<img src="images/2459208.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Aeolian (WLOP fanart)">
-				<img src="images/2459302.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -15px    0px" alt="Akemi &amp; Naryana" class="commission">
-				<img src="images/2459380.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Batavia travel poster">
-			</div>
-			</div>
-			<li><span id="menuButton7" class="button" alt="3D CGI">3D CGI</span></li>
-			<div id="menuContent7" class="ThumbNav"><p class="Section">Computer-generated images</p>
+			<li><span id="menuButton6" class="button" alt="3D CGI">3D CGI</span></li>
+			<div id="menuContent6" class="ThumbNav"><p class="Section">Computer-generated images</p>
 			<div class="ThumbGrid">
 				<img src="images/2452923.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Winter dryad">
 				<img src="images/2453047.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Dragon">
@@ -491,8 +482,8 @@ p.Section{
 				<img src="images/2459057.png" onclick="showImg(this);" loading="lazy" style="object-position:    0px -110px" alt="Jottuz">
 			</div>
 			</div>
-			<li><span id="menuButton8" class="button" alt="Photography">Photo</span></li>
-			<div id="menuContent8" class="ThumbNav"><p class="Section">Photography</p>
+			<li><span id="menuButton7" class="button" alt="Photography">Photo</span></li>
+			<div id="menuContent7" class="ThumbNav"><p class="Section">Photography</p>
 				<div class="ThumbGrid">
 					<img src="images/2452040b.jpg" onclick="showImg(this);" loading="lazy" alt="Batavia, IL">
 					<img src="images/2452140.jpg"  onclick="showImg(this);" loading="lazy" alt="Sunset">
