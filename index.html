@@ -2,12 +2,12 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-		<title>TimCookArt - Evocative, Romantic Imagery</title>
+		<title>TimCookArt - Evocative, Romantic Imagery | Mt. Pleasant, Iowa, United States</title>
 		<meta name="description" content="TimCookArt showcases art by Tim Cook and provides access to resources where coloring books and individual pieces can be bought.">
-		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
-		<link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
-		<link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
-		<link rel="icon" type="image/png" href="images/favicon.png">
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=EB Garamond" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Aguafina Script" rel="stylesheet">
+		<link href="images/favicon.png" rel="icon" type="image/png">
 		<style type="text/css">
 *{
 	/*border: 1px solid rgba( 255, 0, 0, 0.25 );*/
@@ -24,7 +24,7 @@
 	left: calc( 50vw - var( --w ) / 2 );
 	position: fixed;
 	text-align: center;
-	top: 1.5em;
+	top: 2.75em;
 	width: var( --w );
 }
 #title{
@@ -44,10 +44,10 @@
 	--w: calc( 9em + 1vw );
 	font-family: 'Aguafina Script';
 	font-weight: normal;
-	font-size: calc( 2.0em + 2vw );
+	font-size: calc( 2.5em + 1.5vw );
 	left: calc( 50vw - var( --w ) / 2 );
 	position: fixed;
-	top: calc( 2.15em - 1.25vw );
+	top: calc( 2.4em - 1.25vw );
 	width: var( --w )
 }
 #byline1{
@@ -64,26 +64,28 @@ img#sig{
 	--w: calc( 15em + 10vw );
 	left: calc( 50vw - var( --w ) / 2 );
 	position: fixed;
-	top: calc( 7em + 4.5vw );
+	top: calc( 8em + 4.5vw );
 	width: var( --w )
 }
 #about{
+	bottom: 0.5em;
 	color: #000000;
 	font-family: 'Oswald', arial, sans-serif;
 	font-size: small;
 	left: 0.5em;
 	position: fixed;
-	top: 0.5em;
 	z-index: 1
 }
 #about p{
 	margin: 0
 }
 #bubbles{
+	bottom: 0.5em;
 	position: fixed;
 	right: 0.5em;
-	top: 0.5em;
-	z-index: 1
+	z-index: 1;
+	transition: width 0.5s linear;
+	width: 286px
 }
 #bubbles img{
 	height: 32px;
@@ -100,7 +102,7 @@ img#sig{
 	left: calc( 50vw - var( --w ) / 2 );
 	position: fixed;
 	text-shadow: 0 0 6px Black;
-	top: calc( 21em + 13vw );
+	top: calc( 22em + 13vw );
 	width: var( --w )
 }
 table#books{
@@ -109,7 +111,7 @@ table#books{
 	display: block;
 	left: calc( 50vw - var( --w ) / 2 );
 	position: fixed;
-	top: calc( 23em + 13vw );
+	top: calc( 24em + 13vw );
 	width: var( --w )
 }
 a.link{
@@ -139,7 +141,7 @@ td:hover{
 	text-shadow: 0 0 8px White, 0 0 4px White, 0 0 2px White;
 	width: var( --w )
 }
-/****************************** Menu bar styling ******************************/
+/****************************** Main Menu styling *****************************/
 ul.menu li:hover{
 	color: #FFFFFF;
 	text-shadow: 0 0 10px #0080FF
@@ -148,19 +150,27 @@ ul.menu li{
 	cursor: default
 }
 .commission{
-	box-shadow: 0 0 8px rgba( 0, 128, 0, 0.75 );
+	box-shadow: 0 0 10px rgba( 0, 128, 0, 0.85 );
 }
-#footmenu{
+.commission2::after{
+	background-color: Yellow;
+	border: 1px solid Red;
+	content: "Test";
+	left: 0px;
+	position: absolute;
+	top: 0px
+}
+#MainMenu{
 	background-color: rgba( 0, 0, 0, 0.25 );
-	bottom: 0px;
 	left: 0px;
 	position: fixed;
+	top: 0px;
 	width: 100%
 }
-#footmenu a{
+#MainMenu a{
 	text-decoration: none
 }
-#footmenu ul{
+#MainMenu ul{
 	display: flex;
 	font-family: 'Oswald';
 	justify-content: space-between;
@@ -191,7 +201,7 @@ ul.menu li{
 	position: fixed;
 	left: 0.5em;
 	text-align: left;
-	bottom: 2.5em
+	top: 2.5em
 }
 p.nav{
 	color: #0040FF;
@@ -200,25 +210,27 @@ p.nav{
 }
 .grid{
 	display: grid;
-	grid-template-columns: auto auto auto auto;
-	grid-gap: 30px;
+	grid-gap: 1em;
+	grid-template-columns: repeat( auto-fit, minmax( 6em, 1fr ) );
 	padding: 10px;
+	position: relative;
 	margin-left: 10px;
 	margin-right: 10px
 }
 .grid img{
+	--x: calc( 3.5em + 4vw );
 	cursor: pointer;
-	height: 5em;
+	height: var( --x );
 	margin: auto;
 	object-fit: cover;
-	width: 5em
+	width: var( --x )
 }
 .grid img:hover{
 	box-shadow: 0 0 15px rgb( 32, 96, 255 )
 }
 @keyframes slider{
-	from { bottom: -500px }
-	to { bottom: 2.5em }
+	from { top: -500px }
+	to { top: 2.5em }
 }
 /************************* Image presentation styling *************************/
 .modal{
@@ -234,11 +246,13 @@ p.nav{
 	z-index: 1
 }
 .modal-content{
-	box-shadow: 0 0 6px #000000;
 	display: block;
 	margin: auto;
 	max-height: 90%;
-	max-width: 90%
+	max-width: 90%;
+	min-height: 90%;
+	min-width: 90%;
+	object-fit: contain
 }
 #caption{
 	display: block;
@@ -258,6 +272,30 @@ p.nav{
 	position: fixed;
 	top: 0px;
 	width: 100%
+}
+.prev,
+.next{
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none
+}
+.next{
+  right: 0;
+  border-radius: 3px 0 0 3px
+}
+.prev:hover,
+.next:hover{
+  background-color: rgba(0, 0, 0, 0.8)
 }
 /************************************* Grid ***********************************/
 .grid-container{
@@ -283,7 +321,7 @@ p.nav{
 }
 		</style>
 	</head>
-	<body style="margin: 0">
+	<body style="/*background-color: #121212;*/margin: 0">
 
 	<div class="grid-container">
 		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
@@ -301,24 +339,24 @@ p.nav{
 			Creating Coloring Books, Fine Art, and Graphic Design&ndash;Commissions Available!
 			</p>
 			<p>
-			Buy individual prints directly or from <a href="https://www.zazzle.com/store/z993126" alt="Zazzle">Zazzle</a>, and
-			digital media directly or from <a href="https://www.etsy.com/shop/TimCookArt" alt="Etsy">Etsy</a>.
+			Buy individual prints directly or from <a href="https://www.zazzle.com/store/z993126" alt="Zazzle" target="_blank" rel="external nofollow noopener noreferrer">Zazzle</a>, and
+			digital media directly or from <a href="https://www.etsy.com/shop/TimCookArt" alt="Etsy" target="_blank" rel="external nofollow noopener noreferrer">Etsy</a>.
 			</p>
 		</div>
 		<div id="bubbles">
-			<a href="mailto:TimCookArtLLC@gmail.com"       alt="e-mail"><img src="images/ico-email.png"></a>
-			<a href="https://empyrean.deviantart.com"      alt="deviantArt"><img src="images/ico-da.png"></a>
-			<a href="https://www.etsy.com/shop/TimCookArt" alt="Etsy"><img src="images/ico-etsy.png"></a>
-			<a href="https://www.zazzle.com/store/z993126" alt="Zazzle"><img src="images/ico-zazzle.png"></a>
-			<a href="https://www.facebook.com/TimCookArt"  alt="Facebook"><img src="images/ico-face.png"></a>
-			<a href="https://www.twitter.com/TCookTwit"    alt="Twitter"><img src="images/ico-twit.png"></a>
-			<a href="https://www.paypal.me/TimCookArt"     alt="Paypal"><img src="images/ico-paypal.png"></a>
-			<a href="https://cash.app/$TimCookArt"         alt="Cash.App"><img src="images/ico-cashapp.png"></a>
+			<a href="mailto:TimCookArtLLC@gmail.com"       target="_blank" rel="external nofollow noopener noreferrer" alt="e-mail"><img src="images/ico-email.png"></a>
+			<a href="https://empyrean.deviantart.com"      target="_blank" rel="external nofollow noopener noreferrer" alt="deviantArt"><img src="images/ico-da.png"></a>
+			<a href="https://www.etsy.com/shop/TimCookArt" target="_blank" rel="external nofollow noopener noreferrer" alt="Etsy"><img src="images/ico-etsy.png"></a>
+			<a href="https://www.zazzle.com/store/z993126" target="_blank" rel="external nofollow noopener noreferrer" alt="Zazzle"><img src="images/ico-zazzle.png"></a>
+			<a href="https://www.facebook.com/TimCookArt"  target="_blank" rel="external nofollow noopener noreferrer" alt="Facebook"><img src="images/ico-face.png"></a>
+			<a href="https://www.twitter.com/TCookTwit"    target="_blank" rel="external nofollow noopener noreferrer" alt="Twitter"><img src="images/ico-twit.png"></a>
+			<a href="https://www.paypal.me/TimCookArt"     target="_blank" rel="external nofollow noopener noreferrer" alt="Paypal"><img src="images/ico-paypal.png"></a>
+			<a href="https://cash.app/$TimCookArt"         target="_blank" rel="external nofollow noopener noreferrer" alt="Cash.App"><img src="images/ico-cashapp.png"></a>
 		</div>
 
 		<div class="top" style="height: 100vh">
 		<div id="background">
-			<div id="title">TimCookArt</div>
+			<div id="title"><img src="images/logo - TimCookArt.png" style="height: 1.25em; left: -1em; position: absolute; top: 0.25em">TimCookArt</div>
 			<div>
 				<div class="subtitle" id="byline1">Evocative, Romantic Imagery</div>
 				<div class="subtitle" id="byline2">Evocative, Romantic Imagery</div>
@@ -327,19 +365,25 @@ p.nav{
 			<div id="label">Coloring Books for Adults</div>
 			<table id="books"><tr>
 				<td>
-					<a href="https://www.amazon.com/Mermaids-coloring-book-Timothy-Cook/dp/1533468958/" alt="Mermaids:  a coloring book by Timothy R Cook">
+					<a href="https://www.amazon.com/Mermaids-coloring-book-Timothy-Cook/dp/1533468958/"
+					  alt="Mermaids:  a coloring book by Timothy R Cook"
+					  target="_blank" rel="external nofollow noopener noreferrer">
 						<img src="images/cover1.jpg" class="cover" title="Mermaids:  a coloring book by Timothy R Cook">
 						<img src="images/amazon.png" class="amazon">
 					</a>
 				</td>
 				<td>
-					<a href="https://www.amazon.com/Merfolk-coloring-book-Timothy-Cook/dp/1547101261/" alt="Merfolk:  a coloring book by Timothy R Cook">
+					<a href="https://www.amazon.com/Merfolk-coloring-book-Timothy-Cook/dp/1547101261/"
+					  alt="Merfolk:  a coloring book by Timothy R Cook"
+					  target="_blank" rel="external nofollow noopener noreferrer">
 						<img src="images/cover2.jpg" class="cover" title="Merfolk:  a coloring book by Timothy R Cook">
 						<img src="images/amazon.png" class="amazon">
 					</a>
 				</td>
 				<td>
-					<a href="https://www.amazon.com/Fantasy-Fashion-coloring-Timothy-Cook/dp/1987736885/" alt="Fantasy & Fashion:  a coloring book by Timothy R Cook">
+					<a href="https://www.amazon.com/Fantasy-Fashion-coloring-Timothy-Cook/dp/1987736885/"
+					  alt="Fantasy & Fashion:  a coloring book by Timothy R Cook"
+					  target="_blank" rel="external nofollow noopener noreferrer">
 						<img src="images/cover3.jpg" class="cover" title="Fantasy & Fashion:  a coloring book by Timothy R Cook">
 						<img src="images/amazon.png" class="amazon">
 					</a>
@@ -352,7 +396,7 @@ p.nav{
 		</div>
 		</div>
 
-		<div id="footmenu"
+		<div id="MainMenu"
 			onmouseover="document.getElementsByClassName('top')[0].style.filter='blur(3px)'"
 			onmouseout= "document.getElementsByClassName('top')[0].style.filter='blur(0px)'">
 
@@ -464,6 +508,10 @@ p.nav{
 			<span class="closebtn"></span>
 			<image class="modal-content" id="imgX">
 			<div id="caption"></div>
+<!--
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+-->
 		</div>
 
 	</body>
