@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-		<title>TimCookArt - Evocative, Romantic Imagery | Mt. Pleasant, Iowa, United States</title>
+		<title>TimCookArt | Evocative, Romantic Imagery | Mt. Pleasant, Iowa, United States</title>
 		<meta name="description" content="TimCookArt showcases art by Tim Cook and provides access to resources where coloring books and individual pieces can be bought.">
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=EB Garamond" rel="stylesheet">
@@ -79,21 +79,6 @@ img#sig{
 #about p{
 	margin: 0
 }
-#bubbles{
-	bottom: 0.5em;
-	position: fixed;
-	right: 0.5em;
-	z-index: 1;
-	transition: width 0.5s linear;
-	width: 286px
-}
-#bubbles img{
-	height: 32px;
-	width: 32px
-}
-@media screen and ( max-width: 800px ){
-	#bubbles{ width: 34px }
-}
 #label{
 	--w: calc( 21em + 17.5vw );
 	background-color: rgba( 0, 0, 0, 0.2);
@@ -140,6 +125,22 @@ td:hover{
 	position: fixed;
 	text-shadow: 0 0 8px White, 0 0 4px White, 0 0 2px White;
 	width: var( --w )
+}
+/************************ Social Media bubbles styling ************************/
+#bubbles{
+	bottom: 0.5em;
+	position: fixed;
+	right: 0.5em;
+	z-index: 1;
+	transition: width 0.5s linear;
+	width: 286px
+}
+#bubbles img{
+	height: 32px;
+	width: 32px
+}
+@media screen and ( max-width: 800px ){
+	#bubbles{ width: 34px }
 }
 /****************************** Main Menu styling *****************************/
 ul.menu li:hover{
@@ -190,8 +191,8 @@ ul.menu li{
 	#menuButton6::after{ content: " Drawings" }
 	#menuButton8::after{ content: "graphy" }
 }
-/*************************** Thumbnail menu styling ***************************/
-.navbar{
+/************************** Thumbnails Menu styling ***************************/
+.ThumbNav{
 	background-color: rgba( 192, 212, 255, 0.8 );
 	box-shadow: 0 0 8px rgba( 0, 64, 255, 0.5 );
 	display: none;
@@ -203,12 +204,12 @@ ul.menu li{
 	text-align: left;
 	top: 2.5em
 }
-p.nav{
+p.Section{
 	color: #0040FF;
 	margin: 0;
 	padding-left: 0.5em
 }
-.grid{
+.ThumbGrid{
 	display: grid;
 	grid-gap: 1em;
 	grid-template-columns: repeat( auto-fit, minmax( 6em, 1fr ) );
@@ -217,15 +218,15 @@ p.nav{
 	margin-left: 10px;
 	margin-right: 10px
 }
-.grid img{
-	--x: calc( 3.5em + 4vw );
+.ThumbGrid img{
+	--x: calc( 3.5em + 3.5vw );
 	cursor: pointer;
 	height: var( --x );
 	margin: auto;
 	object-fit: cover;
 	width: var( --x )
 }
-.grid img:hover{
+.ThumbGrid img:hover{
 	box-shadow: 0 0 15px rgb( 32, 96, 255 )
 }
 @keyframes slider{
@@ -403,8 +404,8 @@ p.nav{
 			<p style="font-family: 'Oswald'; letter-spacing: 1em; margin: 0; text-align: center">ART SAMPLES</p>
 			<ul class="menu">
 			<li><span id="menuButton1" class="button" alt="Merfolk">Merfolk</span></li>
-			<div id="menuContent1" class="navbar"><p class="nav">Merfolk</p>
-			<div class="grid">
+			<div id="menuContent1" class="ThumbNav"><p class="Section">Merfolk</p>
+			<div class="ThumbGrid">
 				<img src="images/2453364.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Mermaid &amp; dolphin">
 				<img src="images/2455494.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="A mermaid's choice">
 				<img src="images/2455811.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Tanemura-style mermaid">
@@ -419,8 +420,8 @@ p.nav{
 			</div>
 			</div>
 			<li><span id="menuButton2" class="button" alt="Ballet">Ballet</span></li>
-			<div id="menuContent2" class="navbar"><p class="nav">Ballet</p>
-			<div class="grid">
+			<div id="menuContent2" class="ThumbNav"><p class="Section">Ballet</p>
+			<div class="ThumbGrid">
 				<img src="images/2454926.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Ballerina studies">
 				<img src="images/2455070.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Rose ballerina">
 				<img src="images/2459084.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -18px" alt="Petals in light">
@@ -429,8 +430,8 @@ p.nav{
 			</div>
 			</div>
 			<li><span id="menuButton3" class="button" alt="Maps">Maps</span></li>
-			<div id="menuContent3" class="navbar"><p class="nav">Maps</p>
-			<div class="grid">
+			<div id="menuContent3" class="ThumbNav"><p class="Section">Maps</p>
+			<div class="ThumbGrid">
 				<img src="images/2454564.jpg" onclick="showImg(this);" loading="lazy" alt="Map 1">
 				<img src="images/2456049.jpg" onclick="showImg(this);" loading="lazy" alt="Legia Jerva">
 				<img src="images/2456430.jpg" onclick="showImg(this);" loading="lazy" alt="Skyrim">
@@ -438,8 +439,8 @@ p.nav{
 			</div>
 			</div>
 			<li><span id="menuButton4" class="button" alt="Fashion Design">Fashion</span></li>
-			<div id="menuContent4" class="navbar"><p class="nav">Fashion Design</p>
-			<div class="grid">
+			<div id="menuContent4" class="ThumbNav"><p class="Section">Fashion Design</p>
+			<div class="ThumbGrid">
 				<img src="images/2455513.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Ball gown 1">
 				<img src="images/2458905.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Fashion design 2">
 				<img src="images/2458916.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Fashion design 3">
@@ -450,8 +451,8 @@ p.nav{
 			</div>
 			</div>
 			<li><span id="menuButton5" class="button" alt="Logos">Logo</span></li>
-			<div id="menuContent5" class="navbar"><p class="nav">Logo Design</p>
-			<div class="grid">
+			<div id="menuContent5" class="ThumbNav"><p class="Section">Logo Design</p>
+			<div class="ThumbGrid">
 				<img src="images/logo - CommUNITY Iowa.png" onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="CommUNITY Iowa" class="commission">
 				<img src="images/logo - Bibliocar.png"      onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Bibliocar" class="commission">
 				<img src="images/logo - Kenopsia.png"       onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Kenopsia" class="commission">
@@ -463,8 +464,8 @@ p.nav{
 			</div>
 			</div>
 			<li><span id="menuButton6" class="button" alt="Other drawings">Other</span></li>
-			<div id="menuContent6" class="navbar"><p class="nav">Other Drawings</p>
-			<div class="grid">
+			<div id="menuContent6" class="ThumbNav"><p class="Section">Other Drawings</p>
+			<div class="ThumbGrid">
 				<img src="images/2451852.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -20px" alt="the Lady of Shalott">
 				<img src="images/2457229.jpg" onclick="showImg(this);" loading="lazy" style="object-position:   -5px    0px" alt="Distances" class="commission">
 				<img src="images/2457240.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -20px    0px" alt="Meadow cherubs" class="commission">
@@ -481,8 +482,8 @@ p.nav{
 			</div>
 			</div>
 			<li><span id="menuButton7" class="button" alt="3D CGI">3D CGI</span></li>
-			<div id="menuContent7" class="navbar"><p class="nav">Computer-generated images</p>
-			<div class="grid">
+			<div id="menuContent7" class="ThumbNav"><p class="Section">Computer-generated images</p>
+			<div class="ThumbGrid">
 				<img src="images/2452923.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Winter dryad">
 				<img src="images/2453047.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Dragon">
 				<img src="images/2453147.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Blue Mars">
@@ -491,8 +492,8 @@ p.nav{
 			</div>
 			</div>
 			<li><span id="menuButton8" class="button" alt="Photography">Photo</span></li>
-			<div id="menuContent8" class="navbar"><p class="nav">Photography</p>
-				<div class="grid">
+			<div id="menuContent8" class="ThumbNav"><p class="Section">Photography</p>
+				<div class="ThumbGrid">
 					<img src="images/2452040b.jpg" onclick="showImg(this);" loading="lazy" alt="Batavia, IL">
 					<img src="images/2452140.jpg"  onclick="showImg(this);" loading="lazy" alt="Sunset">
 					<img src="images/2452633.jpg"  onclick="showImg(this);" loading="lazy" alt="Sunrise">
@@ -525,7 +526,7 @@ document.getElementsByClassName( "closebtn" )[0].onclick = function(){
 	document.getElementById( "myModal" ).style.display = "none";
 }
 
-var menus = document.getElementsByClassName( "navbar" ), menu;
+var menus = document.getElementsByClassName( "ThumbNav" ), menu;
 document.addEventListener( "click", function( event ){
 	for( var i = 0; menu = menus[i]; i++ ){
 		if( document.getElementsByClassName( "button" )[i].contains( event.target ) ){
