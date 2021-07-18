@@ -129,13 +129,16 @@ td:hover{
 /***************************** Dark Mode styling ******************************/
 @media ( prefers-color-scheme: dark ){
 	body{ background: Black }
-	#about{	color: White }
+	#about{
+		color: White;
+		text-shadow: 0 0 8px Black, 0 0 4px Black, 0 0 2px Black
+	}
 	#byline1{
 		--s: White;
 		color: Black;
 		text-shadow: 0 0 8px var( --s ), -2px 0 var( --s ), 0 2px var( --s ), 2px 0 var( --s ), 0 -2px var( --s );
 	}
-	#label{ background-color: rgba( 1, 1, 1, 0.2) }
+	#label{ background-color: rgba( 255, 255, 255, 0.2) }
 }
 /************************ Social Media bubbles styling ************************/
 #bubbles{
