@@ -16,7 +16,7 @@
 /******************************* Primary styling ******************************/
 #background{
 	--w: calc( 25em + 20vw );
-	background-image: url( "images/2456107.jpg" );
+	background-image: url( "images/2456107.png" ), url( "images/stars.png" );
 	background-position: center 4em;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -60,7 +60,7 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
-img #sig{
+img#sig{
 	--w: calc( 15em + 10vw );
 	left: calc( 50vw - var( --w ) / 2 );
 	position: fixed;
@@ -90,7 +90,7 @@ img #sig{
 	bottom: calc( 20.5em + 6.5vw );
 	width: var( --w )
 }
-table #books{
+table#books{
 	--w: calc( 21em + 17.5vw );
 	border-collapse: collapse;
 	display: block;
@@ -125,20 +125,6 @@ td:hover{
 	position: fixed;
 	text-shadow: 0 0 8px White, 0 0 4px White, 0 0 2px White;
 	width: var( --w )
-}
-/***************************** Dark Mode styling ******************************/
-@media ( prefers-color-scheme: dark ){
-	body{ background: Black }
-	#about{
-		color: White;
-		text-shadow: 0 0 8px Black, 0 0 4px Black, 0 0 2px Black
-	}
-	#byline1{
-		--s: White;
-		color: Black;
-		text-shadow: 0 0 8px var( --s ), -2px 0 var( --s ), 0 2px var( --s ), 2px 0 var( --s ), 0 -2px var( --s );
-	}
-	#label{ background-color: rgba( 255, 255, 255, 0.2) }
 }
 /************************ Social Media bubbles styling ************************/
 #bubbles{
@@ -301,6 +287,23 @@ p.Section{
 .next:hover{
 	background-color: rgba(0, 0, 0, 0.8)
 }
+/***************************** Dark Mode styling ******************************/
+@media ( prefers-color-scheme: dark ){
+	body{ background: Black }
+	#about{
+		color: White;
+		text-shadow: 0 0 8px Black, 0 0 4px Black, 0 0 2px Black
+	}
+	#byline1{
+		--s: White;
+		color: Black;
+		text-shadow: 0 0 8px var( --s ), -2px 0 var( --s ), 0 2px var( --s ), 2px 0 var( --s ), 0 -2px var( --s );
+	}
+	#label{ background-color: rgba( 255, 255, 255, 0.2) }
+	#MainMenu{ background-color: rgba( 255, 255, 255, 0.25 ) }
+	#notice{ color: LightGrey; text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey }
+	img#sig{ filter: invert( 100% ) }
+}
 /************************************* Grid ***********************************/
 .grid-container{
 	--a: calc( 100vw / 8 );
@@ -365,7 +368,7 @@ p.Section{
 				<div class="subtitle" id="byline1">Evocative, Romantic Imagery</div>
 				<div class="subtitle" id="byline2">Evocative, Romantic Imagery</div>
 			</div>
-			<div><img src="images/signature.png"  id="sig" alt="[signature] Tim Cook" title="Tim Cook signature"></div>
+			<div><img src="images/signature.png" id="sig" alt="[signature] Tim Cook" title="Tim Cook signature"></div>
 			<div id="label">Coloring Books for Adults</div>
 			<table id="books"><tr>
 				<td>
