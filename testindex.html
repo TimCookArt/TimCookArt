@@ -232,7 +232,7 @@ p.Section{
 	top: 10px;
 	width: 100%
 }
-.closebtn{
+.close{
 	cursor: pointer;
 	height: 100%;
 	top: 0px;
@@ -275,7 +275,7 @@ p.Section{
 .next{ right: 0; border-radius: 3px 0 0 3px }
 #caption, .prev, .next{ position: absolute }
 .prev:hover, .next:hover{ background-color: #000000C8 }
-.closebtn, .modal{ position: fixed }
+.close, .modal{ position: fixed }
 /***************************** Dark Mode styling ******************************/
 @media ( prefers-color-scheme: dark ){
 	body{
@@ -484,7 +484,7 @@ p.Section{
 		</div>
 
 		<div id="myModal" class="modal">
-			<span class="closebtn"></span>
+			<span class="close" onclick="hideImg()"></span>
 			<image class="modal-content" id="imgX">
 			<div id="caption"></div>
 <!--
@@ -525,19 +525,28 @@ function showImg( imgs ){
 	document.getElementById( "caption" ).innerHTML = imgs.alt;
 	document.getElementById( "myModal" ).style.display = "block";
 }
-document.getElementsByClassName( "closebtn" )[0].onclick = function(){
-	document.getElementById( "myModal" ).style.display = "none";
-}
+function hideImg(){ document.getElementById( "myModal" ).style.display = "none"; }
 var menus = document.getElementsByClassName( "ThumbNav" ), menu;
 document.addEventListener( "click", function( event ){
 	for( var i = 0; menu = menus[i]; i++ ){
-		if( document.getElementsByClassName( "button" )[i].contains( event.target ) ){
-			menu.style.display = menu.style.display === "block" ? "none" : "block";
+		if( menu.style.display == "block" ){
+			alert( 'menu=' + menu );
+			setTimeout( function(){ test( menu ); }, 500 );
 		}else{
-			menu.style.display = menu.contains( event.target ) ? "block" : "none";
+			if( document.getElementsByClassName( "button" )[i].contains( event.target ) ){
+				menu.style.border = menu.style.display === "none" ? "1px solid Red" : "1px solid Blue";
+				menu.style.display = menu.style.display === "block" ? "none" : "block";
+			}else{
+				menu.style.border = menu.contains( event.target ) ? "1px solid Green" : "1px solid Yellow";
+				menu.style.display = menu.contains( event.target ) ? "block" : "none";
+			}
+			menu.style.animation = "slider 0.6s";
 		}
-		menu.style.animation = "slider 0.6s";
 	}
 });
+function test( foo ){
+	alert( 'setTimeout menu=' + foo );
+	foo.style.border = "2px solid Purple";
+}
 	</script>
 </html>
