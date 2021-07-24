@@ -487,6 +487,7 @@ p.Section{
 			<span class="close" onclick="hideImg()"></span>
 			<image class="modal-content" id="imgX">
 			<div id="caption"></div>
+			<div id="section"></div>
 <!--
 			<a class="prev" onclick="plusSlides(-1)">🡄</a>
 			<a class="next" onclick="plusSlides(1)">🡆</a>
@@ -523,30 +524,27 @@ p.Section{
 function showImg( imgs ){
 	document.getElementById( "imgX" ).src = imgs.src;
 	document.getElementById( "caption" ).innerHTML = imgs.alt;
+	/*document.getElementById( "section" ).innerHTML = parent's parent's first child's content*/
 	document.getElementById( "myModal" ).style.display = "block";
 }
 function hideImg(){ document.getElementById( "myModal" ).style.display = "none"; }
 var menus = document.getElementsByClassName( "ThumbNav" ), menu;
 document.addEventListener( "click", function( event ){
-	for( var i = 0; menu = menus[i]; i++ ){
+	for( var i = 0; i < menus.length; i++ ){
+		menu = menus[i];
 		if( menu.style.display == "block" ){
-			alert( 'menu=' + menu );
-			setTimeout( function(){ test( menu ); }, 500 );
+			var menu2 = menu;
+			menu2.style.opacity = "0";
+			menu2.style.transition = "opacity 1s";
+			setTimeout( function(){ menu2.style.display = "none"; }, 1000 );
 		}else{
 			if( document.getElementsByClassName( "button" )[i].contains( event.target ) ){
-				menu.style.border = menu.style.display === "none" ? "1px solid Red" : "1px solid Blue";
-				menu.style.display = menu.style.display === "block" ? "none" : "block";
-			}else{
-				menu.style.border = menu.contains( event.target ) ? "1px solid Green" : "1px solid Yellow";
-				menu.style.display = menu.contains( event.target ) ? "block" : "none";
+				menu.style.display = "block";
+				menu.style.opacity = "1";
+				menu.style.animation = "slider 0.6s";
 			}
-			menu.style.animation = "slider 0.6s";
 		}
 	}
 });
-function test( foo ){
-	alert( 'setTimeout menu=' + foo );
-	foo.style.border = "2px solid Purple";
-}
 	</script>
 </html>
