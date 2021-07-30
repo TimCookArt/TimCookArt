@@ -120,12 +120,20 @@ a.link{
 	text-decoration: none
 }
 .amazon{
-	height: 2em
+	right: 2em;
+	height: 4vh;
+	position: absolute;
+	top: 3vh;
+	transform: rotate( 20deg )
 }
 .BookBlurb{
+	color: White;
 	display: block;
+	font-family: Sans-serif;
 	height: 28vh;
 	margin-bottom: 2vh;
+	overflow: auto;
+	padding-left: 2em;
 	position: relative
 }
 #ColouringBooks{
@@ -137,9 +145,17 @@ a.link{
 .cover{
 	box-shadow: 0.5em 0.5em 1em Black;
 	height: 24vh;
+	max-width: 33%;
 	position: absolute;
 	right: 2em;
 	top: 2vh
+}
+.inBlurb{
+	font-family: 'Oswald';
+	margin: 0;
+	max-width: 60%;
+	padding-top: 2vh;
+	text-shadow: 0 0 8px Black, 0 0 4px Black, 0 0 2px Black
 }
 /****************************** Main Menu styling *****************************/
 ul.menu li:hover{
@@ -262,6 +278,7 @@ p.Section{
 #section{
 	display: block;
 	color: #FFFFFFC0;
+	font-family: 'Aguafina Script';
 	font-size: 20px;
 	font-weight: normal;
 	margin-left: 0.5em;
@@ -505,30 +522,54 @@ p.Section{
 -->
 		</div>
 		<div id="ColouringBooks">
-			<p class="BookBlurb" style="background: #202040C0">
+			<div class="BookBlurb" style="background: #202040C0">
 				<a href="https://www.amazon.com/Mermaids-coloring-book-Timothy-Cook/dp/1533468958/"
-				  alt="Mermaids:  a coloring book by Timothy R Cook"
-				  target="_blank" rel="external nofollow noopener noreferrer">
+					alt="Mermaids:  a coloring book by Timothy R Cook"
+					target="_blank" rel="external nofollow noopener noreferrer">
 					<img src="images/cover1.jpg" class="cover" title="Mermaids:  a coloring book by Timothy R Cook">
 					<img src="images/amazon.png" class="amazon">
 				</a>
-			</p>
-			<p class="BookBlurb" style="background: #403020C0">
+				<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">MERMAIDS <span style="font-size: 0.75em">COLORING BOOK</span></p>
+				<p class="inBlurb">
+				Forty-eight images featuring the constellations of the zodiac embodied as mermaids, individual mermaids, couples, and examples
+				of undersea fashion are contained in this enchanting coloring book.
+				</p>
+				<p class="inBlurb">Buy from
+				<a href="https://www.amazon.com/Mermaids-coloring-book-Timothy-Cook/dp/1533468958/"
+					alt="Mermaids:  a coloring book by Timothy R Cook"
+					target="_blank" rel="external nofollow noopener noreferrer"
+					style="text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey"
+				>Amazon<img src="images/cover1.jpg" class="cover" title="Mermaids:  a coloring book by Timothy R Cook"></a>.
+				<p>
+			</div>
+			<div class="BookBlurb" style="background: #403020C0">
+				<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">MERFOLK <span style="font-size: 0.75em">COLORING BOOK</span></p>
+				<p class="inBlurb">
+				Forty-eight additional images of undersea denizens are presented in this additional volume of work by Tim Cook, welcoming you
+				to dive into your imagination and explore the worlds within.
+				</p>
+				<p class="inBlurb">Buy from
 				<a href="https://www.amazon.com/Merfolk-coloring-book-Timothy-Cook/dp/1547101261/"
-				  alt="Merfolk:  a coloring book by Timothy R Cook"
-				  target="_blank" rel="external nofollow noopener noreferrer">
-					<img src="images/cover2.jpg" class="cover" title="Merfolk:  a coloring book by Timothy R Cook">
-					<img src="images/amazon.png" class="amazon">
-				</a>
-			</p>
-			<p class="BookBlurb" style="background: #003000C0">
+					alt="Merfolk:  a coloring book by Timothy R Cook"
+					target="_blank" rel="external nofollow noopener noreferrer"
+					style="text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey"
+				>Amazon<img src="images/cover2.jpg" class="cover" title="Merfolk:  a coloring book by Timothy R Cook"></a>.
+				</p>
+			</div>
+			<div class="BookBlurb" style="background: #003000C0">
+				<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">FANTASY &amp; FASHION <span style="font-size: 0.75em">COLORING BOOK</span></p>
+				<p class="inBlurb">
+				Winsome mermaids, capricious faeries and dryads, radiant angels, noble centaurs, majestic dragons, and elegant fashion designs
+				all reside in this coloring book, beckoning you to embark on a journey through forty-eight examples of wonder.
+				</p>
+				<p class="inBlurb">Buy from
 				<a href="https://www.amazon.com/Fantasy-Fashion-coloring-Timothy-Cook/dp/1987736885/"
-				  alt="Fantasy & Fashion:  a coloring book by Timothy R Cook"
-				  target="_blank" rel="external nofollow noopener noreferrer">
-					<img src="images/cover3.jpg" class="cover" title="Fantasy & Fashion:  a coloring book by Timothy R Cook">
-					<img src="images/amazon.png" class="amazon">
-				</a>
-			</p>
+					alt="Fantasy & Fashion:  a coloring book by Timothy R Cook"
+					target="_blank" rel="external nofollow noopener noreferrer"
+					style="text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey"
+				>Amazon<img src="images/cover3.jpg" class="cover" title="Fantasy & Fashion:  a coloring book by Timothy R Cook"></a>.
+				</p>
+			</div>
 		</div>
 	</body>
 	<script>
