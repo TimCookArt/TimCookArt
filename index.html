@@ -119,6 +119,9 @@ a.link{
 	top: 3vh;
 	transform: rotate( 20deg )
 }
+#Book1{ background: #202040C0; }
+#Book2{ background: #403020C0; }
+#Book3{ background: #003000C0; }
 .BookBlurb{
 	color: White;
 	display: block;
@@ -329,8 +332,7 @@ p.Section{
 	background-color: #00008004;
 	display: grid;
 	grid-gap: 0;
-	grid-template-columns:
-		var(--a) var(--a) var(--a) var(--a) var(--a) var(--a) var(--a) var(--a);
+	grid-template-columns: var(--a) var(--a) var(--a) var(--a) var(--a) var(--a) var(--a) var(--a);
 	left: 0;
 	padding: 0;
 	pointer-events: none;
@@ -514,13 +516,7 @@ p.Section{
 -->
 		</div>
 		<div id="ColouringBooks">
-			<div class="BookBlurb" style="background: #202040C0">
-				<a href="https://www.amazon.com/Mermaids-coloring-book-Timothy-Cook/dp/1533468958/"
-					alt="Mermaids:  a coloring book by Timothy R Cook"
-					target="_blank" rel="external nofollow noopener noreferrer">
-					<img src="images/cover1.jpg" class="cover" title="Mermaids:  a coloring book by Timothy R Cook">
-					<img src="images/amazon.png" class="amazon">
-				</a>
+			<div class="BookBlurb" id="Book1">
 				<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">MERMAIDS <span style="font-size: 0.75em">COLORING BOOK</span></p>
 				<p class="inBlurb">
 				Forty-eight images featuring the constellations of the zodiac embodied as mermaids, individual mermaids, couples, and examples
@@ -532,9 +528,9 @@ p.Section{
 					target="_blank" rel="external nofollow noopener noreferrer"
 					style="text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey"
 				>Amazon<img src="images/cover1.jpg" class="cover" title="Mermaids:  a coloring book by Timothy R Cook"></a>.
-				<p>
+				</p>
 			</div>
-			<div class="BookBlurb" style="background: #403020C0">
+			<div class="BookBlurb" id="Book2">
 				<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">MERFOLK <span style="font-size: 0.75em">COLORING BOOK</span></p>
 				<p class="inBlurb">
 				Forty-eight additional images of undersea denizens are presented in this additional volume of work by Tim Cook, welcoming you
@@ -548,7 +544,7 @@ p.Section{
 				>Amazon<img src="images/cover2.jpg" class="cover" title="Merfolk:  a coloring book by Timothy R Cook"></a>.
 				</p>
 			</div>
-			<div class="BookBlurb" style="background: #003000C0">
+			<div class="BookBlurb" id="Book3">
 				<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">FANTASY &amp; FASHION <span style="font-size: 0.75em">COLORING BOOK</span></p>
 				<p class="inBlurb">
 				Winsome mermaids, capricious faeries and dryads, radiant angels, noble centaurs, majestic dragons, and elegant fashion designs
