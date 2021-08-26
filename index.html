@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Tim Cook Art | Evocative, Romantic Imagery | Mt. Pleasant, Iowa, United States</title>
 		<meta name="description" content="TimCookArt showcases art by Tim Cook and provides access to resources where coloring books and individual pieces can be bought.">
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
@@ -87,12 +88,13 @@ img#sig{
 	margin: 0
 }
 #notice{
+	--s: #808080;
 	--w: calc( 15em + 15vw );
 	bottom: 2.5em;
 	font-variant: small-caps;
 	left: calc( 50vw - var( --w ) / 2 );
 	position: fixed;
-	text-shadow: 0 0 8px White, 0 0 4px White, 0 0 2px White;
+	text-shadow: 0 0 8px var( --2 ), 0 0 4px var( --s ), 0 0 2px var( --s );
 	width: var( --w )
 }
 /************************ Social Media bubbles styling ************************/
@@ -140,11 +142,12 @@ a.link{
 	top: 2vh
 }
 .inBlurb{
+	--s: #000000;
 	font-family: 'Oswald';
 	margin: 0;
 	max-width: 60%;
 	padding-top: 2vh;
-	text-shadow: 0 0 8px Black, 0 0 4px Black, 0 0 2px Black
+	text-shadow: 0 0 8px var( --s ), 0 0 4px var( --s ), 0 0 2px var( --s )
 }
 /****************************** Main Menu styling *****************************/
 ul.menu li:hover{
@@ -177,8 +180,8 @@ ul.menu li{
 }
 /************************** Thumbnails Menu styling ***************************/
 .ThumbNav{
-	background-color: rgba( 192, 212, 255, 0.8 );
-	box-shadow: 0 0 8px rgba( 0, 64, 255, 0.5 );
+	background-color: #C0D4FFC8;
+	box-shadow: 0 0 8px #0040FF80;
 	display: none;
 	font-size: 1.5em;
 	left: 0.5em;
@@ -291,10 +294,10 @@ p.Section{
 .prev:hover, .next:hover{ background-color: #000000C8 }
 .close, .modal{ position: fixed }
 /***************************** Dark Mode styling ******************************/
-@media ( prefers-color-scheme: light ){
+@media ( prefers-color-scheme: dark ){
 	body{ background: Black }
 	#byline1{
-		--s: #80808080;
+		--s: #808080C0;
 		color: Black;
 		text-shadow: 0 0 10px LightGrey, -2px 0 var( --s ), 0 2px var( --s ), 2px 0 var( --s ), 0 -2px var( --s );
 	}
@@ -318,14 +321,14 @@ p.Section{
 	#mask{
 		background: Black;
 		height: 50vh;
-		left: 10%;
+		left: 0;
 		position: fixed;
 		top: calc( 10vw + 21em );
-		width: 80%;
+		width: 100%;
 		z-index: -5
 	}
 	#about, .inBlurb, #notice{
-		--s: DarkGrey;
+		--s: #C0C0C0C0;
 		color: White;
 		text-shadow: 0 0 8px var( --s ), 0 0 4px var( --s ), 0 0 2px var( --s )
 	}
