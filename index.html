@@ -248,8 +248,8 @@ p.Section{
 	display: none;
 	height: 100%;
 	left: 0;
-	padding-top: 45px;
 	overflow: hidden;
+	padding-top: 45px;
 	top: 0;
 	width: 100%;
 	z-index: 1
@@ -263,7 +263,7 @@ p.Section{
 	min-width: 90%;
 	object-fit: contain
 }
-.next{ right: 0; border-radius: 3px 0 0 3px }
+#next{ right: 0; border-radius: 3px 0 0 3px }
 #section{
 	display: block;
 	color: LightBlue;
@@ -276,7 +276,7 @@ p.Section{
 	top: 10px;
 	width: 100%
 }
-.prev, .next{
+#prev, #next{
 	cursor: pointer;
 	top: 50%;
 	width: auto;
@@ -290,8 +290,8 @@ p.Section{
 	user-select: none;
 	-webkit-user-select: none
 }
-#caption, .prev, .next, #section{ position: absolute }
-.prev:hover, .next:hover{ background-color: #000000C8 }
+#caption, #prev, #next, #section{ position: absolute }
+#prev:hover, #next:hover{ background-color: #000000C8 }
 .close, .modal{ position: fixed }
 /***************************** Dark Mode styling ******************************/
 @media ( prefers-color-scheme: dark ){
@@ -429,14 +429,14 @@ p.Section{
 			<ul class="menu">
 			<li><span id="menuButton1" class="button" alt="Commissions">Commissions</span></li>
 			<div id="menuContent1" class="ThumbNav"><p class="Section">Commissioned Works</p>
-			<div class="ThumbGrid">
+			<div class="ThumbGrid" id="group1">
 				<img src="images/2457229.jpg" onclick="showImg(this);" loading="lazy" style="object-position:   -5px    0px" alt="Commissioned Works|Distances">
 				<img src="images/2457240.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -20px    0px" alt="Commissioned Works|Meadow cherubs">
 				<img src="images/2457292.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Commissioned Works|Flowering mind">
 				<img src="images/2459114.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -30px" alt="Commissioned Works|Angel Feather">
 				<img src="images/2459163.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Commissioned Works|Arashi">
 				<img src="images/2459165.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Commissioned Works|Leaf-Catching">
-				<img src="images/2459302.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -15px    0px" alt="Commissioned Works|Akemi &amp; Naryana">
+				<img src="images/2459302.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -15px    0px" alt="Commissioned Works|Akemi and Naryana">
 				<img src="images/logo - CommUNITY Iowa.png" onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Commissioned Works|CommUNITY Iowa logo">
 				<img src="images/logo - Bibliocar.png"      onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Commissioned Works|Bibliocar logo">
 				<img src="images/logo - Kenopsia.png"       onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Commissioned Works|Kenopsia logo">
@@ -446,9 +446,9 @@ p.Section{
 			</div>
 			<li><span id="menuButton2" class="button" alt="Drawings">Drawings</span></li>
 			<div id="menuContent2" class="ThumbNav"><p class="Section">Drawings</p>
-			<div class="ThumbGrid">
+			<div class="ThumbGrid" id="group2">
 				<img src="images/2451852.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -20px" alt="Drawings|the Lady of Shalott">
-				<img src="images/2453364.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Mermaid &amp; dolphin">
+				<img src="images/2453364.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Mermaid and dolphin">
 				<img src="images/2454926.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Ballerina studies">
 				<img src="images/2455070.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Rose ballerina">
 				<img src="images/2455494.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|A mermaid's choice">
@@ -457,12 +457,12 @@ p.Section{
 				<img src="images/2456268.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px -110px" alt="Drawings|Beribboned mermaid">
 				<img src="images/2456472.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Drawings|Mermaid musculature">
 				<img src="images/2456474.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Drawings|Mermaid skeleton">
-				<img src="images/2456561.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -5px" alt="Drawings|Mermaid">
+				<img src="images/2456561.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -5px" alt="Drawings|Mermaid 1">
 				<img src="images/2457010.jpg" onclick="showImg(this);" loading="lazy" style="object-position: -100px    0px" alt="Drawings|Trident">
 				<img src="images/2457168.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Drawings|Merman">
-				<img src="images/2457170.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -40px" alt="Drawings|Mermaid">
+				<img src="images/2457170.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -40px" alt="Drawings|Mermaid 2">
 				<img src="images/2458031.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Dryad">
-				<img src="images/2458376.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Drawings|Akemi &amp; Cutter">
+				<img src="images/2458376.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Drawings|Akemi and Cutter">
 				<img src="images/2459072.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|DeviantArt 20th Birthday">
 				<img src="images/2459084.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -18px" alt="Drawings|Petals in light">
 				<img src="images/2459102.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Akemi Whitacre XIII">
@@ -473,7 +473,7 @@ p.Section{
 			</div>
 			<li><span id="menuButton3" class="button" alt="Maps">Maps</span></li>
 			<div id="menuContent3" class="ThumbNav"><p class="Section">Maps</p>
-			<div class="ThumbGrid">
+			<div class="ThumbGrid" id="group3">
 				<img src="images/2454564.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Map 1">
 				<img src="images/2456049.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Legia Jerva">
 				<img src="images/2456430.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Skyrim">
@@ -482,7 +482,7 @@ p.Section{
 			</div>
 			<li><span id="menuButton4" class="button" alt="Fashion Design">Fashion</span></li>
 			<div id="menuContent4" class="ThumbNav"><p class="Section">Fashion Design</p>
-			<div class="ThumbGrid">
+			<div class="ThumbGrid" id="group4">
 				<img src="images/2455513.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Fashion Design|Ball gown 1">
 				<img src="images/2458905.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Fashion Design|Fashion design 2">
 				<img src="images/2458916.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Fashion Design|Fashion design 3">
@@ -519,7 +519,7 @@ p.Section{
 -->
 			<li><span id="menuButton5" class="button" alt="Photography">Photo</span></li>
 			<div id="menuContent5" class="ThumbNav"><p class="Section">Photography</p>
-				<div class="ThumbGrid">
+				<div class="ThumbGrid" id="group5">
 					<img src="images/2452040b.jpg" onclick="showImg(this);" loading="lazy" alt="Photography|Batavia, IL">
 					<img src="images/2452140.jpg"  onclick="showImg(this);" loading="lazy" alt="Photography|Sunset">
 					<img src="images/2452633.jpg"  onclick="showImg(this);" loading="lazy" alt="Photography|Sunrise">
@@ -536,10 +536,10 @@ p.Section{
 			<image class="modal-content" id="imgX">
 			<div id="caption"></div>
 			<div id="section"></div>
-<!--
-			<a class="prev" onclick="plusSlides(-1)">🡄</a>
-			<a class="next" onclick="plusSlides(1)">🡆</a>
--->
+
+			<a id="prev" onclick="plusSlide(-1)">🡄</a>
+			<a id="next" onclick="plusSlide(1)">🡆</a>
+
 		</div>
 		<div id="ColouringBooks">
 			<div class="BookBlurb" id="Book1">
@@ -595,6 +595,26 @@ function showImg( imgs ){
 }
 function hideImg(){ document.getElementById( "myModal" ).style.display = "none"; }
 var menus = document.getElementsByClassName( "ThumbNav" ), menu;
+function plusSlide( n ){
+	var images;
+	const imgPos = [ -1, -1, -1 ];
+	for( var i = 0; i < menus.length; i++ ){
+		images = menus[i].children[1].getElementsByTagName( "img");
+		for( var j = 0; j < images.length; j++ ){
+			if(
+				menus[i].children[0].innerHTML == document.getElementById( "section" ).innerHTML &&
+				images[j].alt.split( "|" )[1] == document.getElementById( "caption" ).innerHTML
+			){
+				imgPos[1] = j + 1;
+				imgPos[0] = imgPos[1] - 1 < 1 ? images.length : imgPos[1] - 1;
+				imgPos[2] = imgPos[1] + 1 > images.length ? 1 : imgPos[1] + 1;
+				break;
+			}
+		}
+		if( imgPos[0] != -1 ){ break; }
+	}
+	showImg( images[imgPos[1 + n] - 1] );
+}
 document.addEventListener( "click", function( event ){
 	for( var i = 0; i < menus.length; i++ ){
 		menu = menus[i];
