@@ -13,13 +13,15 @@
 *{ box-sizing: border-box }
 /******************************** Splash styling ******************************/
 #background{
+	--h: calc( 30vw + 30vh );
 	--w: calc( 25em + 20vw );
 	background-image: url( "images/2456107.png" );
 	background-position: center 4em;
 	background-repeat: no-repeat;
 	background-size: contain;
-	height: calc( var( --w ) );
+	height: calc( var( --h ) );
 	left: calc( 50vw - var( --w ) / 2 );
+	max-height: 90vh;
 	text-align: center;
 	top: 2.75em;
 	width: var( --w );
@@ -69,7 +71,7 @@ img#sig{
 	color: #20204080;
 	font-size: calc( 1em + 0.6vw );
 	left: calc( 50vw - var( --w ) / 2 );
-	top: calc( 27em + 0.3vw );
+	bottom: calc( 20vh - 2em );
 	width: var( --w )
 }
 #products, .subtitle{ font-family: 'Aguafina Script'; font-weight: normal }
@@ -93,6 +95,7 @@ img#sig{
 	bottom: 2.5em;
 	font-variant: small-caps;
 	left: calc( 50vw - var( --w ) / 2 );
+	font-size: calc( 0.5vw + 0.5vh + 0.3em );
 	position: fixed;
 	text-shadow: 0 0 8px var( --2 ), 0 0 4px var( --s ), 0 0 2px var( --s );
 	width: var( --w )
@@ -128,15 +131,16 @@ a.link{
 	position: relative
 }
 #ColouringBooks{
-	height: 100vh;
-	padding-bottom: 8.5vh;
+	height: calc( 100vh - 3em );
+	max-height: calc( 100vh - 3em );
+	padding-bottom: 0px;
 	position: absolute;
 	width: 100%
 }
 .cover{
 	box-shadow: 0.5em 0.5em 1em Black;
 	height: 24vh;
-	max-width: 33%;
+	max-height: 24vh;
 	position: absolute;
 	right: 2em;
 	top: 2vh
@@ -144,26 +148,27 @@ a.link{
 .inBlurb{
 	--s: #000000;
 	font-family: 'Oswald';
-	margin: 0;
+	margin: auto;
 	max-width: 60%;
 	padding-top: 2vh;
 	text-shadow: 0 0 8px var( --s ), 0 0 4px var( --s ), 0 0 2px var( --s )
 }
 /****************************** Main Menu styling *****************************/
-ul.menu li:hover{
+ul#menu li:hover{
 	color: #FFFFFF;
 	text-shadow: 0 0 10px #0080FF
 }
-ul.menu li{
+ul#menu li{
 	cursor: default
 }
 #MainMenu{
 	color: LightBlue;
 	background-color: #202040C0;
 	left: 0px;
-	position: absolute;
+	position: fixed;
 	top: 0px;
-	width: 100%
+	width: 100%;
+	z-index: 1
 }
 #MainMenu a{
 	text-decoration: none
@@ -303,6 +308,7 @@ p.Section{
 	}
 	#MainMenu{ background-color: #404080C0 }
 	#stars{
+		--h: calc( 30vw + 30vh );
 		--w: calc( 25em + 20vw );
 		animation-duration: 240s;
 		animation-iteration-count: infinite;
@@ -311,7 +317,7 @@ p.Section{
 		background-position: center 4em;
 		background-repeat: no-repeat;
 		background-size: contain;
-		height: calc( var( --w ) + 5em );
+		height: calc( var( --h ) + 2em );
 		left: calc( 50vw - var( --w ) / 2 );
 		position: fixed;
 		top: 2.75em;
@@ -333,8 +339,8 @@ p.Section{
 		text-shadow: 0 0 8px var( --s ), 0 0 4px var( --s ), 0 0 2px var( --s )
 	}
 	img#sig{ filter: invert( 100% ) }
-	ul.menu{ color: DarkGrey }
-	ul.menu li:hover{
+	ul#menu{ color: DarkGrey }
+	ul#menu li:hover{
 		color: White;
 		text-shadow: 0 0 10px #Cyan
 	}
@@ -349,6 +355,21 @@ p.Section{
 @media screen and ( min-width: 800px ){
 	#menuButton4::after{ content: " Design" }
 	#menuButton5::after{ content: "graphy" }
+}
+@media screen and ( min-width: 1600px ){
+	div#MainMenu{
+		background-color: #202040C0;
+		height: calc( 2.5em + 0.3vw );
+		width: 100%
+	}
+	ul#menu{
+		font-size: calc( 1em + 0.3vw );
+		left: calc( 50vw - 800px );
+		margin-top: 0.2em;
+		margin-bottom: 0.2em;
+		position: fixed;
+		width: 1600px
+	}
 }
 /************************************* Grid ***********************************/
 .grid-container{
@@ -371,9 +392,37 @@ p.Section{
 	padding: 0;
 	font-size: 2em
 }
+#sizeAa{ --x: 1920px; --y: 1080px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeAb{ --y: 1920px; --x: 1080px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeBa{ --x: 1366px; --y:  768px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeBb{ --y: 1366px; --x:  768px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeCa{ --x:  360px; --y:  640px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeCb{ --y:  360px; --x:  640px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeDa{ --x:  414px; --y:  896px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeDb{ --y:  414px; --x:  896px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeEa{ --x: 1536px; --y:  864px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeEb{ --y: 1536px; --x:  864px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeFa{ --x:  375px; --y:  667px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeFb{ --y:  375px; --x:  667px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeGa{ --x: 2560px; --y: 1440px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeGb{ --y: 2560px; --x: 1440px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeHa{ --x:  320px; --y:  480px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeHb{ --y:  320px; --x:  480px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeIa{ --x: 38400x; --y: 2160px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
+#sizeIb{ --y: 3840px; --x: 2160px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
 		</style>
 	</head>
 	<body style="/*background-color: #121212;*/margin: 0">
+
+	<!--<div id="sizeAa">&nbsp;</div><div id="sizeAb">&nbsp;</div>
+	<div id="sizeBa">&nbsp;</div><div id="sizeBb">&nbsp;</div>
+	<div id="sizeCa">&nbsp;</div><div id="sizeCb">&nbsp;</div>
+	<div id="sizeDa">&nbsp;</div><div id="sizeDb">&nbsp;</div>
+	<div id="sizeEa">&nbsp;</div><div id="sizeEb">&nbsp;</div>
+	<div id="sizeFa">&nbsp;</div><div id="sizeFb">&nbsp;</div>
+	<div id="sizeGa">&nbsp;</div><div id="sizeGb">&nbsp;</div>
+	<div id="sizeHa">&nbsp;</div><div id="sizeHb">&nbsp;</div>
+	<div id="sizeIa">&nbsp;</div><div id="sizeIb">&nbsp;</div>-->
 
 	<div class="grid-container">
 		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
@@ -402,189 +451,179 @@ p.Section{
 			<p>Note:  some content on this site may be inappropriate for work
 			environments (NSFW) or general audiences in some jurisdictions.</p>
 		</div>
-		</div>
+	</div>
 	</div>
 
-		<div id="about">
-			<p>
-			Creating Coloring Books, Fine Art, and Graphic Design&ndash;Commissions Available!
-			</p>
-			<p>
-			Buy individual prints directly or from <a href="https://www.zazzle.com/store/z993126" alt="Zazzle" target="_blank" rel="external nofollow noopener noreferrer">Zazzle</a>, and
-			digital media directly or from <a href="https://www.etsy.com/shop/TimCookArt" alt="Etsy" target="_blank" rel="external nofollow noopener noreferrer">Etsy</a>.
-			</p>
-		</div>
-		<div id="bubbles">
-			<a href="mailto:TimCookArtLLC@gmail.com"       target="_blank" rel="external nofollow noopener noreferrer" alt="e-mail"><img src="images/ico-email.png"></a>
-			<a href="https://empyrean.deviantart.com"      target="_blank" rel="external nofollow noopener noreferrer" alt="deviantArt"><img src="images/ico-da.png"></a>
-			<a href="https://www.etsy.com/shop/TimCookArt" target="_blank" rel="external nofollow noopener noreferrer" alt="Etsy"><img src="images/ico-etsy.png"></a>
-			<a href="https://www.zazzle.com/store/z993126" target="_blank" rel="external nofollow noopener noreferrer" alt="Zazzle"><img src="images/ico-zazzle.png"></a>
-			<a href="https://www.facebook.com/TimCookArt"  target="_blank" rel="external nofollow noopener noreferrer" alt="Facebook"><img src="images/ico-face.png"></a>
-			<a href="https://www.twitter.com/TCookTwit"    target="_blank" rel="external nofollow noopener noreferrer" alt="Twitter"><img src="images/ico-twit.png"></a>
-			<a href="https://www.paypal.me/TimCookArt"     target="_blank" rel="external nofollow noopener noreferrer" alt="Paypal"><img src="images/ico-paypal.png"></a>
-			<a href="https://cash.app/$TimCookArt"         target="_blank" rel="external nofollow noopener noreferrer" alt="Cash.App"><img src="images/ico-cashapp.png"></a>
-		</div>
+	<div id="about">
+		<p>
+		Creating Coloring Books, Fine Art, and Graphic Design&ndash;Commissions Available!
+		</p>
+		<p>
+		Buy individual prints directly or from <a href="https://www.zazzle.com/store/z993126" alt="Zazzle" target="_blank" rel="external nofollow noopener noreferrer">Zazzle</a>, and
+		digital media directly or from <a href="https://www.etsy.com/shop/TimCookArt" alt="Etsy" target="_blank" rel="external nofollow noopener noreferrer">Etsy</a>.
+		</p>
+	</div>
+	<div id="bubbles">
+		<a href="mailto:TimCookArtLLC@gmail.com"       target="_blank" rel="external nofollow noopener noreferrer" alt="e-mail"><img src="images/ico-email.png"></a>
+		<a href="https://empyrean.deviantart.com"      target="_blank" rel="external nofollow noopener noreferrer" alt="deviantArt"><img src="images/ico-da.png"></a>
+		<a href="https://www.etsy.com/shop/TimCookArt" target="_blank" rel="external nofollow noopener noreferrer" alt="Etsy"><img src="images/ico-etsy.png"></a>
+		<a href="https://www.zazzle.com/store/z993126" target="_blank" rel="external nofollow noopener noreferrer" alt="Zazzle"><img src="images/ico-zazzle.png"></a>
+		<a href="https://www.facebook.com/TimCookArt"  target="_blank" rel="external nofollow noopener noreferrer" alt="Facebook"><img src="images/ico-face.png"></a>
+		<a href="https://www.twitter.com/TCookTwit"    target="_blank" rel="external nofollow noopener noreferrer" alt="Twitter"><img src="images/ico-twit.png"></a>
+		<a href="https://www.paypal.me/TimCookArt"     target="_blank" rel="external nofollow noopener noreferrer" alt="Paypal"><img src="images/ico-paypal.png"></a>
+		<a href="https://cash.app/$TimCookArt"         target="_blank" rel="external nofollow noopener noreferrer" alt="Cash.App"><img src="images/ico-cashapp.png"></a>
+	</div>
 
-		<div id="MainMenu">
-			<ul class="menu">
-			<li><span id="menuButton1" class="button" alt="Commissions">Commissions</span></li>
-			<div id="menuContent1" class="ThumbNav"><p class="Section">Commissioned Works</p>
-			<div class="ThumbGrid" id="group1">
-				<img src="images/2457229.jpg" onclick="showImg(this);" loading="lazy" style="object-position:   -5px    0px" alt="Commissioned Works|Distances">
-				<img src="images/2457240.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -20px    0px" alt="Commissioned Works|Meadow cherubs">
-				<img src="images/2457292.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Commissioned Works|Flowering mind">
-				<img src="images/2459114.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -30px" alt="Commissioned Works|Angel Feather">
-				<img src="images/2459163.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Commissioned Works|Arashi">
-				<img src="images/2459165.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Commissioned Works|Leaf-Catching">
-				<img src="images/2459302.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -15px    0px" alt="Commissioned Works|Akemi and Naryana">
-				<img src="images/logo - CommUNITY Iowa.png" onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Commissioned Works|CommUNITY Iowa logo">
-				<img src="images/logo - Bibliocar.png"      onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Commissioned Works|Bibliocar logo">
-				<img src="images/logo - Kenopsia.png"       onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Commissioned Works|Kenopsia logo">
-				<img src="images/logo - Saorsa.png"         onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Commissioned Works|Saorsa logo">
-				<img src="images/logo - TA.png"             onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Commissioned Works|Trinity Advent logo">
-			</div>
-			</div>
-			<li><span id="menuButton2" class="button" alt="Drawings">Drawings</span></li>
-			<div id="menuContent2" class="ThumbNav"><p class="Section">Drawings</p>
-			<div class="ThumbGrid" id="group2">
-				<img src="images/2451852.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -20px" alt="Drawings|the Lady of Shalott">
-				<img src="images/2453364.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Mermaid and dolphin">
-				<img src="images/2454926.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Ballerina studies">
-				<img src="images/2455070.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Rose ballerina">
-				<img src="images/2455494.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|A mermaid's choice">
-				<img src="images/2455811.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Drawings|Tanemura-style mermaid">
-				<img src="images/2455940.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Drawings|Diving mermaids">
-				<img src="images/2456268.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px -110px" alt="Drawings|Beribboned mermaid">
-				<img src="images/2456472.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Drawings|Mermaid musculature">
-				<img src="images/2456474.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Drawings|Mermaid skeleton">
-				<img src="images/2456561.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -5px" alt="Drawings|Mermaid 1">
-				<img src="images/2457010.jpg" onclick="showImg(this);" loading="lazy" style="object-position: -100px    0px" alt="Drawings|Trident">
-				<img src="images/2457168.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Drawings|Merman">
-				<img src="images/2457170.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -40px" alt="Drawings|Mermaid 2">
-				<img src="images/2458031.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Dryad">
-				<img src="images/2458376.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Drawings|Akemi and Cutter">
-				<img src="images/2459072.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|DeviantArt 20th Birthday">
-				<img src="images/2459084.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -18px" alt="Drawings|Petals in light">
-				<img src="images/2459102.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Akemi Whitacre XIII">
-				<img src="images/2459208.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Drawings|Aeolian (WLOP fanart)">
-				<img src="images/2459358.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -30px" alt="Drawings|Steampunk Ballerina">
-				<img src="images/2459380.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Drawings|Batavia travel poster">
-			</div>
-			</div>
-			<li><span id="menuButton3" class="button" alt="Maps">Maps</span></li>
-			<div id="menuContent3" class="ThumbNav"><p class="Section">Maps</p>
-			<div class="ThumbGrid" id="group3">
-				<img src="images/2454564.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Map 1">
-				<img src="images/2456049.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Legia Jerva">
-				<img src="images/2456430.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Skyrim">
-				<img src="images/2459032.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Tamriel">
-			</div>
-			</div>
-			<li><span id="menuButton4" class="button" alt="Fashion Design">Fashion</span></li>
-			<div id="menuContent4" class="ThumbNav"><p class="Section">Fashion Design</p>
-			<div class="ThumbGrid" id="group4">
-				<img src="images/2455513.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Fashion Design|Ball gown 1">
-				<img src="images/2458905.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Fashion Design|Fashion design 2">
-				<img src="images/2458916.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Fashion Design|Fashion design 3">
-				<img src="images/2458938.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Fashion Design|Fashion design 4">
-				<img src="images/2459070.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Fashion Design|Fashion design 5">
-				<img src="images/2459259.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Fashion Design|Fashion design 6">
-				<img src="images/2459292.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Fashion Design|Aisling Duval">
-			</div>
-			</div>
+	<div id="MainMenu">
+		<ul id="menu">
+		<li><span id="menuButton1" class="button" alt="Commissions">Commissions</span></li>
+		<div id="menuContent1" class="ThumbNav"><p class="Section">Commissioned Works</p><div class="ThumbGrid" id="group1">
+			<img src="images/2457229.jpg" onclick="showImg(this);" loading="lazy" style="object-position:   -5px    0px" alt="Commissioned Works|Distances">
+			<img src="images/2457240.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -20px    0px" alt="Commissioned Works|Meadow cherubs">
+			<img src="images/2457292.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Commissioned Works|Flowering mind">
+			<img src="images/2459114.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -30px" alt="Commissioned Works|Angel Feather">
+			<img src="images/2459163.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Commissioned Works|Arashi">
+			<img src="images/2459165.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Commissioned Works|Leaf-Catching">
+			<img src="images/2459302.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -15px    0px" alt="Commissioned Works|Akemi and Naryana">
+			<img src="images/logo - CommUNITY Iowa.png" onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Commissioned Works|CommUNITY Iowa logo">
+			<img src="images/logo - Bibliocar.png"      onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Commissioned Works|Bibliocar logo">
+			<img src="images/logo - Kenopsia.png"       onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Commissioned Works|Kenopsia logo">
+			<img src="images/logo - Saorsa.png"         onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Commissioned Works|Saorsa logo">
+			<img src="images/logo - TA.png"             onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Commissioned Works|Trinity Advent logo">
+		</div></div>
+		<li><span id="menuButton2" class="button" alt="Drawings">Drawings</span></li>
+		<div id="menuContent2" class="ThumbNav"><p class="Section">Drawings</p><div class="ThumbGrid" id="group2">
+			<img src="images/2451852.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -20px" alt="Drawings|the Lady of Shalott">
+			<img src="images/2453364.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Mermaid and dolphin">
+			<img src="images/2454926.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Ballerina studies">
+			<img src="images/2455070.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Rose ballerina">
+			<img src="images/2455494.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|A mermaid's choice">
+			<img src="images/2455811.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Drawings|Tanemura-style mermaid">
+			<img src="images/2455940.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Drawings|Diving mermaids">
+			<img src="images/2456268.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px -110px" alt="Drawings|Beribboned mermaid">
+			<img src="images/2456472.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Drawings|Mermaid musculature">
+			<img src="images/2456474.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Drawings|Mermaid skeleton">
+			<img src="images/2456561.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -5px" alt="Drawings|Mermaid 1">
+			<img src="images/2457010.jpg" onclick="showImg(this);" loading="lazy" style="object-position: -100px    0px" alt="Drawings|Trident">
+			<img src="images/2457168.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Drawings|Merman">
+			<img src="images/2457170.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -40px" alt="Drawings|Mermaid 2">
+			<img src="images/2458031.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Dryad">
+			<img src="images/2458376.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Drawings|Akemi and Cutter">
+			<img src="images/2459072.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|DeviantArt 20th Birthday">
+			<img src="images/2459084.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -18px" alt="Drawings|Petals in light">
+			<img src="images/2459102.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Akemi Whitacre XIII">
+			<img src="images/2459208.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Drawings|Aeolian (WLOP fanart)">
+			<img src="images/2459358.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -30px" alt="Drawings|Steampunk Ballerina">
+			<img src="images/2459380.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Drawings|Batavia travel poster">
+		</div></div>
+		<li><span id="menuButton3" class="button" alt="Maps">Maps</span></li>
+		<div id="menuContent3" class="ThumbNav"><p class="Section">Maps</p><div class="ThumbGrid" id="group3">
+			<img src="images/2454564.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Map 1">
+			<img src="images/2456049.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Legia Jerva">
+			<img src="images/2456430.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Skyrim">
+			<img src="images/2459032.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Tamriel">
+		</div></div>
+		<li><span id="menuButton4" class="button" alt="Fashion Design">Fashion</span></li>
+		<div id="menuContent4" class="ThumbNav"><p class="Section">Fashion Design</p><div class="ThumbGrid" id="group4">
+			<img src="images/2455513.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Fashion Design|Ball gown 1">
+			<img src="images/2458905.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Fashion Design|Fashion design 2">
+			<img src="images/2458916.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Fashion Design|Fashion design 3">
+			<img src="images/2458938.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -25px" alt="Fashion Design|Fashion design 4">
+			<img src="images/2459070.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Fashion Design|Fashion design 5">
+			<img src="images/2459259.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Fashion Design|Fashion design 6">
+			<img src="images/2459292.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Fashion Design|Aisling Duval">
+		</div></div>
 <!--
-			<li><span id="menuButton5" class="button" alt="Logos">Logo</span></li>
-			<div id="menuContent5" class="ThumbNav"><p class="Section">Logo Design</p>
-			<div class="ThumbGrid">
-				<img src="images/logo - CommUNITY Iowa.png" onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Logo Design|CommUNITY Iowa">
-				<img src="images/logo - Bibliocar.png"      onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Logo Design|Bibliocar">
-				<img src="images/logo - Kenopsia.png"       onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Logo Design|Kenopsia">
-				<img src="images/2459319.png"               onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:   30px    0px" alt="Logo Design|Leafwalker Family Emblem">
-				<img src="images/logo - PCC.png"            onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Logo Design|Planetary Circumnavigation Club">
-				<img src="images/logo - Saorsa.png"         onclick="showImg(this);" loading="lazy" style="object-position:                         0px    0px" alt="Logo Design|Saorsa">
-				<img src="images/logo - TA.png"             onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px  -15px" alt="Logo Design|Trinity Advent">
-				<img src="images/logo - TimCookArt.png"     onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Logo Design|TimCookArt">
-			</div>
-			</div>
-			<li><span id="menuButton6" class="button" alt="3D CGI">3D CGI</span></li>
-			<div id="menuContent6" class="ThumbNav"><p class="Section">Computer-generated images</p>
-			<div class="ThumbGrid">
-				<img src="images/2452923.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Winter dryad">
-				<img src="images/2453047.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Dragon">
-				<img src="images/2453147.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Blue Mars">
-				<img src="images/2457843.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -20px    0px" alt="China cabinet">
-				<img src="images/2459057.png" onclick="showImg(this);" loading="lazy" style="object-position:    0px -110px" alt="Jottuz">
-			</div>
-			</div>
+		<li><span id="menuButton5" class="button" alt="Logos">Logo</span></li>
+		<div id="menuContent5" class="ThumbNav"><p class="Section">Logo Design</p><div class="ThumbGrid">
+			<img src="images/logo - CommUNITY Iowa.png" onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Logo Design|CommUNITY Iowa">
+			<img src="images/logo - Bibliocar.png"      onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Logo Design|Bibliocar">
+			<img src="images/logo - Kenopsia.png"       onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px   20px" alt="Logo Design|Kenopsia">
+			<img src="images/2459319.png"               onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:   30px    0px" alt="Logo Design|Leafwalker Family Emblem">
+			<img src="images/logo - PCC.png"            onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Logo Design|Planetary Circumnavigation Club">
+			<img src="images/logo - Saorsa.png"         onclick="showImg(this);" loading="lazy" style="object-position:                         0px    0px" alt="Logo Design|Saorsa">
+			<img src="images/logo - TA.png"             onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px  -15px" alt="Logo Design|Trinity Advent">
+			<img src="images/logo - TimCookArt.png"     onclick="showImg(this);" loading="lazy" style="object-fit: contain; object-position:    0px    0px" alt="Logo Design|TimCookArt">
+		</div></div>
+		<li><span id="menuButton6" class="button" alt="3D CGI">3D CGI</span></li>
+		<div id="menuContent6" class="ThumbNav"><p class="Section">Computer-generated images</p><div class="ThumbGrid">
+			<img src="images/2452923.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -10px    0px" alt="Winter dryad">
+			<img src="images/2453047.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Dragon">
+			<img src="images/2453147.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Blue Mars">
+			<img src="images/2457843.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -20px    0px" alt="China cabinet">
+			<img src="images/2459057.png" onclick="showImg(this);" loading="lazy" style="object-position:    0px -110px" alt="Jottuz">
+		</div></div>
 -->
-			<li><span id="menuButton5" class="button" alt="Photography">Photo</span></li>
-			<div id="menuContent5" class="ThumbNav"><p class="Section">Photography</p>
-				<div class="ThumbGrid" id="group5">
-					<img src="images/2452040b.jpg" onclick="showImg(this);" loading="lazy" alt="Photography|Batavia, IL">
-					<img src="images/2452140.jpg"  onclick="showImg(this);" loading="lazy" alt="Photography|Sunset">
-					<img src="images/2452633.jpg"  onclick="showImg(this);" loading="lazy" alt="Photography|Sunrise">
-					<img src="images/2452793.jpg"  onclick="showImg(this);" loading="lazy" alt="Photography|Lightning">
-					<img src="images/2452979.jpg"  onclick="showImg(this);" loading="lazy" alt="Photography|Snow">
-					<img src="images/2452982.jpg"  onclick="showImg(this);" loading="lazy" alt="Photography|Red Moon">
-				</div>
-				</div>
-			</ul>
-		</div>
+		<li><span id="menuButton5" class="button" alt="Photography">Photo</span></li>
+		<div id="menuContent5" class="ThumbNav"><p class="Section">Photography</p><div class="ThumbGrid" id="group5">
+			<img src="images/2452040b.jpg" onclick="showImg(this);" loading="lazy" alt="Photography|Batavia, IL">
+			<img src="images/2452140.jpg"  onclick="showImg(this);" loading="lazy" alt="Photography|Sunset">
+			<img src="images/2452633.jpg"  onclick="showImg(this);" loading="lazy" alt="Photography|Sunrise">
+			<img src="images/2452793.jpg"  onclick="showImg(this);" loading="lazy" alt="Photography|Lightning">
+			<img src="images/2452979.jpg"  onclick="showImg(this);" loading="lazy" alt="Photography|Snow">
+			<img src="images/2452982.jpg"  onclick="showImg(this);" loading="lazy" alt="Photography|Red Moon">
+		</div></div>
+		</ul>
+	</div>
 
-		<div id="myModal" class="modal">
-			<span class="close" onclick="hideImg()"></span>
-			<image class="modal-content" id="imgX">
-			<div id="caption"></div>
-			<div id="section"></div>
+	<div id="myModal" class="modal">
+		<span class="close" onclick="hideImg()"></span>
+		<image class="modal-content" id="imgX">
+		<div id="caption"></div>
+		<div id="section"></div>
+		<a id="prev" onclick="plusSlide(-1)">🡄</a>
+		<a id="next" onclick="plusSlide(1)">🡆</a>
+	</div>
 
-			<a id="prev" onclick="plusSlide(-1)">🡄</a>
-			<a id="next" onclick="plusSlide(1)">🡆</a>
-
+	<div id="ColouringBooks">
+	<div style="--x:13em; clip-path:inset(-25% 0% 0% 0%); height:2.5em; top:-2.5em; left:calc( 50vw - ( var(--x) / 2 ) ); position:absolute; width: var(--x)">
+		<img src="images/cover1.jpg" style="transform:rotate(-10deg);position:absolute;width:6em;left: 8%">
+		<img src="images/cover2.jpg" style="transform:rotate(  0deg);position:absolute;width:6em;left:28%;top:-15%">
+		<img src="images/cover3.jpg" style="transform:rotate( 10deg);position:absolute;width:6em;left:48%">
+	</div>
+		<div class="BookBlurb" id="Book1">
+			<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">MERMAIDS <span style="font-size: 0.75em">COLORING BOOK</span></p>
+			<p class="inBlurb">
+			Forty-eight images featuring the constellations of the zodiac embodied as mermaids, individual mermaids, couples, and examples
+			of undersea fashion are contained in this enchanting coloring book.
+			</p>
+			<p class="inBlurb">Buy from
+			<a href="https://www.amazon.com/Mermaids-coloring-book-Timothy-Cook/dp/1533468958/"
+				alt="Mermaids:  a coloring book by Timothy R Cook"
+				target="_blank" rel="external nofollow noopener noreferrer"
+				style="text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey"
+			>Amazon<img src="images/cover1.jpg" class="cover" title="Mermaids:  a coloring book by Timothy R Cook"></a>.
+			</p>
 		</div>
-		<div id="ColouringBooks">
-			<div class="BookBlurb" id="Book1">
-				<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">MERMAIDS <span style="font-size: 0.75em">COLORING BOOK</span></p>
-				<p class="inBlurb">
-				Forty-eight images featuring the constellations of the zodiac embodied as mermaids, individual mermaids, couples, and examples
-				of undersea fashion are contained in this enchanting coloring book.
-				</p>
-				<p class="inBlurb">Buy from
-				<a href="https://www.amazon.com/Mermaids-coloring-book-Timothy-Cook/dp/1533468958/"
-					alt="Mermaids:  a coloring book by Timothy R Cook"
-					target="_blank" rel="external nofollow noopener noreferrer"
-					style="text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey"
-				>Amazon<img src="images/cover1.jpg" class="cover" title="Mermaids:  a coloring book by Timothy R Cook"></a>.
-				</p>
-			</div>
-			<div class="BookBlurb" id="Book2">
-				<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">MERFOLK <span style="font-size: 0.75em">COLORING BOOK</span></p>
-				<p class="inBlurb">
-				Forty-eight additional images of undersea denizens are presented in this additional volume of work by Tim Cook, welcoming you
-				to dive into your imagination and explore the worlds within.
-				</p>
-				<p class="inBlurb">Buy from
-				<a href="https://www.amazon.com/Merfolk-coloring-book-Timothy-Cook/dp/1547101261/"
-					alt="Merfolk:  a coloring book by Timothy R Cook"
-					target="_blank" rel="external nofollow noopener noreferrer"
-					style="text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey"
-				>Amazon<img src="images/cover2.jpg" class="cover" title="Merfolk:  a coloring book by Timothy R Cook"></a>.
-				</p>
-			</div>
-			<div class="BookBlurb" id="Book3">
-				<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">FANTASY &amp; FASHION <span style="font-size: 0.75em">COLORING BOOK</span></p>
-				<p class="inBlurb">
-				Winsome mermaids, capricious faeries and dryads, radiant angels, noble centaurs, majestic dragons, and elegant fashion designs
-				all reside in this coloring book, beckoning you to embark on a journey through forty-eight examples of wonder.
-				</p>
-				<p class="inBlurb">Buy from
-				<a href="https://www.amazon.com/Fantasy-Fashion-coloring-Timothy-Cook/dp/1987736885/"
-					alt="Fantasy & Fashion:  a coloring book by Timothy R Cook"
-					target="_blank" rel="external nofollow noopener noreferrer"
-					style="text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey"
-				>Amazon<img src="images/cover3.jpg" class="cover" title="Fantasy & Fashion:  a coloring book by Timothy R Cook"></a>.
-				</p>
-			</div>
+		<div class="BookBlurb" id="Book2">
+			<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">MERFOLK <span style="font-size: 0.75em">COLORING BOOK</span></p>
+			<p class="inBlurb">
+			Forty-eight additional images of undersea denizens are presented in this additional volume of work by Tim Cook, welcoming you
+			to dive into your imagination and explore the worlds within.
+			</p>
+			<p class="inBlurb">Buy from
+			<a href="https://www.amazon.com/Merfolk-coloring-book-Timothy-Cook/dp/1547101261/"
+				alt="Merfolk:  a coloring book by Timothy R Cook"
+				target="_blank" rel="external nofollow noopener noreferrer"
+				style="text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey"
+			>Amazon<img src="images/cover2.jpg" class="cover" title="Merfolk:  a coloring book by Timothy R Cook"></a>.
+			</p>
 		</div>
+		<div class="BookBlurb" id="Book3">
+			<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">FANTASY &amp; FASHION <span style="font-size: 0.75em">COLORING BOOK</span></p>
+			<p class="inBlurb">
+			Winsome mermaids, capricious faeries and dryads, radiant angels, noble centaurs, majestic dragons, and elegant fashion designs
+			all reside in this coloring book, beckoning you to embark on a journey through forty-eight examples of wonder.
+			</p>
+			<p class="inBlurb">Buy from
+			<a href="https://www.amazon.com/Fantasy-Fashion-coloring-Timothy-Cook/dp/1987736885/"
+				alt="Fantasy & Fashion:  a coloring book by Timothy R Cook"
+				target="_blank" rel="external nofollow noopener noreferrer"
+				style="text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey"
+			>Amazon<img src="images/cover3.jpg" class="cover" title="Fantasy & Fashion:  a coloring book by Timothy R Cook"></a>.
+			</p>
+		</div>
+	</div>
 	</body>
 	<script>
 function showImg( imgs ){
