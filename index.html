@@ -42,11 +42,9 @@ function init(){
 	--w: calc( 5.5em + 1vw );
 	color: LightBlue;
 	font-family: 'EB Garamond';
-	font-size: calc( 3.5em + 2vw );
+	font-size: calc( 1.5em + 4vw );
 	left: calc( 50vw - var( --w ) / 2 );
-	text-shadow:
-		+2px -2px var( --s ), +2px +2px var( --s ), -2px -2px var( --s ), -2px +2px var( --s ),
-		+0px -2px var( --s ), +2px +0px var( --s ), +0px +2px var( --s ), -2px +0px var( --s );
+	-webkit-text-stroke: 0.125vw var( --s );
 	width: var( --w )
 }
 #logo{
@@ -62,9 +60,9 @@ function init(){
 	width: var( --w )
 }
 #byline1{
-	--s: Black;
 	color: White;
-	text-shadow: 0 0 8px var( --s ), -2px 0 var( --s ), 0 2px var( --s ), 2px 0 var( --s ), 0 -2px var( --s );
+	-webkit-text-stroke: 0.1vw Black;
+	text-shadow: 0 0 8px Black;
 }
 #byline2{
 	background: linear-gradient( #8080FF, #FFC0FF );
@@ -108,7 +106,7 @@ img#sig{
 	left: calc( 50vw - var( --w ) / 2 );
 	font-size: calc( 0.5vw + 0.5vh + 0.3em );
 	position: fixed;
-	text-shadow: 0 0 8px var( --2 ), 0 0 4px var( --s ), 0 0 2px var( --s );
+	text-shadow: 0 0 4px var( --s ), 0 0 2px var( --s );
 	width: var( --w )
 }
 /************************ Social Media bubbles styling ************************/
@@ -133,7 +131,6 @@ a.link{ text-decoration: none }
 	height: 28vh;
 	margin-bottom: 2vh;
 	overflow: auto;
-	padding-left: 2em;
 	position: relative
 }
 #ColouringBooks{
@@ -145,19 +142,26 @@ a.link{ text-decoration: none }
 }
 .cover{
 	box-shadow: 0.5em 0.5em 1em Black;
+	float: right;
 	height: 24vh;
+	margin-left: 2em;
 	max-height: 24vh;
-	position: absolute;
-	right: 2em;
+	position: relative;
+	right: 1em;
 	top: 2vh
 }
 .inBlurb{
 	--s: #000000;
 	font-family: 'Oswald';
-	margin: auto;
-	max-width: 60%;
-	padding-top: 2vh;
+	padding-left: 1em;
 	text-shadow: 0 0 8px var( --s ), 0 0 4px var( --s ), 0 0 2px var( --s )
+}
+.outBlurb{
+	--x: 90vw;
+	height: 99%;
+	left: calc( 50vw - ( var(--x) /2 ) );
+	position: absolute;
+	width: var( --x )
 }
 #minicovers{
 	--x: 13em;
@@ -376,74 +380,24 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 		width: 1600px
 	}
 }
+@media screen and ( min-width: 1778px ){
+	.outBlurb{
+		--x: 1600px;
+		height: 99%;
+		left: calc( 50vw - ( var(--x) /2 ) );
+		position: absolute;
+		width: var( --x )
+	}
+}
 @media screen and ( min-width: 2560px ){
 	#bubbles{ width: calc( 68px * 9 ) }
 	#bubbles img{ height: 64px; width: 64px }
 }
-/************************************* Grid ***********************************/
-.grid-container{
-	--a: 100px; /* calc( 100vw / 8 ); */
-	background-color: #00008004;
-	display: grid;
-	grid-gap: 0;
-	grid-template-columns: var(--a) var(--a) var(--a) var(--a) var(--a) var(--a) var(--a) var(--a);
-	left: 0;
-	padding: 0;
-	pointer-events: none;
-	position: fixed;
-	top: 0;
-	z-index: 1
-}
-.grid-container > div{
-	border: 1px solid #00008019;
-	display: none;
-	height: calc( 100vh / 8 );
-	padding: 0;
-	font-size: 2em
-}
-#sizeAa{ --x: 1920px; --y: 1080px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeAb{ --y: 1920px; --x: 1080px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeBa{ --x: 1366px; --y:  768px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeBb{ --y: 1366px; --x:  768px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeCa{ --x:  360px; --y:  640px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeCb{ --y:  360px; --x:  640px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeDa{ --x:  414px; --y:  896px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeDb{ --y:  414px; --x:  896px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeEa{ --x: 1536px; --y:  864px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeEb{ --y: 1536px; --x:  864px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeFa{ --x:  375px; --y:  667px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeFb{ --y:  375px; --x:  667px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeGa{ --x: 2560px; --y: 1440px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeGb{ --y: 2560px; --x: 1440px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeHa{ --x:  320px; --y:  480px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeHb{ --y:  320px; --x:  480px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeIa{ --x: 38400x; --y: 2160px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
-#sizeIb{ --y: 3840px; --x: 2160px; background-color: #00008008; border: 1px solid #0000FF80; height: var(--y); left: calc( 50vw - ( var(--x) / 2 ) ); position: fixed; top: 0; width: var(--x) }
 		</style>
 	</head>
-	<body style="/*background-color: #121212;*/margin: 0">
+	<body style="margin: 0">
 
-	<!--<div id="sizeAa">&nbsp;</div><div id="sizeAb">&nbsp;</div>
-	<div id="sizeBa">&nbsp;</div><div id="sizeBb">&nbsp;</div>
-	<div id="sizeCa">&nbsp;</div><div id="sizeCb">&nbsp;</div>
-	<div id="sizeDa">&nbsp;</div><div id="sizeDb">&nbsp;</div>
-	<div id="sizeEa">&nbsp;</div><div id="sizeEb">&nbsp;</div>
-	<div id="sizeFa">&nbsp;</div><div id="sizeFb">&nbsp;</div>
-	<div id="sizeGa">&nbsp;</div><div id="sizeGb">&nbsp;</div>
-	<div id="sizeHa">&nbsp;</div><div id="sizeHb">&nbsp;</div>
-	<div id="sizeIa">&nbsp;</div><div id="sizeIb">&nbsp;</div>-->
-
-	<div class="grid-container">
-		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
-		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
-		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
-		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
-		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
-		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
-		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
-		<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
-	</div>
-<script type="text/javascript">init();</script>
+	<script type="text/javascript">init();</script>
 
 	<div id="MainMenu">
 		<ul id="menu">
@@ -536,7 +490,7 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 		<a id="next" onclick="plusSlide(1)">🡆</a>
 	</div>
 
-	<!--<div style="position: fixed; top: 3em"><span id="x">?</span> x <span id="y">?</span></div>-->
+	<div style="display: none; position: fixed; top: 3em"><span id="x">?</span> x <span id="y">?</span></div>
 
 	<div id="stars"></div>
 	<div id="mask"></div>
@@ -588,7 +542,8 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 		<img src="images/cover2.jpg" style="transform:rotate(  0deg);position:absolute;width:33%;left:33%;top:-15%">
 		<img src="images/cover3.jpg" style="transform:rotate( 10deg);position:absolute;width:33%;left:55%">
 	</div>
-		<div class="BookBlurb" id="Book1">
+		<div class="BookBlurb" id="Book1"><div class="outBlurb">
+			<img src="images/cover1.jpg" class="cover" title="Mermaids:  a coloring book by Timothy R Cook">
 			<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">MERMAIDS <span style="font-size: 0.75em">COLORING BOOK</span></p>
 			<p class="inBlurb">
 			Forty-eight images featuring the constellations of the zodiac embodied as mermaids, individual mermaids, couples, and examples
@@ -599,10 +554,11 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 				alt="Mermaids:  a coloring book by Timothy R Cook"
 				target="_blank" rel="external nofollow noopener noreferrer"
 				style="text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey"
-			>Amazon<img src="images/cover1.jpg" class="cover" title="Mermaids:  a coloring book by Timothy R Cook"></a>.
+			>Amazon</a>.
 			</p>
-		</div>
-		<div class="BookBlurb" id="Book2">
+		</div></div>
+		<div class="BookBlurb" id="Book2"><div class="outBlurb">
+			<img src="images/cover2.jpg" class="cover" title="Merfolk:  a coloring book by Timothy R Cook">
 			<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">MERFOLK <span style="font-size: 0.75em">COLORING BOOK</span></p>
 			<p class="inBlurb">
 			Forty-eight additional images of undersea denizens are presented in this additional volume of work by Tim Cook, welcoming you
@@ -613,10 +569,11 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 				alt="Merfolk:  a coloring book by Timothy R Cook"
 				target="_blank" rel="external nofollow noopener noreferrer"
 				style="text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey"
-			>Amazon<img src="images/cover2.jpg" class="cover" title="Merfolk:  a coloring book by Timothy R Cook"></a>.
+			>Amazon</a>.
 			</p>
-		</div>
-		<div class="BookBlurb" id="Book3">
+		</div></div>
+		<div class="BookBlurb" id="Book3"><div class="outBlurb">
+			<img src="images/cover3.jpg" class="cover" title="Fantasy & Fashion:  a coloring book by Timothy R Cook">
 			<p class="inBlurb" style="font-size: 1.5em; font-weight: bold">FANTASY &amp; FASHION <span style="font-size: 0.75em">COLORING BOOK</span></p>
 			<p class="inBlurb">
 			Winsome mermaids, capricious faeries and dryads, radiant angels, noble centaurs, majestic dragons, and elegant fashion designs
@@ -627,9 +584,9 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 				alt="Fantasy & Fashion:  a coloring book by Timothy R Cook"
 				target="_blank" rel="external nofollow noopener noreferrer"
 				style="text-shadow: 0 0 8px DarkGrey, 0 0 4px DarkGrey, 0 0 2px DarkGrey"
-			>Amazon<img src="images/cover3.jpg" class="cover" title="Fantasy & Fashion:  a coloring book by Timothy R Cook"></a>.
+			>Amazon</a>.
 			</p>
-		</div>
+		</div></div>
 	</div>
 	</body>
 
