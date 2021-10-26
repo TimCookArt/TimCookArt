@@ -31,35 +31,9 @@ function init(){
 	background-repeat: no-repeat;
 	background-size: contain;
 	height: 100vh;
-	left: calc( 50vw - var( --w ) / 2 );
 	max-height: 90vh;
 	text-align: center;
-	top: 2.75em;
-	width: var( --w );
-}
-#title{
-	--s: MidnightBlue;
-	--w: calc( 5.5em + 0.5vw );
-	color: LightBlue;
-	font-family: 'EB Garamond';
-	font-size: calc( 1.5em + 3vw );
-	left: calc( 50vw - var( --w ) / 2 );
-	-webkit-text-stroke: 0.125vw var( --s );
-	width: var( --w )
-}
-#logo{
-	height: 1.25em;
-	left: -1em;
-	position: absolute;
-	top: 0.25em;
-	z-index: -1
-}
-.subtitle{
-	--w: calc( 9em + 1vw );
-	font-size: calc( 1.25em + 2.5vw );
-	left: calc( 50vw - var( --w ) / 2 );
-	top: calc( 3.9em - 7vw );
-	width: var( --w )
+	top: 2.75em
 }
 #byline1{
 	color: White;
@@ -71,22 +45,38 @@ function init(){
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
-img#sig{
-	--w: calc( 6.5em + 14vw );
-	left: calc( 50vw - var( --w ) / 2 );
-	top: calc( 6.25em + 5.5vw );
-	width: var( --w )
+#logo{
+	height: 1.25em;
+	left: -1em;
+	position: absolute;
+	top: 0.25em;
+	z-index: -1
 }
 #products{
 	--w: calc( 18em + 1vw );
 	color: #20204080;
 	font-size: calc( 1em + 0.6vw );
-	left: calc( 50vw - var( --w ) / 2 );
-	bottom: calc( 4em + 2vh );
-	width: var( --w )
+	bottom: calc( 4em + 2vh )
 }
+#title{
+	--w: calc( 5.5em + 0.5vw );
+	color: LightBlue;
+	font-family: 'EB Garamond';
+	font-size: calc( 1.5em + 3vw );
+	-webkit-text-stroke: 0.125vw MidnightBlue
+}
+.subtitle{
+	--w: calc( 9em + 1vw );
+	font-size: calc( 1.25em + 2.5vw );
+	top: calc( 3.9em - 7vw )
+}
+img#sig{
+	--w: calc( 6.5em + 14vw );
+	top: calc( 6.25em + 5.5vw )
+}
+#background, #products, #title, .subtitle, img#sig{ left: calc( 50vw - var( --w ) / 2 ); width: var( --w ) }
 #products, .subtitle{ font-family: 'Aguafina Script'; font-weight: normal }
-#background, img#sig, #products, .subtitle, #title{ position: fixed }
+#background, #products, #title, .subtitle, img#sig{ position: fixed }
 /****************************** Footnote styling ******************************/
 #about{
 	bottom: 0.5em;
@@ -94,11 +84,7 @@ img#sig{
 	font-family: 'Oswald', arial, sans-serif;
 	font-size: small;
 	left: 0.5em;
-	position: fixed;
 	z-index: 1
-}
-#about p{
-	margin: 0
 }
 #notice{
 	--s: #808080;
@@ -108,14 +94,11 @@ img#sig{
 	font-variant: small-caps;
 	font-size: calc( 0.5vw + 0.5vh + 0.3em );
 	left: calc( 50vw - var( --w ) / 2 );
-	position: fixed;
 	text-shadow: 0 0 4px var( --s ), 0 0 2px var( --s );
 	width: var( --w )
 }
-#notice p{
-	margin: 0px;
-	padding: 0px
-}
+#about, #notice{ position: fixed }
+#about p, #notice p{ margin: 0px; padding: 0px }
 /**************************** Bubble menu styling *****************************/
 #bubbles{
 	bottom: 0.5em;
@@ -128,9 +111,20 @@ img#sig{
 #bubbles img{ height: 32px; width: 32px }
 /************************** Colouring Books styling ***************************/
 a.link{ text-decoration: none }
-#Book1{ background: #202040C0; }
-#Book2{ background: #403020C0; }
-#Book3{ background: #003000C0; }
+#ColouringBooks{
+	height: calc( 100vh - 3em );
+	max-height: calc( 100vh - 3em );
+	padding-bottom: 0px;
+	width: 100%
+}
+#minicovers{
+	--x: 13em;
+	clip-path: inset( -25% 0% 0% 0% );
+	height: 2.5em;
+	top: -2.5em;
+	left: calc( 50vw - ( var( --x ) / 2 ) );
+	width: var(--x)
+}
 .BookBlurb{
 	color: White;
 	display: block;
@@ -138,12 +132,6 @@ a.link{ text-decoration: none }
 	height: 28vh;
 	margin-bottom: 2vh;
 	overflow: auto
-}
-#ColouringBooks{
-	height: calc( 100vh - 3em );
-	max-height: calc( 100vh - 3em );
-	padding-bottom: 0px;
-	width: 100%
 }
 .cover{
 	box-shadow: 0.5em 0.5em 1em Black;
@@ -157,6 +145,7 @@ a.link{ text-decoration: none }
 .inBlurb{
 	--s: #000000;
 	font-family: 'Oswald';
+	font-size: calc( 0.5vw + 0.5vh + 0.3em );
 	padding-left: 1em;
 	text-shadow: 0 0 8px var( --s ), 0 0 4px var( --s ), 0 0 2px var( --s )
 }
@@ -166,19 +155,12 @@ a.link{ text-decoration: none }
 	left: calc( 50vw - ( var( --x ) / 2 ) );
 	width: var( --x )
 }
-#minicovers{
-	--x: 13em;
-	clip-path: inset( -25% 0% 0% 0% );
-	height: 2.5em;
-	top: -2.5em;
-	left: calc( 50vw - ( var( --x ) / 2 ) );
-	width: var(--x)
-}
+#Book1{ background: #202040C0 }
+#Book2{ background: #403020C0 }
+#Book3{ background: #003000C0 }
 .BookBlurb, .cover{ position: relative }
 #ColouringBooks, .outBlurb, #minicovers{ position: absolute }
 /****************************** Main Menu styling *****************************/
-ul#menu li{ cursor: default }
-ul#menu li:hover{ color: #FFFFFF; text-shadow: 0 0 10px #0080FF }
 #MainMenu{
 	color: LightBlue;
 	background-color: #202040C0;
@@ -199,21 +181,9 @@ ul#menu li:hover{ color: #FFFFFF; text-shadow: 0 0 10px #0080FF }
 	padding-left: 2em;
 	padding-right: 2em
 }
+ul#menu li{ cursor: default }
+ul#menu li:hover{ color: #FFFFFF; text-shadow: 0 0 10px #0080FF }
 /************************** Thumbnails Menu styling ***************************/
-.ThumbNav{
-	background-color: #C0D4FFC8;
-	box-shadow: 0 0 8px #0040FF80;
-	display: none;
-	font-size: 1.5em;
-	left: 0.5em;
-	max-height: 90%;
-	overflow-y: auto;
-	position: fixed;
-	text-align: left;
-	top: 2.5em;
-	width: calc( 100% - 1em )
-}
-p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 .ThumbGrid{
 	display: grid;
 	grid-gap: 1em;
@@ -232,6 +202,20 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 	width: var( --x )
 }
 .ThumbGrid img:hover{ box-shadow: 0 0 15px #2060FF }
+.ThumbNav{
+	background-color: #C0D4FFC8;
+	box-shadow: 0 0 8px #0040FF80;
+	display: none;
+	font-size: 1.5em;
+	left: 0.5em;
+	max-height: 90%;
+	overflow-y: auto;
+	position: fixed;
+	text-align: left;
+	top: 2.5em;
+	width: calc( 100% - 1em )
+}
+p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 @keyframes slider{ from { top: -500px } to { top: 2.5em } }
 @keyframes spinner{ from{ transform: rotate( 360deg ) } to{ transform: rotate( 0deg ) } }
 /************************* Image presentation styling *************************/
@@ -242,8 +226,21 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 	font-weight: bolder;
 	margin: auto;
 	text-align: center;
-	text-shadow: 0 0 6px #000000;
-	top: 10px;
+	text-shadow: 0 0 6px Black, 0 0 12px DarkBlue;
+	top: 22px;
+	width: 100%
+}
+#next{ right: 0; border-radius: 3px 0 0 3px }
+#section{
+	display: block;
+	color: LightBlue;
+	font-family: 'Oswald';
+	font-size: 15px;
+	font-weight: normal;
+	margin-left: 0.5em;
+	text-align: left;
+	text-shadow: 0 0 6px MidnightBlue;
+	top: 5px;
 	width: 100%
 }
 .close{ cursor: pointer; height: 100%; top: 0px; width: 100% }
@@ -267,19 +264,6 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 	min-width: 90%;
 	object-fit: contain
 }
-#next{ right: 0; border-radius: 3px 0 0 3px }
-#section{
-	display: block;
-	color: LightBlue;
-	font-family: 'Aguafina Script';
-	font-size: 20px;
-	font-weight: normal;
-	margin-left: 0.5em;
-	text-align: left;
-	text-shadow: 0 0 6px MidnightBlue;
-	top: 10px;
-	width: 100%
-}
 #prev, #next{
 	cursor: pointer;
 	top: 50%;
@@ -300,6 +284,9 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 /***************************** Dark Mode styling ******************************/
 @media ( prefers-color-scheme: dark ){
 	body{ background: Black }
+	img#sig{ filter: invert( 100% ) }
+	ul#menu{ color: DarkGrey }
+	ul#menu li:hover{ color: White; text-shadow: 0 0 10px #Cyan }
 	#byline1{
 		--s: #808080C0;
 		color: Black;
@@ -337,39 +324,45 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 		color: White;
 		text-shadow: 0 0 8px var( --s ), 0 0 4px var( --s ), 0 0 2px var( --s )
 	}
-	img#sig{ filter: invert( 100% ) }
-	ul#menu{ color: DarkGrey }
-	ul#menu li:hover{ color: White; text-shadow: 0 0 10px #Cyan }
 }
 /******************************* Dynamic styling ******************************/
 @media screen and ( max-width: 320px ){
 	#bubbles{ right: 0px; width: 16px }
 	#bubbles img{ height: 16px; width: 16px }
 }
+@media screen and ( max-width: 580px ){
+	#AboutC{ width: 9em }
+	#menuButton1::after{ content: "💰" }
+	#menuButton2::after{ content: "✎" }
+	#menuButton3::after{ content: "🗺" }
+	#menuButton4::after{ content: "👗" }
+	#menuButton5::after{ content: "📷" }
+}
+@media screen and ( min-width: 580px ){
+	#menuButton1::after{ content: "Commissions" }
+	#menuButton2::after{ content: "Drawings" }
+	#menuButton3::after{ content: "Maps" }
+	#menuButton4::after{ content: "Fashion" }
+	#menuButton5::after{ content: "Photos" }
+}
 @media screen and ( max-width: 640px ){
 	#bubbles{ right: 0px; width: 24px }
 	#bubbles img{ height: 24px; width: 24px }
 }
-/*@media screen and ( max-width: 520px ){ #logo{ left: -0.5em; top: 1.8em } }
-@media screen and ( min-width: 520px ){ #logo{ left: -1em; top: 0.25em } }*/
-@media screen and ( max-width: 580px ){ #AboutC{ width: 9em } }
+@media screen and ( min-width: 800px ){
+	#menuButton4::after{ content: "Fashion Design" }
+	#menuButton5::after{ content: "Photography" }
+}
 @media screen and ( max-width: 880px ){
 	#bubbles{ width: 34px }
-	#menuButton5::after, #menuButton6::after{ content: "s" }
-}
-@media screen and ( min-width: 800px ){
-	#menuButton4::after{ content: " Design" }
-	#menuButton5::after{ content: "graphy" }
-}
-@media screen and ( min-width: 990px ){
-	#AboutA{ display: block }
-	#AboutB{ display: block }
-	#AboutC{ display: none }
 }
 @media screen and ( max-width: 990px ){
-	#AboutA{ display: none }
-	#AboutB{ display: none }
+	#AboutA, #AboutB{ display: none }
 	#AboutC{ display: block }
+}
+@media screen and ( min-width: 990px ){
+	#AboutA, #AboutB{ display: block }
+	#AboutC{ display: none }
 }
 @media screen and ( min-width: 1600px ){
 	div#MainMenu{
@@ -377,22 +370,22 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 		height: calc( 2.5em + 0.3vw );
 		width: 100%
 	}
-	#bubbles{ width: calc( 52px * 9 ) }
-	#bubbles img{ height: 48px; width: 48px }
 	ul#menu{
 		font-size: calc( 1em + 0.3vw );
 		left: calc( 50vw - 800px );
-		margin-top: 0.2em;
-		margin-bottom: 0.2em;
 		position: fixed;
-		width: 1600px
+		width: 1600px;
+		margin-bottom: 0.2em;
+		margin-top: 0.2em
 	}
+	#bubbles{ width: calc( 52px * 9 ) }
+	#bubbles img{ height: 48px; width: 48px }
 }
 @media screen and ( min-width: 1778px ){
 	.outBlurb{
 		--x: 1600px;
 		height: 99%;
-		left: calc( 50vw - ( var(--x) /2 ) );
+		left: calc( 50vw - ( var(--x) / 2 ) );
 		position: absolute;
 		width: var( --x )
 	}
@@ -409,7 +402,7 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 
 	<div id="MainMenu">
 		<ul id="menu">
-		<li><span id="menuButton1" class="button" alt="Commissions">Commissions</span></li>
+		<li><span id="menuButton1" class="button" alt="Commissions"></span></li>
 		<div id="menuContent1" class="ThumbNav"><p class="Section">Commissioned Works</p><div class="ThumbGrid" id="group1">
 			<img src="images/2456612.png" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Commissioned Works|Trinity Advent RPG logo">
 			<img src="images/2457144.png" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Commissioned Works|Saorsa RPG logo">
@@ -424,7 +417,7 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 			<img src="images/2459165.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px    0px" alt="Commissioned Works|Leaf-Catching">
 			<img src="images/2459302.jpg" onclick="showImg(this);" loading="lazy" style="object-position:  -15px    0px" alt="Commissioned Works|Akemi and Naryana">
 		</div></div>
-		<li><span id="menuButton2" class="button" alt="Drawings">Drawings</span></li>
+		<li><span id="menuButton2" class="button" alt="Drawings"></span></li>
 		<div id="menuContent2" class="ThumbNav"><p class="Section">Drawings</p><div class="ThumbGrid" id="group2">
 			<img src="images/2451852.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -20px" alt="Drawings|the Lady of Shalott">
 			<img src="images/2453364.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Drawings|Mermaid and dolphin">
@@ -451,14 +444,14 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 			<img src="images/2459476.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Drawings|Aeolian, Desert Princess, Kin of Lions">
 			<img src="images/2459505.png" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Drawings|Water Witch">
 		</div></div>
-		<li><span id="menuButton3" class="button" alt="Maps">Maps</span></li>
+		<li><span id="menuButton3" class="button" alt="Maps"></span></li>
 		<div id="menuContent3" class="ThumbNav"><p class="Section">Maps</p><div class="ThumbGrid" id="group3">
 			<img src="images/2454564.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Map 1">
 			<img src="images/2456049.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Legia Jerva">
 			<img src="images/2456430.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Skyrim">
 			<img src="images/2459032.jpg" onclick="showImg(this);" loading="lazy" alt="Maps|Tamriel">
 		</div></div>
-		<li><span id="menuButton4" class="button" alt="Fashion Design">Fashion</span></li>
+		<li><span id="menuButton4" class="button" alt="Fashion Design"></span></li>
 		<div id="menuContent4" class="ThumbNav"><p class="Section">Fashion Design</p><div class="ThumbGrid" id="group4">
 			<img src="images/2455513.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px   -8px" alt="Fashion Design|Ball gown 1">
 			<img src="images/2458905.jpg" onclick="showImg(this);" loading="lazy" style="object-position:    0px  -15px" alt="Fashion Design|Fashion design 2">
@@ -479,7 +472,7 @@ p.Section{ color: #0040FF; margin: 0; padding-left: 0.5em }
 			<img src="images/2459057.png" onclick="showImg(this);" loading="lazy" style="object-position:    0px -110px" alt="Jottuz">
 		</div></div>
 -->
-		<li><span id="menuButton5" class="button" alt="Photography">Photo</span></li>
+		<li><span id="menuButton5" class="button" alt="Photography"></span></li>
 		<div id="menuContent5" class="ThumbNav"><p class="Section">Photography</p><div class="ThumbGrid" id="group5">
 			<img src="images/2452040b.jpg" onclick="showImg(this);" loading="lazy" alt="Photography|Batavia, IL">
 			<img src="images/2452140.jpg"  onclick="showImg(this);" loading="lazy" alt="Photography|Sunset">
