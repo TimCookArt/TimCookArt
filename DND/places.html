@@ -1,0 +1,309 @@
+<html><title>D&amp;D Game - the Wayfarers Places</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://fonts.googleapis.com/css?family=Charm' rel='stylesheet'>
+<style>
+body{
+	background-color: wheat;
+	color: #000000;
+	font-family: 'Charm'
+}
+button.a, button.b, button.c{
+	background-color: rgba( 192, 192, 192, 0.25 );
+	border: none;
+	border-bottom: 1px solid black;
+	font-family: 'Charm';
+	font-size: 16pt;
+	margin: auto;
+	outline: none;
+	text-align: center
+}
+button.a{ width: 50% }
+button.b{ width: 95% }
+button.c{ width: 100% }
+.active, button.a:hover{ background-color: rgba( 192, 192, 192, 0.5 ) }
+.active{ color: #0080FF }
+.content, .content1, .content2{
+	margin: auto;
+	max-height: 0;
+	overflow: hidden;
+	padding: 0 18px;
+	transition: max-height 0.2s ease-out
+}
+.content{ width: 50% }
+.content1{ width: 90% }
+.content2{ width: 90% }
+div.top{
+	margin: auto;
+	text-align: center
+}
+p.a{
+	border-bottom: 1px solid rgba( 0, 0, 0, 0.33 );
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	padding-bottom: 2px;
+	text-align: left;
+	vertical-align: text-top
+}
+p.b, p.c, p.d{
+	display: inline-block;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	text-align: left
+}
+p.b{ font-size: 90% }
+p.b:after{ content: '\2002\2013' }
+p.b:before{ content: '\2013\2002' }
+p.c{ font-size: 80% }
+p.d:after{ content: '\2002\1F310' }
+p.d:before{ content: '\1F310\2002' }
+img{
+	float: left;
+	padding: 10px;
+	width: 100px
+}
+
+p.history:before{ content: '\1F4C5\2002' }
+p.geography:before{ content: '\1F3D4\2002' }
+p.biome:before{ content: '\1F3DC\2002' }
+p.flora:before{ content: '\1F33F\2002' }
+p.fauna:before{ content: '\1F98C\2002' }
+p.hazards:before{ content: '\26A0\2002' }
+p.population:before{ content: '\1F465\2002' }
+
+/* Style for sub-4k monitors */
+@media only screen and ( max-width: 1600px ){
+	body{ font-size: calc( 10pt + (( 100vw - 720px) / 220 )) }
+	button.a{ width: 75vw; font-size: calc( 12pt + (( 100vw - 720px) / 220 )); }
+	button.b{ width: 70vw; font-size: calc( 12pt + (( 100vw - 720px) / 220 )); }
+	button.c{ width: 65vw; font-size: calc( 12pt + (( 100vw - 720px) / 220 )); }
+	.content{ width: 75vw; font-size: calc( 10pt + (( 100vw - 720px) / 220 )) }
+	.content1{ width: 70vw; font-size: calc( 10pt + (( 100vw - 720px) / 220 )) }
+	.content2{ width: 65vw; font-size: calc( 10pt + (( 100vw - 720px) / 220 )) }
+}
+/* Style for cell-phones */
+@media only screen and ( max-width: 720px ){
+	body{ font-size: 10pt }
+	button.a{ width: 95vw; font-size: 12pt }
+	button.b{ width: 90vw; font-size: 11pt }
+	button.c{ width: 85vw; font-size: 11pt }
+	.content{ width: 90vw; font-size: 10pt }
+	.content1{ width: 85vw; font-size: 10pt }
+	.content2{ width: 80vw; font-size: 10pt }
+}
+</style>
+</head>
+<body>
+<div style="margin: auto; text-align: center; width: 100%"><h3>&#10087; Locations of the Wayfarers' D&amp;D Game &#9753;</h3></div>
+
+<div class="top"><button type="button" class="a"><p class="d">Akavir</p></button>
+<div class="content">
+	<p class="a">Continent to the east of Tamriel.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a"><p class="d">Aldmeris</p></button>
+<div class="content">
+	<p class="a">Fabled continent purported to be the original homeland of elves, southwest of Tamriel.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a"><p class="d">Atmora</p></button>
+<div class="content">
+	<p class="a">Continent to the north of Tamriel, origin of Nords, other human races, and (as a homebrew game addition) variant offshoots of elves.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a"><p class="d">Pyadonea</p></button>
+<div class="content">
+	<p class="a geography">Pyadonea is a continent far to the south of Tamriel with low terrain to the north and a mountain range across its southern region.</p>
+	<p class="a biome">Mostly covered by dense tropical jungle with mangrove swamps to the west and freshwater swamps around the large Talaz lake.</p>
+	<p class="a fauna">Carnivorous dinosaurs, megatheria, and large snakes proliferate across the continent.</p>
+	<p class="a population">Homeland to the Maormer and Wemic.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a"><p class="d">Tamriel</p></button>
+<div class="content">
+	<p class="a geography">Tamriel is the central contient of Nirn.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a b"><p class="b">Black Marsh (Argonia)</p></button>
+<div class="content">
+	<p class="a">Foetid marsh in the southeast of Tamriel, homeland of the Argonians.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a b"><p class="b">Cyrodiil</p></button>
+<div class="content1">
+	<p class="a">Central country of Tamriel, heart of the Empire, homeland of Imperial humans.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a b"><p class="b">Elsweyr</p></button>
+<div class="content1">
+	<p class="a">Homeland of the Khajiit in the south-central region of Tamriel, mostly desert and savannah.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a b"><p class="b">Hammerfell</p></button>
+<div class="content1">
+	<p class="a">Rocky desert nation to the west of Cyrodiil, current homeland of the Redguard.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a b"><p class="b">High Rock</p></button>
+<div class="content1">
+	<p class="a">Nation in the northwest of Tamriel, homeland of the Bretons and Orcs.  Craggy mountains in the north, fertile but rocky land along the Illiac Bay coast, and windswept plateau to the west are the main geological regions.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a b"><p class="b">Morrowind</p></button>
+<div class="content1">
+	<p class="a">Desolate nation in the northeast of Tamriel, dominated by the massive volcano Vvardenfell, homeland of the Dunmer.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a b"><p class="b">Skyrim</p></button>
+<div class="content1">
+	<p class="a">Frigid country in the north of Tamriel, home to the Nords.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a c"><p class="c">Blackreach</p></button>
+<div class="content2">
+	<p class="a geography">Blackreach is a vast subterranean cavern below the Pale and Winterhold.</p>
+	<p class="a flora">Huge treelike glowing mushrooms.</p>
+	<p class="a hazards">Falmer, Dwemer constructs, albino frostbite spiders.</p>
+	<p class="a population">Academic research camp, rebel Imperial base.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a c"><p class="c">Eastmarch Hold</p></button>
+<div class="content2">
+	<p class="a">Province in the east of Skyrim.  Its capital is Windhelm.</p>
+	<p class="a biome">Boreal forest with tundra to the northeast.</p>
+	<p class="a geography">Volcanic basin with mineral hot springs &amp; geysers</p>
+	<p class="a fauna">Giants &amp; mammoths.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a c"><p class="c">Falkreath Hold</p></button>
+<div class="content2">
+	<p class="a">Province in the south of Skyrim, capital is Falkreath.</p>
+	<p class="a geography">Broad valley with open areas, low rolling hills and moors punctuated by limestone outcrops.</p>
+	<p class="a biome">Temperate rainforest in west and south with bogs around Lake Ilinalta.</p>
+	<p class="a flora">Dense pine forest rings the bounds of Lake Ilinalta's heather-covered moor which is rich farmland used to grow wheat, barley, rye, and oats.  The heart of the lowlands forest are misty mixed trees with hanging moss, moderately-dense undergrowth, and ferns similar to the Pacific Northwest of the US.</p>
+	<p class="a population">Falkreath's human-majority population in towns &amp; surrounding farms are a stout, practical, and superstitious lot (mostly shepherds &amp; farmers) that are generally bigoted against outsiders, especially elves &amp; mages.  They see nature &amp; supernature as an enemy to survive/overcome and shun use of magic.  Revolutionary-era New England is a general inspiration for the mood.  Russian/Slavic family names are frequent.</p>
+	<p class="a hazards">Restless ghosts usually at night, occasionally at dusk, infrequently at dawn, rarely at day.</p>
+	<p class="a fauna">Sheep and aurochs are common on farms, with wolves the primary predator.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a c"><p class="c">&#x1F3D8; Eshnium</p></button>
+<div class="content2">
+		<p class="a history">
+		On the 5<sup>th</sup> of Evening Star, 3E 433, a young Bosmer named Elen Rootweft entered the depths of Falkreath Hold's evergreen forests while fleeing the chaos of the Oblivion Crisis.  Hircine&ndash;the Daedric Prince of the Hunt and the Father of Manbeasts, enamoured of the wood elf's fierce spirit of independence, appeared in the horned-wolf form of Storihbeg the Skinchanger and took her as his lover, begetting a pair of twins.  Alignment of astral energies at the yearly nadir of Hircine's power shaped the offspring to manifest the fundamental traits of the Prince's identity.  Firstborn was Celan, a delicate deer-faun boy who was to embody the self-sacrificing essence of prey.  Following him was the headstrong wolfir girl Kyra, a consummate hunter.
+		</p>
+		<p class="a history">
+		While the twins' very existence as beastkin broke the Green Pact, elements of the Treaty were maintained:  Kyra was a strict carnivore (though Celan was an herbivore), great respect to life was shown and wasteful killing was avoided, and use of nonliving flora as building material and decoration was eschewed (structures were patiently shaped from living wood by Celan and augmented with bone and pelts acquired by Kyra).
+		</p>
+		<p class="a history">
+		The town of Eshnium ('Hightown') was founded at the site of the twins' birth, but tension between Celan and Kyra and their respective offspring resulted in the town nearly being destroyed thirty-two years later.  Though Celan's descendants and followers fled, by the third century of the fourth era Eshnium had a population of 236 living in the dwellings shaped into the trunks and branches of the great evergreens, and about another hundred particularly reclusive individuals residing in the surrounding area.  Due to the schism between the twins and the tendency of males of the group to be relatively delicate and docile, males are treated as second-class citizens and twins are considered bad luck.
+		</p>
+		<p class="a history">
+		As a secretive group, little awareness of the town's populace exists in the outside world.  They are ridiculed as 'beast-consorts' (or by coarser phrases) by the residents of Falkreath, though for most it is more of a mythical reference used as a casual insult to each other than recognition that the Half-elf Twins of Hircine actually existed and whose female descendents not infrequently find wolves as mates.  These couplings result in a one-in-fourteen chance of the offspring being a wolfir, which are held in high regard and trained as druid-paladins charged with protecting the wilds.  The town militia is composed of seven groups of two female elves and one male wolf, known as a triat, which are joined in a mating ritual (the wolf is granted the decision as to which is first, who henceforth functions as the triat's leader).  These serve to guard the town and maintain peace.</p>
+		<p class="a history">
+		Elen Rootweft was slain by the Silver Vigilants (a small group of Vigilants of Stendarr, werewolf hunters, and Green Pact adherants sworn to destroy Elen, her daedra-kin bloodline, and any close allies) in 4E287.  Kyra, currently the eldest female of the village and blind, serves as oracle and chooses the chief magistrate of the village every thirty-two years on the eve of the anniversary of Eshnium's near-destruction (or sooner, as needed).
+		</p>
+		<table style="border-collapse:collapse">
+		<tr><th colspan=2>Eshnium demographics</th></tr>
+		<tr><td style="padding-right: 5px; text-align: right">177</td><td>Bosmer</td></tr>
+		<tr><td style="padding-right: 5px; text-align: right">86</td><td>wolves</td></tr>
+		<tr><td style="padding-right: 5px; text-align: right">27</td><td>Reachmen</td></tr>
+		<tr><td style="padding-right: 5px; text-align: right">20</td><td>wolfir</td></tr>
+		<tr><td style="padding-right: 5px; text-align: right">12</td><td>Breton</td></tr>
+		<tr><td style="padding-right: 5px; text-align: right">6</td><td>Nords</td></tr>
+		<tr><td style="padding-right: 5px; text-align: right">5</td><td>centaurs</td></tr>
+		<tr><td style="padding-right: 5px; text-align: right">2</td><td>Khajiit</td></tr>
+		<tr style="border-bottom: 1px solid black"><td style="padding-right: 5px; text-align: right">1</td><td>Dunmer</td></tr>
+		<tr><td style="padding-right: 5px; text-align: right">336</td><td>total population</td></tr>
+		</table>
+</div>
+</div>
+<div class="top"><button type="button" class="a c"><p class="c">Haafingar Hold</p></button>
+<div class="content2">
+	<p class="a">Province in the northwest of Skyrim, its capital is Solitude, a metropolis with a population near a million.</p>
+	<p class="a biome">Boreal forest.</p>
+	<p class="a geography">Haafingar Hold consists mainly of high mountains with a massive rock arch over the Hjaal river on which Solitude is built.</p>
+	<p class="a flora">Thick pine forest.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a c"><p class="c">Hjaalmarch Hold</p></button>
+<div class="content2">
+	<p class="a">Province in the north of Skyrim, west of the Pale.  Its capital is Morthal.</p>
+	<p class="a geography">Low flatland surrounded by high mountains.</p>
+	<p class="a biome">Cold brackish swampland.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a c"><p class="c">The Pale Hold</p></button>
+<div class="content2">
+	<p class="a">Province in the central north of Skyrim, its capital is Dawnstar.</p>
+	<p class="a geography">Craggy mountains with fjords along the north seacoast.</p>
+	<p class="a biome">Frozen tundra.</p>
+	<p class="a hazards">Kobolds living deep in the caves, frost trolls.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a c"><p class="c">The Reach Hold</p></button>
+<div class="content2">
+	<p class="a">Province in the west of Skyrim, capital is Markarth.</p>
+	<p class="a geography">Rugged highland with a deep river valley.</p>
+	<p class="a biome">Alpine shrubland.</p>
+	<p class="a fauna">Mountain goats.</p>
+	<p class="a flora">Scrub trees, lichen.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a c"><p class="c">The Rift Hold</p></button>
+<div class="content2">
+	<p class="a">Province in the southeast of Skyrim, its capital is Riften.</li>
+	<p class="a biome">Lake Honrich area temperate marsh.</p>
+	<p class="a flora">High birch population.</p>
+	<p class="a fauna">Brown & black bears, herons, weasels, deer, wolves.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a c"><p class="c">Whiterun Hold</p></button>
+<div class="content2">
+	<p class="a">Province in the middle of Skyrim, capital is Whiterun.</p>
+	<p class="a geography">Broad flatland with mountains to the north and south.</p>
+	<p class="a biome">Temperate grassland.</p>
+	<p class="a fauna">Deer, elk, giants, mammoths, sabre-tooth tigers, wolves.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a c"><p class="c">Winterhold</p></button>
+<div class="content2">
+	<p class="a">Province in the northeast of Skyrim, capital is Winterhold.</p>
+	<p class="a biome">Frozen tundra.</p>
+	<p class="a geography">Mountains, fjords.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a b"><p class="b">Summerset Isles</p></button>
+<div class="content2">
+	<p class="a">Island nation to the southwest of the Tamriel mainland, temperate climate, homeland of the Altmer.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a b"><p class="b">Valenwood</p></button>
+<div class="content2">
+	<p class="a">Dense tropical forest nation in the southwest of Tamriel, homeland of the Bosmer.</p>
+</div>
+</div>
+<div class="top"><button type="button" class="a"><p class="d">Yokuda</p></button>
+<div class="content">
+	<p class="a">Origin continent of the Redguards to the west of Tamriel, mostly sunk beneath the sea in a catclysm.</p>
+</div>
+</div>
+<script>
+	var coll = document.getElementsByClassName( "a" );
+	var i;
+	for( i = 0; i < coll.length; i++ ){
+		coll[i].addEventListener( "click", function(){
+			this.classList.toggle( "active" );
+			var content = this.nextElementSibling;
+			if( content.style.maxHeight ){
+				content.style.maxHeight = null;
+				content.style.overflow = "hidden";
+			}else{
+				content.style.maxHeight = "100%";
+				content.style.overflow = "auto";
+			}
+		});
+	}
+</script>
+</body>
+</html>

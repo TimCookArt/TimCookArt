@@ -1,0 +1,758 @@
+═╦══════════╦══════════════════════════════════════════════════════════════════
+ ║ CALENDAR ║
+ ╚══════════╝
+MM │ Month Name   │ Sign       │ Traits
+───┼──────────────┼────────────┼───────────────────────────────────────────────────────────────────────────
+01 │ Morning Star │ Ritual     │ +self-heal ability, turn undead
+02 │ Sun's Dawn   │ Lover      │ +dex, paralyse opponent 1x/day
+03 │ First Seed   │ Lord       │ self-heal ability (1d6), vulnerability to fire
+04 │ Rain's Hand  │ Mage       │ +mana (L2 slot)
+05 │ Second Seed  │ Shadow     │ invisibility 1x/day
+06 │ Midyear      │ Steed      │ +movement speed, +carry weight
+07 │ Sun's Height │ Apprentice │ +mana regeneration, vulnerability to magic
+08 │ Last Seed    │ Warrior    │ +str, +stamina
+09 │ Hearthfire   │ Lady       │ +charisma, +stamina
+10 │ Frostfall    │ Tower      │ ability to open all but most difficult locks 1x/day, reflect damage 1x/day
+11 │ Sun's Dusk   │ Atronach   │ +mana, absorb spells to recharge mana, reduced mana regeneration
+12 │ Evening Star │ Thief      │ +dex, +movement speed, +luck
+═╦═══════════════════════╦═════════════════════════════════════════════════════
+ ║ MISC CHARACTER TRAITS ║
+ ╚═══════════════════════╝
+lawful  neutral  chaotic
+good    neutral  evil
+
+📖 &#x1F4D6; (open book)
+⚖️ &#x2696; (balance)
+Ⓐ  &#x24B6; (circled A)
+😇 &#x1F607; (smiling face with halo)
+🤔 &#x1F914; (thinking face)
+😈 &#x1F608; (smiling face with horns)
+
+
+Name       │ Class          │ Born        │ Breath    │ Colour      │ Appearance notes
+───────────┼────────────────┼─────────────┼───────────┼─────────────┼──────────────────────────────────────────────────
+Akara      │ Cleric         │ 2E344-10-13 │ Elemental │ Gold        │ black hair w/silver streak, ivory horns
+Angelina   │ Paladin/Cleric │ 3E139-08-07 │ Acid      │ Black       │ golden hair, luminous pale skin, snow-white wings
+Firaliin   │ Druid          │ 4E276-04-28 │ Lightning │ Blue        │ auburn hair
+Shiera     │ Druid/Ranger   │ 4E176-02-09 │ Cold      │ Silver-blue │
+Stolovold  │ Wizard         │ 4E271-02-04 │ Poison    │ Green       │
+Thesa      │ Ranger         │ 4E231-05-13 │ Fire      │ Red         │ copper hair, olive skin
+Tinkerbell │ Rogue/Sorcerer │ 4E291-04-01 │ Radiant   │ Turquoise   │
+═╦══════════════════╦═════════════════════════════════════════════════════════
+ ║ WEBSITE REDESIGN ║
+ ╚══════════════════╝
+• Map of Wayfarers' journey
+  • Labels (font Quintessential (Google) [alternately Cataneo BT])
+    NATION NAME (36pt #000000)
+    ✪ National Capital (20pt bold #000000)
+    ✫ Regional Capital (20pt #000000)
+    • Large City (16pt #000000)
+    • City (16pt #000000)
+    • Town (16pt #000000)
+    • Village (16pt #000000)
+    🏰 Fort (16pt #000000)
+    🌾 Farm (12pt #000000)
+    ∴ Ruin (12pt #808080)
+    🏨 Inn (12pt #000000)
+    ⚒ Mine (12pt #000000)
+    🛐 Religious Site (12pt #000000)
+  • national border #646464 (100, 100, 100) ➖∙➖∙➖∙
+  • regional border #646464 (100, 100, 100) ─── ─── ───
+  • shoreline  #0978AB (  9, 120, 171) ─────────
+  • land area  #FEFEE9 (254, 254, 233)
+  • water area #C6ECFF (198, 236, 255)
+  • <i>Water Feature</i>
+  • POINT DATA LABELS
+    • city label position precedence
+    ___2   1___   __7___
+    ___6 x 5___      x
+    ___4   3___    ___8__
+    • label ports and harbors on the sea
+    • label inland towns on the land
+    • label land features on the land, water features on water
+    • label towns on the side of the river on which they are located
+  • LINE DATA LABELS
+    • curve or slant type following symbol
+    • keep type above symbol if possible
+    • keep type as horizontal as possible
+    • never place type upside-down
+    • place start of vertical label at bottom
+    • repeat rather than stretch type
+  • AREA DATA LABELS
+    • curve and space type to fit areas
+√ Cosmology & Timeline (with link to canon timeline)
+√ Races
+• People
+√ Character profiles
+√ Genealogies
+═╦═════════════╦══════════════════════════════════════════════════════════════
+ ║ GENEALOGIES ║
+ ╚═════════════╝
+                                 ┌───┐      ┌──────┐     ┌───────┐
+                                 │Anu╞~~╤~~~╡Aurbis╞~~╤~~╡Padomay│
+                                 └───┘  │   └───┬──┘  │  └───────┘
+           ┌────────────────────────────┘       │     └─────────────┐
+      ┌────┴──┐                                 │                  ┌┴─────┐
+      │Anui-El│                                 │                  │Sithis│
+      └┬──────┘                             ┌───┴───────────┐      └──┬───┘
+   ┌───┴────┐                            ┌──┴───┐        ┌──┴──┐   ┌──┴──────────────────────┐
+   │♂Akatosh│                ╭───────────│Daedra│─────╮  │Aedra╞═╤═╡♂Lorkhan/Masser & Secunda│
+   └──┬─────┘                │           └──────┘     │  └─────┘ │ └─────────────────────────┘
+   ┌──┴────────┐             │                        │       ┌──┴───┐
+   │♂Alduin    │╮            │                        │       │Mundus│
+   │♂Odahviing ││            │                        │       └──────┘
+   │♂Sahrotaar │├╮           │                        │
+   │♂Viinturuth│││           │                        │
+   │♂Paarthunax│╯│           │                        │
+   └───────────┘ │           │                        │          ROOTWEFT
+              ┌──┴────┐   ┌──┴─────┐               ┌──┴─────┐   ┌──┴──────────┐
+              │♀Tiamat╞═╤═╡♀Meridia│               │♂Hircine╞═╤═╡♀Elen        │
+              └───────┘ │ └────────┘               └────────┘ │ │(3E318-4E287)│
+               ┌────────┴───┐                                 │ └─────────────┘
+            ┌──┴──────┐  ┌──┴─────────┐     ?             ┌───┴──────────────────┐           ?
+            │♂Tazamé  │  │♀Akara Ember│  ┌──┴──────┐   ┌──┴──────┐            ┌──┴────┐   ┌──┴──────┐
+            │(2E344- )│  │(2E344- )   │  │♀[?]     ╞═╤═╡♂Celan   │            │♀Kyra  ╞═╤═╡♂[?]     │
+            └─────────┘  └────────────┘  │(4E?-4E?)│ │ │(4E0-4E?)│            │(4E0- )│ │ │(3E?-4E?)│
+                                         └─────────┘ │ └─────────┘            └───────┘ │ └─────────┘      -
+                                       ?             │                      ┌───────────┤             ┌────┴─────────────┐           HELEKAIN
+                                    ┌──┴──────┐   ┌──┴───────┐           ┌──┴─────┐  ┌──┴──────┐   ┌──┴──────┐        ┌──┴──────┐   ┌──┴─────┐
+                                    │♂[?]     ╞═╤═╡♀Blossom  │           │♂Yiv    │  │♀Gildnan ╞═╤═╡♂Fonah   │        │♂Halflar ╞═╤═╡♀Elvira │
+                                    │(4E?-4E?)│ ⁞ │(4E17-4E?)│           │(4E23- )│  │(4E80- ) │ │ │(4E123- )│        │(4E125- )│ │ │(4E91- )│
+                                    └─────────┘ ⁞ └──────────┘           └────────┘  └─────────┘ │ └─────────┘        └─────────┘ │ └────────┘
+                                WINDSONG        ⁞                                                │           LEAFWALKER           │         BALRA
+                               ┌──┴──────┐   ┌──┴──────┐                                      ┌──┴──────┐   ┌──┴───────┐       ┌──┴────┐   ┌──┴────┐
+                               │♂[?]     ╞═╤═╡♀[?]     │                                      │♂Parvolen╞═╤═╡♀Russakynd│       │♀Tisha ╞═╤═╡♂Vamir │
+                               │(4E?-4E?)│ │ │(4E?-4E?)│                                      │(4E153- )│ │ │(4E123- ) │       │(4E?- )│ │ │(4E?- )│
+                               └─────────┘ │ └─────────┘                       -              └─────────┘ │ └──────────┘       └───────┘ │ └───────┘
+                                        ┌──┴──────────┐     -             ┌────┴────────┐                 │           MEADOWGLEAM        │
+                                        │♀Alis        │  ┌──┴──────┐   ┌──┴──────┐   ┌──┴──────────┐   ┌──┴──────┐   ┌──┴──────────┐  ┌──┴──────┐  ┌─────────┐
+                                        │(4E291-4E303)│  │♂Vaa     ╞═╤═╡♀Luna    │   │♂Grohiik     ╞═╤═╡♀Thesa   ╞═══╡♀Katja       │  │♀Ameria  │..│♂Heath   │
+                                        └─────────────┘  │(4E270- )│ │ │(4E273- )│   │(4E276-4E303)│ │ │(4E231- )│   │(4E138-4E303)│  │(4E231- )│  │(4E272- )│
+                                                         └─────────┘ │ └─────────┘   └─────────────┘ │ └─────────┘   └─────────────┘  └─────────┘  └─────────┘
+                                                 ┌────────────┬──────┴─────┬────────────┐         ┌──┴──────┐
+                                              ┌──┴──────┐  ┌──┴──────┐  ┌──┴──────┐  ┌──┴──────┐  │♀Aurum   │
+                                              │♀Cami    │  │♀Miki    │  │♂Shadow  │  │♂Kai     │  │(4E304- )│
+                                              │(4E289- )│  │(4E289- )│  │(4E289- )│  │(4E289- )│  └─────────┘
+                                              └─────────┘  └─────────┘  └─────────┘  └─────────┘
+
+   ?                ?
+┌──┴─────────┐   ┌──┴─────────┐
+│♂[?]        ╞═╤═╡♀[?]        │
+│(4E?-4E278?)│ │ │(4E?-4E278?)│
+└────────────┘ │ └────────────┘
+            ┌──┴─────────────┐
+            │♀Firaliin Carson│
+            │(4E276- )       │
+            └────────────────┘
+
+ JOERGSEN    KILLAN
+┌──┴────┐   ┌──┴────┐
+│♂Thuri ╞═╤═╡♀Greta │
+│(4E?- )│ │ │(4E?- )│
+└───────┘ │ └───────┘
+          │         SPARRICH
+       ┌──┴────┐   ┌──┴────┐
+       │♀Olga  ╞═══╡♂Ernest│
+       │(4E?- )│   │(4E?- )│
+       └───────┘   └───────┘
+
+ SWIFTLEAF
+┌──┴──────────┐
+│♀Oriwynn     │
+│(4E153-4E261)│
+└─────────────┘
+
+      MOONGLADE
+   ┌────┴───────┬────────────┐             ?
+┌──┴──────┐  ┌──┴──────┐  ┌──┴──────┐   ┌──┴──────┐
+│♀Pelenope│  │♀Angelica│  │♂Thad    ╞═╤═╡♀[?]     │
+│(2E?-3E?)│  │(2E?-3E?)│  │(2E?-3E?)│ │ │(2E?-3E?)│
+└─────────┘  └─────────┘  └─────────┘ │ └─────────┘ ?
+                                   ┌──┴──────┐   ┌──┴──────┐
+                                   │♂[?]     ╞═╤═╡♀[?]     │
+                                   │(2E?-3E?)│ │ │(2E?-3E?)│
+                                   └─────────┘ │ └─────────┘ ?
+                                            ┌──┴──────┐   ┌──┴──────┐
+                                            │♂[?]     ╞═╤═╡♀[?]     │
+                                            │(3E?-4E?)│ │ │(3E?-4E?)│
+                                            └─────────┘ │ └─────────┘
+                                     GOLDENLEAF     ┌───┴────────────┐                          WILLOWTREE            LIONDALE             SUNFLOWER
+                                    ┌──┴─────┐   ┌──┴──────────┐  ┌──┴─────────────────────┐   ┌──┴───────────────┐  ┌──┴─────────────┐   ┌──┴───────────────────┐
+                                    │♀Loranna╞═══╡♂Arthur      │  │♂Thaddecus of Twin Blade╞═╤═╡♀Elsa the Graceful│  │♂Odith the Brave╞═╤═╡♀Nalmerry the Merciful│
+                                    │(3E?- ) │   │(3E423-4E301)│  │(3E396-4E189)           │ │ │(3E?-4E189?)      │  │(3E?- )         │ │ │(3E?- )               │
+                                    └────────┘   └─────────────┘  └────────────────────────┘ │ └──────────────────┘  └────────────────┘ │ └──────────────────────┘
+                                                                                      ┌──────┴─────────┬────────────┐              ┌────┴───────┐
+                                                                                   ┌──┴──────────┐  ┌──┴──────┐  ┌──┴──────┐    ┌──┴──────┐  ┌──┴──────┐
+                                                                                   │♂Altin       │  │♀Fate    │  │♀Shiera  │----│♂Tolca   │  │♂Octurius│
+                                                                                   │(4E154-4E189)│  │(4E180- )│  │(4E176- )│    │(4E179- )│  │(4E156- )│
+                                                                                   └─────────────┘  └─────────┘  └─────────┘    └─────────┘  └─────────┘
+
+                              FREE-WINTER       EARLY-DAWN
+                             ┌──┴──────────┐   ┌──┴──────────┐
+                             │♂Brunwulf    ╞═╤═╡♀Elda        │
+                             │(4E138-4E229)│ │ │(4E156-4E228)│
+                             └─────────────┘ │ └─────────────┘ KILNOR
+                                          ┌──┴──────────┐     ┌──┴──────┐
+    CIVETTE                               │♂Skoreld     ╞══╤══╡♀Mariposa│
+   ┌──┴─────────────┐           ABEL      │(4E202-4E288)│  │  │(4E226- )│
+┌──┴──────────┐  ┌──┴──────┐   ┌──┴──────┐└─────────────┘  │  └─────────┘ STENDAHL
+│♂Cornelius   │  │♂Ardnot  ╞═╤═╡ ♀Petret │              ┌──┴──────┐     ┌──┴──────┐
+│(4E174-4E237)│  │(4E218- )│ │ │(4E250- )│              │♂Vidik   ╞══╤══╡♀Isolde  │
+└─────────────┘  └─────────┘ │ └─────────┘              │(4E254- )│  │  │(4E257- )│
+   ┌────────────┬────────────┴───┬────────────┐         └─────────┘  │  └─────────┘
+┌──┴──────┐  ┌──┴──────────┐  ┌──┴──────┐  ┌──┴──────┐            ┌──┴──────┐
+│♂Adophon │  │♂Bremio      │  │♂Pelamius│  │♂Theobold│------------│♀Jenna   │
+│(4E267- )│  │(4E271-4E275)│  │(4E273- )│  │(4E277- )│            │(4E285- )│
+└─────────┘  └─────────────┘  └─────────┘  └─────────┘            └─────────┘
+
+ NIGHTWING
+┌──┴─────┐
+│♂Sylbane│
+└────────┘
+
+    SABIROV
+   ┌──┴─────────┐
+┌──┴──────┐  ┌──┴──────┐
+│♀Saya    │  │♀Mira    │
+│(4E275- )│  │(4E275- )│
+└─────────┘  └─────────┘
+
+SILVERHAND
+┌──┴─────┐
+│♂Mikhail│
+└────────┘
+
+                        KARLSEN       ISTOVIC
+                       ┌──┴──────┐   ┌──┴──────┐
+                       │♂Johann  ╞═╤═╡♀Petra   │
+                       │(3E417-?)│ │ │(4E207-?)│
+                       └─────────┘ │ └─────────┘
+      ULGRAF          ┌────────────┼────────────┐
+     ┌──┴──────┐   ┌──┴──────┐  ┌──┴──────┐  ┌──┴──────┐
+     │♂Hareld  ╞═╤═╡♀Iliana  │  │♂Adrian  │  │♀Ksenia  │
+     │(4E230- )│ │ │(4E235- )│  │(4E224-?)│  │(4E228-?)│
+     └─────────┘ │ └─────────┘  └─────────┘  └─────────┘
+ STIRLING        │
+┌──┴──────┐   ┌──┴──────┐
+│♀Veronica╞═╤═╡♂Albert  │
+│(4E?-? ) │ │ │(4E252- )│
+└─────────┘ │ └─────────┘
+         ┌──┴──────┐
+         │♂Sergei  │
+         │(4E277-?)│
+         └─────────┘
+
+                     SUNMORNING
+ ÜNVELDT         ┌─────┴────┐         FORGEHAMMER
+┌──┴──────┐   ┌──┴────┐  ┌──┴────┐   ┌──┴─────┐
+│♂Jonathan╞═╤═╡♀Isabel│  │♀Shirly╞═══╡♂Balfrik│
+│(4E?- )  │ │ │(4E?- )│  │(4E?- )│   │(4E?- ) │
+└─────────┘ │ └───────┘  └───────┘   └────────┘
+         ┌──┴───────┐
+         │♂Stolovold│
+         │(4E271- ) │
+         └──────────┘
+
+ WINTERMOON                ?
+┌──┴────────────────┐   ┌──┴─────────────┐
+│♂Glavicus the Cruel╞═╤═╡♀Elanor the Fair│
+│(4E?-4E?)          │ │ │(4E?-4E?)       │
+└───────────────────┘ │ └────────────────┘
+   ┌──────────────────┴──────┬────────────────┬────────────────┐
+┌──┴───────────────────┐  ┌──┴──────────┐  ┌──┴──────────┐  ┌──┴──────────┐
+│♂Caligula the Sadistic│  │♂Tari        │  │♂Edward      │  │♂Daniel      │
+│(4E167-4E201)         │  │(4E171-4E196)│  │(4E174-4E256)│  │(4E185-4E258)│
+└──────────────────────┘  └─────────────┘  └─────────────┘  └─────────────┘
+
+YERIKOVA
+┌──┴──────┐
+│♀Anar    │
+│(4E278- )│
+└─────────┘
+═╦══════════════════════════╦══════════════════════════════════════════════════
+ ║ GEOGRAPHY & DEMOGRAPHICS ║
+ ╚══════════════════════════╝
+• Cyrodiil
+  • geography - rolling hills, mountains to north and east
+  • biome - temperate seasonal forest
+  • reference - central Europe, US
+  • Greco-Roman names common in heartland, Iberian names common in Gold Coast area
+• Hammerfell
+  • geography - low flatland, craggy mountains
+  • biome - subtropical desert
+  • reference - northern Africa
+  • Arabic names common
+• High Rock
+  • geography - craggy mountains to the north, cemtral steppe
+  • biome - arid steppe, fertile lowlands
+  • reference - north & northeastern Mediterranean coast
+  • Turkish names common
+• Skyrim (generally Scandanavian names)
+  • geography - high mountains surrounding, central steppe
+  • biome - northern tundra, central taiga & shrubland, temperate forest in southern lowlands
+  • reference - northern Europe, Pacific Northwest US
+═╦════════════════════════╦════════════════════════════════════════════════════
+ ║ EVENTS, CLUES, & NOTES ║
+ ╚════════════════════════╝
+• on foot *half speed difficult terrain
+  • max speed 3.75 mph (30 miles per 8-hour day)
+  • normal speed 3 mph (24 miles per 8-hour day)
+  • slow speed 2.25 mph (18 miles per 8-hour day)
+√ Starstreak
+  • max speed 50 mph (sustainable 2 hrs; 100 mile range before engine stop for 1-hour cooldown)
+  • cruising speed 30 mph (sustainable for capacity of power source)
+√ magic-RADAR, much longer range than Detect Magic, device to be installed on Starstreak (pure tech invisible to it)
+  (already on Starstreak, Knaz figures out how to use/repairs while repairing ship)
+• Daedric gargantuan bats
+• major city law-enforcement keeping remains in custody vs. necromancy/resurrection
+• Thieves' Guild acting as a check to Riften Jarl, its losses affect city's balance
+√ massive influx of ancient coins & gems into Windhelm drops their value, forcing jeweller out of business
+• shipping around Windhelm much more dangerous due to parent of slain baby kraken seeking vengeance
+• Hsaarik Head's baby dragon chaotic evil (or at least very demanding and spoiled)
+• College of Winterhold necromancy experiments officially cut off, go fully underground, more extreme due to loss of subjects, 'gentle' necromancers, and oversight
+• Dawnstar crackdown by Thalmor and/or Council agents harassing citizens who'd seen the Starstreak, citizens upset at loss of Olga & Ernest
+• Dark Brotherhood, Thieves' Guild, and contacts deliberately avoiding any association with Wayfarers
+√ Solitude citizenry reviles Akara for destroying windows, docks, imposing EEC on local economy, changed Temple of Divines, triggering invasion
+• Markarth fallout...?
+• Old Hroldan & Soljund's Sinkhole Fallout...?
+• seer in Whiterun(?) will remark about party being in other worlds
+√ College of Winterhold temporal experimentation
+√ magic time-portals, through which character sees younger/older version of self (don't initially recognise?)
+√ floating rectancular monolith with carvings in side (hedron analogue?)
+√ thorny-wire cages packed with naked Dunmer in rows, 'trade' route between Winhelm and Winterhold for necromantic experiments, Windhelm captain of guard supplying
+√ if an offer of membership in Dark Brotherhood is declined, replacement must be provided (who must prove worth by killing person they're replacing)
+• monastary with zombie-labourers, necromancer monks
+• wandering zombie with intact soul (escaped experiment?)
+√ Dwemer skyship a la Weatherlight
+√ Dwemer vanships
+• group of mages with magic tattoos
+√ Angelina rejoins party before Balmoral found to keep an eye on Akara/make sure she's doing enough to re-earn trust of holds
+• bootprints leading to village, burly Dunmer/Redguard w/Daedric armour on display claims to have killed it (Daedra with disguise spell--detect magic)
+• adventurers being culled in a battle royale 'to find the greatest warrior'
+√ sky-whale family living in skies above Druadach Mts, young child 3x longer than ship
+√ sky-whale matron learned Draconic from Tazamé
+• old Khajiit mage filling petty black soul gems with emotions/hopes, leaving villagers apathetic & listless, buildings not cared for
+• doorways that connect to other places
+• cryomancer that hates chaos brought by yearly thaw, wants frozen/static world
+┌──────────────────────────────┐
+│ Effects of nanomantic plague │
+└──────────────────────────────┘
+• Beksinski-like warping of Eshnium, time travel to correct? (distant future temporal drops disturbing present)
+• corruption 'started in Falkreath in past', future mages 'quarantine'/sending blight back to its source
+• cold snow grains that burn/fire-damage on touch
+• sound of sand blowing over broken glass, faint whispery pipe music
+• wild animals w/cancerous, bloated pustules, weeping open sores
+• viscous black fluid dripping upward from ground
+• black fog
+• glittering, gritty mist of nano-scale Dwemer spiders
+• bucket of potatoes that are actually baby heads on closer inspection
+• rust-coloured stain around reverse-imprint in wall of face, spiderwebs in eye sockets
+• tall mute figures with numbers carved into their foreheads, sealed in tight wrapping resembling cracked stone or muscle
+• feeble child mimicking every motion of a hulking skeletal being standing behind them
+• feral child in the street hungrily gnawing meat off a human bone
+• tree made of bones, topmost branches suddenly bursting into flame
+• vast cemetery, ground made of broken and pulverised gravestones
+• burned-out shells of buildings
+• vast procession of faceless figures carrying innumerable coffins
+┌────────────────────────────────────────┐
+│ Effects of Daedric invasion +1.5 years │
+└────────────────────────────────────────┘
+• Dawnstar protected by Vigilants of Stendarr
+• Falkreath occupied, Daedra leader
+• Imperial City prime target of Daedra, multiple tactics--brute force invasion, corruption & removal of leaders, fear & dissent stoked among populace, raid shipping to cripple economy
+  • Tapestriea branch:  "City Under Siege" - ifwhen group visits College at Winterhold, will be sent via portal to old Mages Guild in Imperial City to scout,
+    their investigation will directly result in Winterhold mages deciding to seal off area.
+• Markarth a fortress-city, covert Daedra
+• Morthal razed, population scattered into wilderness
+• Riften occupied, Daedra-installed leader, rampant corruption
+• Solitude a fortress-city, covert Daedra
+• Whiterun occupied, public slaying of dissidents, population held in fear
+• Windhelm a fortress city, all Dunmer forced out, extreme xenophobia
+• Winterhold hidden by impenetrable barrier, mages everywhere instantly(?) gain stereotype as cowards
+• Tazamé installed as head of EEC during Akara's absence by Council influence, managed due to his cooperating with the Daedra
+• Eshniumites effectively combat Daedric invaders via guerilla warfare, keeping them out of the deep forest and actively hunting them, which pleases Hircine--since he does not commit to actively restoring old status quo because of this, Falkreath's cities succumb to invasion
+• Wayfarers' individual names obscured to facilitate negative propaganda by Council and discourage parties of adventurers (except for Akara, reviled as corrupter of the group who facilitated Daedric invasion)
+• Jenna presumed dead, state funeral, relations between Eastmarch & Haafingar deteriorate
+• Blackreach protected from Daedric invasion by Dwemer resonating harmonic MacGuffin, secret rebel/Imperial military base building fleet of airships, need to study Starstreak
+• Daedric invasion fostered infighting among Aldmeri Dominion:  Bosmer retreated into Valenwood and dug in, Argonians lost some ground but hold Morrowind & Black Marsh in police state, Cyrodiil splintered into small kingdoms, Summerset scheming/building doomsday weapon, majority Elesweyr population forced into hiding
+• High Rock, Hammerfell - major cities burned or occupied, population dislocated & scattered, guerilla warfare
+═╦══════════════╦══════════════════════════════════════════════════════════════
+ ║ OTHER PLANES ║
+ ╚══════════════╝
+• ARDNEH's World - 12 Swords of Power
+  • Coinspinner
+  • Doomgiver
+  • Dragonslicer
+  • Farslayer
+  • Mindsword
+  • Shieldbreaker
+  • Sightblinder
+  • Soulcutter
+  • Stonecutter
+  • Townsaver
+  • Wayfinder
+  • Woundhealer
+• Asteth (Kaitlyn)
+• Brisco County, Jr.
+• Elder Scrolls/Nirn - home plane of party
+• Haibane Renmei
+• Harry Potter
+• Kino's Travels
+• Last Exile
+• Mahou Shoujotai Alice
+• MtG
+  ▪ Alara (ALA)
+    • Bant
+    • Esper
+    • Grixis
+    • Jund
+    • Naya
+  ▪ Amonkhet (AKH)
+  ▫ Argentum/Mirrodin/New Phyrexia (MRD)
+  ▪ Arkhos (HOP)
+  ▪ Azgol (PC2)
+  ▫ Bolas' Meditation Realm (WAR)
+  ▪ Cridhe
+  ▪ Dominaria (LEA)
+    ▪ Aerona
+    ▪ Caliman
+    ▪ Corondor
+    ▪ Frozen Reaches
+    ▪ Jamuraa
+    ▪ Madara
+    ▪ Northland
+    ▪ Otaria
+    ▪ Sarpadia
+    ▪ Shiv
+    ▪ Terisiare
+    ▪ Tolaria
+    ▪ Verdenth
+  ▪ Eldraine (ELD)
+  ? Equilor
+  ▪ Fiora (CNS)
+  ▪ Ikoria (XIKR)
+  ▪ Innistrad (ISD)
+  ? Iquatana
+  ▪ Ir
+  ▪ Ixalan (XLN)
+  ▪ Kaladesh (KLD)
+  ▪ Kaldheim
+  ▪ Kamigawa (CHK)
+  ▪ Kephalai
+  ? Kinshala
+  ▪ Kylem (BBD)
+  ▪ Lorwyn/Shadowmoor (LRW)
+  ▪ Mercadia (MMQ)
+  ? Moag
+  ▪ Muraganda
+  ▫ Phyrexia (ATQ)
+  ▪ Plane of Mountains and Seas (GS1)
+  ▪ Rabiah (ARN)
+  ▫ Rath (TMP)
+    ▪ Cinder Marsh
+    ▪ City of Traitors
+    ▪ Death Pits
+    ▪ Eye of Korai
+    ▪ Flowstone Desert
+    ▪ Furnace of Rath
+    ▪ Heartwood
+    ▪ Kor Haven
+    ▪ Rootwater
+    ▪ Skyshroud
+    ▪ Sliver Lair
+    ▪ Stronghold
+  ▪ Ravnica (RAV)
+  ▪ Regatha (ORI)
+  ? Segovia
+  ▫ Serra's Realm (USG)
+  ▪ Shandalar (M15)
+  ▪ Tarkir (KTK)
+  ▪ Theros (THS)
+  ▪ Ulgrotha (HML)
+  ▪ Valla
+  ▪ Vryn (PC2)
+  ▪ Wildfire
+  ▪ Zendikar (ZEN)
+• Mushishi
+• Old World of Darkness
+• Paranoia
+• Stargate
+• Thief
+  • Pagans - Viktoria (wholly organic world)
+  • Hammerites - Karras (scour life from world, machine-beings)
+  • Keepers (balance)
+• Thun-darr the Barbarian (postapocalptic Earth, shattered moon, mutant monsters, magic, ruins of skyscrapers)
+• Thundercats
+• Unsounded
+  • Alderode
+  • Cresce
+  • Hanret
+  • Mahrshane
+  • Madishane
+  • Manilda
+  • New Arlit
+  • Rachshane
+  • Sharteshane
+  • Ulestry
+  • Viwlet
+  • West Manilda
+• Utawarerumono
+• Wells' City of Bones
+  • Charisat
+  • Enclaves
+  • Kennilar Free State
+• Zelda Breath of the Wild (Kaitlyn)
+• Zootopia
+═╦════════╦════════════════════════════════════════════════════════════════════
+ ║ QUESTS ║
+ ╚════════╝
+┌─────────────┐
+│ Main Quests │
+└─────────────┴────────────────────────────────────────────────────────────────
+√ if one/all of Fate's containment fields are breached, nanomantic corruption will be released
+√ 'nanomantic' plague corrupting world to be released by party via trying to investigate/prevent it from happening
+• Illuminati-like Council's machinations
+  • top Council members = 1 per plane, hierarchy of minions
+  • shapeshifting Eldrazi Morophon the Boundless MtG multiverse rebel ally, impersonating Alis since just before meeting her, drawn to group due to djinn's interest (original Alis had given backstory)
+  • Council polices/restricts planeswalking & time travel
+  • anarchist rebel group opposing Council 'just wants everyone to be free'
+  • Council overthrew a similar Illuminati-like group in aeons past as the rebel group
+  • djinn Councilmember for Aurbis, keeping close watch on party, High King, etc
+  • djinn attempting to recruit party to Council's side, rebels will do the same
+  • a party member with genetic connection to Council or rebels will be kidnapped by other side to extract information about opponent
+  √ Council had Lorac persecuted/had family killed, planted idea to outwit Daedric princes
+  • Lorac Brenner's machinations
+    √ shrewd, scheming Breton warlock
+    √ removed heart, in unobtrusive phylactory in Ivarstead
+    √ false appearance of blessing by Eight Divines by alliance of Boethiah, Mehrunes Dagon, Molag Bal
+    √ bound Daedric succubus in private chambers used as conduit for comms with Daedric Princes and entertainment torturing
+    √ minions impeding party's attempts to reach/destroy phylactory, split it into parts & separate, forming amulets which imbue power
+  √ conditions set up for Akara to be the one to be at fault for setting events in motion
+  • Tazamé seen as easier to manipulate than Akara, shown favour and groomed by Council
+  • Daedric invasion of Tamriel, alliances must be forged across Tamriel to defeat with a unified army
+  • show High King of Skyrim best one to lead Tamriel (as puppet), make Solitude Imperial Capital
+  • manipulating King of Thieves' minions, ruining economy & EEC so can reshape under their complete control (Akara not trusted/seen as wildcard)
+• El Dorado-like city 'Aztlan' in Pyadonea
+  • researchers in Solitude will decipher some information about Aztlan, 'legend of a massive magical power source'
+  • High King of Skyrim will task party with acquiring powerstone to improve Starstreak's ability to fight Daedric invasion
+  • overgrown by jungle, dinosaurs running amok
+  • inhabitants planeshifted to escape encroaching wilds, still present but phased
+  • giant powerstone used to alter inhabitants will grant party planeswalking ability
+  • jaguartaurs
+  • jade weapons/armour
+• planeswalking King of Thieves whose lost son must concentrate to stay on a plane, believes gathering all wealth will break cycle
+┌─────────────┐
+│ Side Quests │
+└─────────────┴────────────────────────────────────────────────────────────────
+√ locate Balmoral and find source of Shiera's visions
+  √ Balmoral in a permanently fog-shrouded lush crater open to sky
+  √ impossibly-peaceful village with all races (incl. Daedra and Khajiit) living happily, hallucination from mountain entity digesting inhabitants
+  √ Balmoral source of mind stone, veins of the mineral form brain of entity
+  √ Balmoral a Rip Van Winkle-like setting, 1.5 years pass while there
+  • Council investigates Balmoral to harvest power stones and ally with entity
+√ find starlace flower with assistance of herbalist in vicinity of Evermore
+√ administer transmutation potion to Angelina
+√ message from Fate Moonglade to Jonathan Unveldt
+• obtain larger power source for Starstreak in Blackreach (researchers will need to study Starstreak to improve their designs vs. Daedra)
+• seek lost city in Pyadonea
+• Thesa will spy Katja bathing in river, hide, Katja aware group in bounds of forest, putting on a show for Thesa
+• party finds Grohiik in process of being captured by one of many encroaching bandit groups
+• brother and sister, one with congenital heart defect, other dresses as them and assumes some of their offial tasks (Whiterun?)
+• planeshifting electric airship HMS Servitor searching for city of Aztlan 'for Queen and Council!'
+  • Cpl. Elizabeth Stanton, female version of Officer and a Gentleman
+  • Prof. Wm. Forsythe III, absent-minded Gadgeteer Genius
+  • Charlotte, Prof's neice, a Spirited Young Lady "what an absolute lark!  did you /see/ that girl?  why, she's practicaally /naked/!  and the two with wings.  how jolly!"
+√ Angelina's transformation was a beacon to heaven, Valkyries will investigate and take custody of Akara's charge & shinigami
+  √ a death that should have happened won't, Valkyries will chastise shinigami
+  √ dying girl will recognise and greet shinigami and say "I guess it's finally time, huh?"
+• Thieves' Guild investigation
+√ party and Tinkerbell's sizes swapped (Kaitlyn)
+• Tinkerbell must be bathed in a spring in the Feywild
+√ guests locked in Blue Palace during ball, key hidden as entertainment, clues leading to treasure ('Soul of Solitude' cerulean diamond brooch)
+√ Sarah Lind used as easy-to-manipulate pawn to destabilise thrown for usurpation
+  √ Sarah Lind attempts assassination of Theobold Civette to keep Jenna Free-Winter to herself
+  √ assassination victim a double placed to uncover conspirators and assess Jenna's loyalties (Jenna unaware of conspiracy, seen as naïve & kind-hearted but with potential to be strong leader)
+  √ Sarah's guilt exposed by party, they decide her punishment
+√ party tasked with escorting Jenna back to Windhelm
+  √ Jenna openly displays combat skills, earns significant respect
+  • Windhelm Jarl killed in battle, Jenna crowned
+• Heath & Ameria 'the Huntress' run shop 'Trink & Hide' in Whiterun selling fur, tanned hides, etc., and curios/knicknacks.
+┌───────────────────┐
+│ Random Encounters │
+└───────────────────┴──────────────────────────────────────────────────────────
+• farmer on the way to market
+• soldiers escorting a prisoner
+• thief shadowing party (perception check vs. losing random item)
+• Vigilants of Stendarr fighting a vampire yearling or Daedra
+• angry bear
+• dryad/spriggan guarding specific grove
+• earth elemental
+• frostbite spider
+• giant
+• mammoth
+• sabertooth tiger
+• shooting star/radioactive meteorite/crater
+• skeletons
+• troll
+• giant rats/skeevers
+• beggars
+• skooma addicts
+• sewer gator
+• dire cockroach swarm/nest (chitin loot)
+• silverfish infesting library of scholar/mage/necromancer
+• stoneborer beetle (small acid bladder, bettleshell fragment loot)
+┌───────────────────────────────────┐
+│ Character-specific Quests & Notes │
+└─┬───────┬─────────────────────────┴──────────────────────────────────────────
+  │ Akara │
+  └───────┘
+• Akara cult worshippers - Kobolds especially
+• Dawnstar, the Pale
+• Falkreath, Falkreath
+• Markarth, the Reach
+  • investigate dead dollmaker's mansion, clockwork porcelain dolls, wind-up dagger reward
+• Morthal, Hjaalmarch
+• Riften, the Rift
+• Solitude, Haafingar
+• Whiterun, Whiterun
+• Windhelm, Eastmarch
+• Winterhold, Winterhold
+  ┌──────────┐
+  │ Firaliin │
+  └──────────┘
+• mother shapeshifter, spent long time as pond in forest near Ivarstead communing with animals that drank from her, firey red hair, seduced father when he bathed in her
+• father a simple woodsman, quiet, black eyes, full black beard, brown hair
+√ memory of mother singing lullaby about dancing with birds & squirrels, then doing so in deer-form
+√ vision of disemboweled/dead Alis
+√ memory of sitting on blanket watching as mother coaxed a wolf over to pet
+• memory of flames roaring up walls, crying, mother's wail, wolf's howl approaching, long snout poking into cradle and lifting her by sleeper
+• parents killed by hagravens (preference for fireballs, hatred of spriggans and related)
+• raised by wolves, only has a few memories of parents.  At age 8 watched temple from nearby tree for 2 days until brave enough to approach while Sister Clara fed chickens
+• Sister Clara of Ivarstead Temple of Mara thought Firaliin had been attacked/devoured by bear, will be overjoyed to see her alive
+• corrupt priestesses in league with Lorac Brenner, part of group that protects his phylactory
+• new, young priestesses at Ivarstead orphanage have heard of Firaliin, petition her fror aid to remove corrupt nuns
+• Ivarstead Temple of Mara 15 nuns, 5 caretakers of orphans, 10 temple duties
+  • Mother Beatty - matron, evil, ruler-hits, soap-in-mouth, hair yanks, gave Firaliin plain last name, starved or fed mouldy gruel/rotten cornmeal, kicked Firaliin out of orphanage (Firaliin wants to kill painfully)
+  • Sister Vicki - Mother Beatty's biggest sidekick (mean)
+  • Sister Clara - loving, kind, convinced Beatty to take Firaliin in
+  • Sister Rose - also sweet, kind, caring, sneaks snacks, slight insomnia, restless
+  • Sister Elle - more neutral but tolerant and kind
+• 23 other children passed through orphanage while Firaliin was there, only 8 stayed long enough for her to remember - 4 girls and 3 boys
+  • Sara - nuns' pet (sacrificed to split apart phylactory without destroying)
+  • Kelly - bully with Ricky
+  √ Lora - best friend (will meet in Balmoral)
+  • Polly - sweet, chubby outsider
+  • Heath - nice, shy
+  • Ricky - bully (still a bully, city-sheriff)
+  • George - nicest boy, bookworm
+• Imperial City zoo
+  • kirin
+  • aibat (purple bat-winged eye)
+  • basilisk
+  • sandworm
+  • crystalback muntjac
+  • flying fox
+  • hippogriff
+  • al-mi'raj (fey-rabbit with unicorn-like horn)
+  • wolpertinger (winged rabbit with deer antlers and fangs)
+  • chimera
+  • shapeshifter (exhibit itself, not an object inside it)
+  • pushmi-pullyu (llama with two heads, one at each end)
+  • lesser glass sea snail
+  • giant lunar moth
+  • astrid (large owl with human face)
+  • peafowl
+  • Bird of Paradise
+  • sphinx
+  • carnivorous deer
+  • guar
+  • cliff racer
+  ┌────────┐
+  │ Shiera │
+  └────────┘
+• acquire panther mount
+√ House Karlsen in Falkreath shy scholars and poets
+√ Karlsens are vampires (willing servants near-exclusive food source) that turned Fate into unaging dhampir
+- Johann Karlsen will be 'repaired' by nanobot cloud
+√ Arthur Moonglade under alias Lord Ebeneezer McPigeon, made deal with Karlsens to save Fate's life
+√ Fate Moonglade a Da Vinci-like polymath, attempting to merge life/undeath/construct for benefit to all (cyborg components, nanites, Dwemer-derived tech)
+√ Arthur Moonglade visits Blue Palace garden memorial to meditate/pay respects
+√ Arthur Moonglade obsessed with restoring Moonglade kingdom, willing to do anything to achieve goal, deals with vampires, Daedra, necromancers
+√ Dark Brotherhood contract taken out on Arthur Moonglade by Lorac Brenner for soliciting support of evil to usurp regimes (also in the way of Lorac's plans)
+√ Harkon vampires sent with ashes/banner to contact Shiera on behalf of Fate
+√ Temple Tokens provided as payment from Dark Brotherhood to Shiera for killing Arthur Moonglade (to tip off about Lorac's involvement)
+√ dream of feast where all of the Moonglade family is present
+  √ 'older sister', who will be distraught and flee if rebuked
+  √ Liondales and Wintermoons present, both friendly, will indicate to Shiera have decided to marry her to both
+  √ Shiera will see young version of herself standing amid carnage, screaming, and remember this as an old nightmare
+√ messenger from Solitude didn't reach Fate
+√ when group arrives Fate (appearing to be 11) will run to and hug Shiera ('Shishi') when recognises
+√ future-vision portal of Karlsen manor, crumbling, ruined walls, smashed glass...and dead body of a girl in a dress (identical to one Fate wearing when Shierra re-meets her)...oily rain falling from ugly purplish clouds, portal will ripple and dissipate into mist
+  ┌───────────┐
+  │ Stolovold │
+  └───────────┘
+√ Shadowfell denizens confront Stolovold for harvesting their realm at random to create mass quantities of things
+  ┌───────┐
+  │ Thesa │
+  └───────┘
+√ time-travel experiments in Winterhold using undead as subjects source of zombie attacks in Falkreath that were blamed on vampires
+√ Alis Windsong, deer-faun bard from Celan Rootweft line deliberately leading Thesa on a chase
+• Karlsens refer to Thesa as 'wolf child', be very respectful (seek alliance?  help rescue Thesa?)
+• to determine best match for triat, Thesa sent with group of eligible female villagers and wolves on a task
+• Thesa joined in triat with Katja and Grohiik in mating ceremony
+  • village gathers in sacred grove to bear witness
+  • incense that heightens senses of all present
+  • villagers all wearing hooded fur cloaks
+  • Alis will flee in terror if present
+  • feast of bloody, raw meat
+  • Thesa and Katja escorted to stone dais by honour guard of (aroused) wolfir
+  • stripped and scrutinised by village to assess suitability as triat
+  • unguent applied to each other that amplifies senses
+  • wolf approaches two, decides which to mate first
+  • each female tends to the other while she is tied to the wolf
+  • wolf switches to other female
+• derided in Falkreath as 'vlk kurva' (Czech), 'volk-jebač' (Slovenian), 'vovk-ebat'' (Ukranian)
+• various events to allow establishment of solid bond among triat
+• triat will pursue Alis on its own (Ivarstead vicinity?), suspicious of her behaviour
+• triat captured, Grohiik & Katja slain by Alis in front of Thesa
+• Alis double-crosses party, betrays Thesa to draw her to hunter's fortress
+• Alis will return to find party and tell them of Thesa's capture
+• fortress will have an energy field that prevents use of magic
+• Thesa chained in courtyard with silver, dressed in garment made of wolf's-bane and starved to incite frenzy urge to devour Alis
+• Thesa will swear off meat and violence in shame/PTSD after devouring Alis (severe nausea at seeing meat, actually morning sickness)
+• Thesa doesn't have rapier originally, will get from Katja's things
+• party must decide whether to join rescue force, all-out attack no good because don't know where Thesa is held in fort
+• Thesa planning to leave party and stay at/return to Eshnium, but loss of her new mates will break her and cause her to rejoin party
+═╦═════════════╦═══════════════════════════════════════════════════════════════
+ ║ OTHER NOTES ║
+ ╚═════════════╝
+• flesh atronach?  gore atronach?  blood atronach?
+Fate Moonglade's Spellbook
+• L0 Trans. Mending
+• L0 Trans. Prestidigitation
+• L1 Divin. Comprehend Languages
+• L1 Conju. Floating Disk
+• L2 Trans. Enlarge/Reduce
+• L2 Necro. Gentle Repose
+• L3 Abjur. Dispel Magic
+• L4 Trans. Fabricate
+• L8 Abjur. Antimagic Field
+═╦═════════════╦═══════════════════════════════════════════════════════════════
+ ║ HOUSE RULES ║
+ ╚═════════════╝
+• shapeshifter race can shift to anything they're encountered, regardless of size, as many times per day as they want
+• combat shall have an additional reaction-opportunity roll for enemy to attempt to dodge (or otherwise indicate a miss)
+• necromancers shall have accesss to true resurrection
+• karma/reputation system between characters & towns, enemy<100<friend
+• archery arrows = 2^(level/5)
+• to-hit = (level+1)/3
+• damage = level/3
+• archery moving-target difficulty = -level/4
+• having at least 1 in a skill prevents critical failure
+• having proficiency in a skill guarantees minimal success if not in combat, roll is for quality of result
+           Mental        Physical  Spiritual   Social
+          ┌─────────────────────────────────────────────
+Power     │Intelligence  Strength  Essence     Charisma
+Inertia   │Cleverness    Agility   Conviction  Loyalty
+Capacity  │Resolve       Stamina   Wisdom      Luck
+Condition │Sanity        Health    Aura        Reputation

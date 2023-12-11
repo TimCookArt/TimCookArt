@@ -1,0 +1,20 @@
+[ ] globe Stolovold sent to retrieve smashed by king of thieves, destroying dwemer tuning crystal that showed accurate position of Aztlan, can only be replaced with Aztlan crystal
+[ ] Aztlan has its own protective measures making it difficult for council to find/get to even w/map--the shift warped time, compressing & expanding it, moving things back & forth, etc
+[ ] eldrazi Morophon nearly insane from eternity of solitude operates in opposition to Council, takes form of Alis, also a hist tree 'the Alone Tree' after her death
+[ ] Adrian & Sergei held, threatened with death unless Ksenia & Petra provide support to group sent to kill vampires, verifying that all are dead/none escape?
+[ ] Bandits encroaching in forest to avoid Daedra patrols, killing wastefully, harming sacred plants, cutting down dryad trees
+[ ] Vampire coven hiding from Daedra patrols, feeding on villagers
+[V] Valkyries will come to retrieve shinigami & Akara's charge, scold shinigami for neglecting her duty
+[V] Nanoplague signs:  mild coughing, scratching, faint metallic gleam of skin, reduced sleep, increased ability (stamina, etc), improved healing, halted aging, inability to die, gradual metamorphosis, uniformity of appearance and thought across population
+[ ] While Thesa disembowels & eats Alis alive, she will grimace through the pain and pet Thesa on the head, saying 'Good girl.' before dying.
+[ ] Alis personally slays Grohiik & Katja in front of Thesa, saying 'You can't have her.'
+[V] Plot problem:  resurrection/necromancy by party?  Solution:  make that the problem :P
+[V] Nanobot purpose:  'repair immediate environment', 'replicate self if available resources', can function as FSA & communicate w/nearby neighbours, adapt as a large group but rudimentary singly or in small clusters
+[V] Party members, esp. Shiera, Fate, carriers of nanoplague
+[V] Fate's tinkering embedded general preference of dhampir cellular features over 'normal' tissue that ages
+[V] Nanoplague will increase healing, stats in general
+[V] Nanobot analysis of more living beings will begin to incorporate beneficial features into 'repair' goal, gradually making Fate seem somewhat more lifelike
+[ ] • Archery arrows = 2^(level/5)
+[ ] • Attack to-hit += (level+1)/3
+[ ] • Attack damage += level/3
+[ ] • Archery moving-target difficulty -= 1 per 4 levels

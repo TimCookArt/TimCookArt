@@ -1,0 +1,1224 @@
+<html>
+<title>Family Trees of the Wayfarers' D&amp;D Game</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://fonts.googleapis.com/css?family=Charm' rel='stylesheet'>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	position: relative
+}
+body{
+	background-color: wheat;
+	color: #000000;
+	font-family: 'Charm'
+}
+.tree{
+	/*background-color: rgba( 128, 255, 0, 0.1 );*/
+	font-family: serif, Times New Roman;
+	font-size: 10pt;
+	display: inline-block;
+	pointer-events: none;
+	text-decoration: none
+}
+.tree ul{ padding-top: 20px }
+.tree li{
+	float: left;
+	list-style-type: none;
+	padding: 1.55em 5px 0 5px;
+	text-align: center
+}
+.container{
+	background-color: rgba( 128, 128, 128, 0.1 );
+	margin: 0 auto 1.5em
+}
+
+/* Connectors for siblings */
+.tree li::before, .tree li::after{
+	border-top: 1.5px solid gray;
+	content: '';
+	height: 10px;
+	position: absolute;
+	right: 50%;
+	top: 10;
+	width: 50%
+}
+.tree li::after{
+	border-left: 1.5px solid gray;
+	left: 50%;
+	right: auto
+}
+
+/* Remove left-right connectors from elements without any siblings */
+.tree li:only-child::after, .tree li:only-child::before{ display: none }
+
+/* Remove space from top of multiple children */
+.tree li:not(:only-child){
+	display: inline-block;
+	top: -10
+}
+
+/* Remove space from the top of single children */
+.tree li:only-child{ padding-top: 0 }
+
+/* Remove extra connectors from first & last children */
+.tree li:first-child::before, .tree li:last-child::after{ border: 0 none }
+
+/* Restore vertical connector to last nodes */
+.tree li:last-child::before{
+	-moz-border-radius: 0 5px 0 0;
+	-webkit-border-radius: 0 5px 0 0;
+	border-radius: 0 5px 0 0;
+	border-right: 1.5px solid gray
+}
+.tree li:first-child::after{
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+	border-radius: 5px 0 0 0
+}
+
+/* Connectors between betrothed, spouses, parents, unspecified descendants */
+div.betrothed, div.descendant, div.parents, div.spouse{
+	margin-left: -3.5;
+	margin-right: -3.5;
+	display: inline-block
+}
+
+/* Connector between betrothed */
+div.betrothed{
+	border-bottom: 2px dashed rgba( 0, 64, 192, 0.5 );
+	height: 0.2em;
+	top: -0.75em;
+	width: 3em
+}
+
+/* Connector between spouses */
+div.descendant, div.parents, div.spouse{
+	border-bottom: 1.5px solid rgba( 192, 64, 0, 0.5 );
+	border-top: 1.5px solid rgba( 192, 64, 0, 0.5 );
+	height: 0.2em;
+	top: -0.75em;
+	width: 2em
+}
+
+/* Connector from parents */
+div.parents::before{
+	border-left: 1.5px solid gray;
+	content: '';
+	height: 3.25em;
+	left: 50%;
+	position: absolute;
+	top: 0.3em;
+	width: 0
+}
+
+/* Connector from unspecified descendants */
+div.descendant::before{
+	border-left: 2.5px dashed #C0C0C0;
+	content: '';
+	height: 3.25em;
+	left: 50%;
+	position: absolute;
+	top: 0.3em;
+	width: 0
+}
+
+/* Family header style */
+.family-header{
+	background-color: #FFFFC0;
+	box-shadow: 0px 5px 5px rgba( 0, 0, 0, 0.25 );
+	font-family: serif, Times New Roman;
+	font-size: 10pt;
+	font-weight: bold;
+	margin-bottom: 1em;
+	text-align: center;
+	width: 100%
+}
+
+/* Male & female styling */
+div.female:hover, div.male:hover{
+	box-shadow: 0 0 8px rgba( 0, 0, 0, 0.5 )
+}
+div.female, div.male{
+	border: 1px solid black;
+	display: inline-block;
+	padding: 0.75em 1.0em 0.75em 1.0em;
+	pointer-events: initial
+}
+div.male{
+	background-color: rgba( 0, 128, 255, 0.05 );
+	text-shadow: 0 0 5px rgba( 0, 128, 255, 0.5 )
+}
+div.female{
+	background-color: rgba( 255, 0, 255, 0.05 );
+	text-shadow: 0 0 5px rgba( 255, 0, 255, 0.5 )
+}
+
+/* Date styling */
+p.date::after{ content: ')' }
+p.date::before{ content: '(' }
+p.date{ font-size: 0.75em }
+
+/* Family-name styling */
+p.family{
+	display: inline-block;
+	font-size: 80%;
+	font-variant: small-caps;
+	left: 0;
+	position: absolute;
+	text-shadow: none;
+	top: -1.25em
+}
+
+/* Deceased & living indicator */
+.dead{
+	display: inline-block;
+	background:
+		linear-gradient(to bottom right,
+			rgba(   0, 0, 0, 0   )   0%,
+			rgba(   0, 0, 0, 0   )  49%,
+			rgba( 255, 0, 0, 0.3 )  49%,
+			rgba( 255, 0, 0, 0.3 )  53%,
+			rgba(   0, 0, 0, 0   )  53%,
+			rgba(   0, 0, 0, 0   ) 100%
+		),
+		linear-gradient(to bottom left,
+			rgba(   0, 0, 0, 0   )   0%,
+			rgba(   0, 0, 0, 0   )  49%,
+			rgba( 255, 0, 0, 0.3 )  49%,
+			rgba( 255, 0, 0, 0.3 )  53%,
+			rgba(   0, 0, 0, 0   )  53%,
+			rgba(   0, 0, 0, 0   ) 100%
+		);
+}
+:not( .dead ) > .date::after{ content: '\2013\2003)' }
+
+/* Type indicator */
+.dhampir, .therian, .type, .vampire, .wolf{
+	display: inline-block;
+	font-size: 75%;
+	position: absolute;
+	top: 0.1em
+}
+img.type{ height: 1em; margin: 3px; right: 0 }
+.dhampir, .therian, .vampire, .wolf{ left: 0 }
+.dampir:after, .therian:after, .vampire:after, .wolf:after{ text-shadow: 0 0 }
+.dhampir:after{ content: '\1F9DB'; opacity: 0.5 }
+.wolf:after{ content: '\1F43A' }
+.therian:after{ content: '\1F43E' }
+.vampire:after{ content: '\1F9DB' }
+.note{
+	visibility: hidden;
+	z-index: 1
+}
+.dead > .dhampir:hover .note:after{ content: 'This individual was a dhampir.' }
+.dead > .therian:hover .note:after{ content: 'This individual was a hybrid with animal-like attributes.' }
+.dead > .vampire:hover .note:after{ content: 'This individual was a vampire.' }
+.dead > .wolf:hover .note:after{ content: 'This individual was a wolf.' }
+.daedra:hover .note:after{ content: 'This individual is a Daedra.' }
+:not( .dead ) > .dhampir:hover .note:after{ content: 'This individual is a dhampir.' }
+:not( .dead ) > .therian:hover .note:after{ content: 'This individual is a hybrid with animal-like attributes.' }
+:not( .dead ) > .vampire:hover .note:after{ content: 'This individual is a vampire.' }
+:not( .dead ) > .wolf:hover .note:after{ content: 'This individual is a wolf.' }
+.daedra:hover .note:after,
+.dhampir:hover .note:after,
+.therian:hover .note:after,
+.vampire:hover .note:after,
+.wolf:hover .note:after{
+	background-color: #606060;
+	border-bottom: 1px solid black;
+	box-shadow: 0 5px 10px rgba( 128, 128, 128, 0.5 );
+	color: #FFFFFF;
+	display: inline-block;
+	font-weight: bold;
+	right: 0;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	visibility: visible;
+	width: 30em
+}
+@media only screen and ( max-width: 1600px ){
+	body{ font-size: calc( 10pt + (( 100vw - 720px) / 220 )) }
+}
+@media only screen and ( max-width: 720px ){
+	body{ font-size: 10pt }
+}
+</style>
+</head>
+<body>
+<div style="margin: auto; margin-bottom: 1em; text-align: center; width: 100%"><h3>&#10087; Family Trees of the Wayfarers' D&amp;D Game &#9753;</h3></div>
+
+<!--------------- CIVETTE & FREE-WINTER FAMILIES --------------->
+<div class="container" style="height: 310; width: 670">
+<div class="family-header">CIVETTE &amp; FREE-WINTER FAMILIES</div>
+<div class="tree" style="left: 267; top: -10"> <!-- Free-Winter branch -->
+<ul>
+	<li>
+	<div class="dead male">
+		Brunwulf
+		<p class="date">4E138&ndash;4E229</p>
+		<p class="family">Free-Winter</p>
+	</div>
+	<div class="parents"></div>
+	<div class="dead female">
+		Elda
+		<p class="date">4E156&ndash;4E228</p>
+		<p class="family">Early&ndash;Dawn</p>
+	</div>
+	<ul style="left: 55">
+		<li>
+		<div class="dead male">
+			Skoreld
+			<p class="date">4E202&ndash;4E288</p>
+		</div>
+		<div class="parents"></div>
+		<div class="female">
+			Mariposa
+			<p class="date">4E226</p>
+			<p class="family">Kilnor</p>
+		</div>
+		<ul style="left: 65">
+			<li>
+			<div class="male">
+				Vidik
+				<p class="date">4E548</p>
+			</div>
+			<div class="parents"></div>
+			<div class="female">
+				Isolde
+				<p class="date">4E576</p>
+				<p class="family">Stendahl</p>
+			</div>
+			<ul style="left: -60">
+				<li>
+				<div class="male" style="opacity: 0">
+					Theobold
+					<p class="date">4E277</p>
+				</div>
+				<div class="betrothed"></div>
+				<div class="female">
+					Jenna
+					<p class="date">4E285</p>
+				</div>
+				</li>
+			</ul>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: -190; top: -81"> <!-- Civette branch -->
+<ul>
+	<li>
+	<div class="dead male">
+		Cornlius
+		<p class="date">4E174&ndash;4E237</p>
+		<p class="family" style="left: 80; top: -2.25em">Civette</p>
+	</div>
+	</li>
+	<li>
+	<div class="male" style="opacity: 0">
+		Ardnot
+		<p class="date">4E218</p>
+	</div>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: 58; top: -165"> <!-- Ardnot's branch -->
+<ul>
+	<li>
+	<div class="male">
+		Ardnot
+		<p class="date">4E218</p>
+	</div>
+	<div class="parents"></div>
+	<div class="female">
+		Petret
+		<p class="date">4E250</p>
+		<p class="family">Abel</p>
+	</div>
+	<ul>
+		<li>
+		<div class="male">
+			Adophon
+			<p class="date">4E267</p>
+		</div>
+		</li>
+		<li>
+		<div class="dead male">
+			Bremio
+			<p class="date">4E271&ndash;4E275</p>
+		</div>
+		</li>
+		<li>
+		<div class="male">
+			Pelamius
+			<p class="date">4E273</p>
+		</div>
+		</li>
+		<li>
+		<div class="male">
+			Theobold
+			<p class="date">4E277</p>
+		</div>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+</div>
+
+<!--------------- FIRALIIN'S FAMILY --------------->
+<div class="container" style="height: 170; width: 280">
+<div class="family-header">FIRALIIN'S FAMILY </div>
+<div class="tree" style="left: 40; top: -15"> <!-- Firaliin's branch -->
+<ul>
+	<li>
+	<div class="dead male">
+		?
+		<p class="date">4E?&ndash;4E278</p>
+	</div>
+	<div class="parents"></div>
+	<div class="dead female">
+		?
+		<p class="date">?&ndash;4E278</p>
+	</div>
+	<ul style="left: 40">
+		<li>
+		<div class="female">
+			Firaliin Carson
+			<p class="date">4E276</p>
+		</div>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+</div>
+
+<!--------------- KARLSEN CLAN --------------->
+<div class="container" style="height: 320; width: 515">
+<div class="family-header">KARLSEN CLAN</div>
+<div class="tree" style="left: 193; top: -60"> <!-- Karlsen branch -->
+<ul>
+	<li>
+	<div class="dead male">
+		Johann
+		<p class="date">3E417&ndash;4E303</p>
+		<p class="vampire"><span class="note"></span></p>
+		<p class="family">Karlsen</p>
+	</div>
+	<div class="parents"></div>
+	<div class="female">
+		Petra
+		<p class="date">4E207</p>
+		<p class="vampire"><span class="note"></span></p>
+		<p class="family">Istovic</p>
+	</div>
+	<ul>
+		<li>
+		<div class="female" style="opacity: 0">
+			Iliana
+			<p class="date">4E235</p>
+		</div>
+		</li>
+		<li>
+		<div class="male">
+			Adrian
+			<p class="date">4E224</p>
+			<img class="type" src="class_bard.png" alt="Bard" title="Bard">
+			<p class="vampire"><span class="note"></span></p>
+		</div>
+		</li>
+		<li>
+		<div class="female">
+			Ksenia
+			<p class="date">4E228</p>
+			<img class="type" src="class_bard.png" alt="Bard" title="Bard">
+			<p class="vampire"><span class="note"></span></p>
+		</div>
+		</li> 
+	</ul>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: -183; top: 70"> <!-- Iliana's branch -->
+<ul>
+	<li>
+	<div class="male">
+		Hareld
+		<p class="date">4E230</p>
+		<p class="family">Ulgraf</p>
+	</div>
+	<div class="parents"></div>
+	<div class="female">
+		Iliana
+		<p class="date">4E235</p>
+	</div>
+	<ul style="left: -50">
+		<li>
+		<div class="female">
+			Veronica
+			<p class="date">4E?</p>
+			<p class="vampire"><span class="note"></span></p>
+			<p class="family">Stirling</p>
+		</div>
+		<div class="parents"></div>
+		<div class="male">
+			Albert
+			<p class="date">4E252</p>
+		</div>
+		<ul style="left: 50">
+			<li>
+			<div class="male">
+				Sergei
+				<p class="date">4E277</p>
+				<p class="vampire"><span class="note"></span></p>
+			</div>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: 340; top: -15"> <!-- Sabirov family -->
+<ul>
+	<li>
+	<div class="female">
+		Saya
+		<p class="date">4E275</p>
+		<p class="vampire"><span class="note"></span></p>
+		<p class="family" style="left: 60; top: -2.25em">Sabirov</p>
+	</div>
+	</li>
+	<li>
+	<div class="female">
+		Mira
+		<p class="date">4E275</p>
+		<p class="vampire"><span class="note"></span></p>
+	</div>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: 50; top: -25"> <!-- Yerikova family -->
+<ul>
+	<li>
+	<div class="female">
+		Anar
+		<p class="date">4E278</p>
+		<p class="family">Yerikova</p>
+	</div>
+	</li>
+</ul>
+</div>
+</div>
+
+<!--------------- JOERGSEN & SPARRICH FAMILIES --------------->
+<div class="container" style="height: 170; width: 280">
+<div class="family-header">JOERGSEN &amp; SPARRICH FAMILIES</div>
+<div class="tree" style="left: 25; top: -15"> <!-- Olga's branch -->
+<ul>
+	<li>
+	<div class="male">
+		Thuri
+		<p class="date">4E?</p>
+		<p class="family">Joergsen</p>
+	</div>
+	<div class="parents"></div>
+	<div class="female">
+		Greta
+		<p class="date">4E?</p>
+		<p class="family">Killan</p>
+	</div>
+	<ul style="left: 50">
+		<li>
+		<div class="female">
+			Olga
+			<p class="date">4E?</p>
+		</div>
+		<div class="spouse"></div>
+		<div class="male">
+			Ernest
+			<p class="date">4E?</p>
+			<p class="family">Sparrich</p>
+		</div>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+</div>
+
+<!--------------- MOONGLADE & LIONDALE FAMILIES --------------->
+<div class="container" style="height: 430; width: 1000">
+<div class="family-header">MOONGLADE &amp; LIONDALE FAMILIES</div>
+<div class="tree" style="top: -215"> <!-- Angelica's branch -->
+<ul>
+	<li>
+	<div class="dead female">
+		Penelope
+		<p class="date">2E?&ndash;3E?</p>
+		<p class="family" style="left: 100; top: -2.25em">Moonglade</p>
+	</div>
+	</li>
+	<li>
+	<div class="dead female">
+		Angelica
+		<p class="date">2E&ndash;3E?</p>
+	</div>
+	</li>
+	<li>
+	<div class="dead male" style="opacity: 0">
+		Thad
+		<p class="date">2E?&ndash;3E?</p>
+	</div>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: -151; top: 6"> <!-- Thad's branch -->
+<ul>
+	<li>
+	<div class="dead male">
+		Thad
+		<p class="date">2E?&ndash;3E?</p>
+	</div>
+	<div class="parents"></div>
+	<div class="dead female">
+		?
+		<p class="date">2E&ndash;3E?</p>
+	</div>
+	<ul style="left: 50">
+		<li>
+		<div class="dead male">
+			?
+			<p class="date">2E&ndash;3E?</p>
+		</div>
+		<div class="parents"></div>
+		<div class="dead female">
+			?
+			<p class="date">2E&ndash;3E?</p>
+		</div>
+		<ul style="left: 50">
+			<li>
+			<div class="dead male">
+				?
+				<p class="date">3E&ndash;4E?</p>
+			</div>
+			<div class="parents"></div>
+			<div class="dead female">
+				?
+				<p class="date">3E&ndash;4E?</p>
+			</div>
+			<ul style="left: 50">
+				<li>
+				<div class="dead male" style="opacity: 0">
+					Arthur
+					<p class="date">3E423&ndash;4E301</p>
+				</div>
+				</li>
+				<li>
+				<div class="dead male" style="opacity: 0">
+					Thaddecus of Twin Blade
+					<p class="date">3E396&ndash;4E189</p>
+				</div>
+				</li>
+			</ul>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: -397; top: -4"> <!-- Arthur's branch -->
+<ul>
+	<li>
+	<div class="female">
+		Loranna
+		<p class="date">3E?</p>
+		<p class="family">Goldenleaf</p>
+	</div>
+	<div class="spouse"></div>
+	<div class="dead male">
+		Arthur
+		<p class="date">3E423&ndash;4E301</p>
+	</div>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: 375; top: -78"> <!-- Thaddecus' branch -->
+<ul>
+	<li>
+	<div class="dead male">
+		Thaddecus of Twin Blade
+		<p class="date">3E396&ndash;4E189</p>
+	</div>
+	<div class="parents"></div>
+	<div class="dead female">
+		Elsa the Graceful
+		<p class="date">3E?&ndash;4E189</p>
+		<p class="family">Willowtree</p>
+	</div>
+	<ul>
+		<li>
+		<div class="dead male">
+			Altin
+			<p class="date">4E154&ndash;4E189</p>
+		</div>
+		</li>
+		<li>
+		<div class="female">
+			Fate
+			<p class="date">4E180</p>
+			<p class="dhampir"><span class="note"></span></p>
+			<img class="type" src="class_artificer.png" alt="Artificer" title="Artificer">
+		</div>
+		</li>
+		<li>
+		<div class="female" style="opacity: 0">
+			Shiera
+			<p class="date">4E176</p>
+		</div>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: 375; top: -78"> <!-- Liondale branch -->
+<ul>
+	<li>
+	<div class="male">
+		Odith the Brave
+		<p class="date">3E?</p>
+		<p class="family">Liondale</p>
+	</div>
+	<div class="parents"></div>
+	<div class="female">
+		Nalmerry the Merciful
+		<p class="date">3E?</p>
+		<p class="family">Sunflower</p>
+	</div>
+	<ul style="left: 40">
+		<li>
+		<div class="male" style="opacity: 0">
+			Tolca
+			<p class="date">4E179</p>
+		</div>
+		</li>
+		<li>
+		<div class="male">
+			Octurius
+			<p class="date">4E156</p>
+		</div>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: -60; top: -88"> <!-- Shiera & Tolca -->
+<ul>
+	<li>
+	<div class="female">
+		Shiera
+		<p class="date">4E176</p>
+		<img class="type" src="class_druid.png" alt="Druid" title="Druid" style="right: 7">
+		<img class="type" src="class_ranger.png" alt="Ranger" title="Ranger">
+	</div>
+	<div class="betrothed" style="padding-left: 4.5em"></div>
+	<div class="male">
+		Tolca
+		<p class="date">4E179</p>
+	</div>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: 20; top: -165"> <!-- Swiftleaf family -->
+<ul>
+	<li>
+	<div class="dead female">
+		Oriwynn
+		<p class="date">4E153&ndash;4E261</p>
+		<img class="type" src="class_druid.png" alt="Druid" title="Druid">
+		<p class="family">Swiftleaf</p>
+	</div>
+	</li>
+</ul>
+</div>
+</div>
+
+<!--------------- MIGHTWING FAMILY --------------->
+<div class="container" style="width: 200">
+<div class="family-header">NIGHTWING FAMILY</div>
+<div class="tree" style="left: 55; top: -15"> <!-- Nightwing family -->
+<ul>
+	<li>
+	<div class="male">
+		Sylbane
+		<p class="family">Nightwing</p>
+	</div>
+	</li>
+</ul>
+</div>
+</div>
+
+<!--------------- ROOTWEFT FAMILY --------------->
+<div class="container" style="height: 490; width: 820">
+<div class="family-header">ROOTWEFT FAMILY</div>
+<div class="tree" style="left: 190; top: -125"> <!-- Rootweft branch -->
+<ul>
+	<li>
+	<div class="male" style="top: -13">
+		Hircine
+		<span class="type daedra" style="left: 0">
+		<span class="note"></span>
+		<img class="type" src="daedra.png" alt="Daedra" title="Daedra" style="left: 0">
+		</p>
+	</div>
+	<div class="parents"></div>
+	<div class="dead female">
+		Elen
+		<p class="date">3E318&ndash;4E287</p>
+		<p class="family">Rootweft</p>
+	</div>
+	<ul>
+		<li>
+		<div class="male" style="opacity: 0">
+			Celan
+			<p class="date">4E0&ndash;4E?</p>
+		</div>
+		</li>
+		<li>
+		<div class="female" style="opacity: 0">
+			Kyra
+			<p class="date">4E0</p>
+		</div>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: -115; top: 75"> <!-- Celan's branch -->
+<ul>
+	<li>
+	<div class="dead female">
+		?
+		<p class="date">4E?&ndash;4E?</p>
+	</div>
+	<div class="parents"></div>
+	<div class="dead male">
+		Celan
+		<p class="date">4E0&ndash;4E?</p>
+		<p class="therian"><span class="note"></span></p>
+	</div>
+	<ul style="left: -50">
+		<li>
+		<div class="dead male">
+			?
+			<p class="date">4E?&ndash;4E?</p>
+		</div>
+		<div class="descendant"></div>
+		<div class="dead female">
+			Blossom
+			<p class="date">4E17&ndash;4E?</p>
+			<p class="therian"><span class="note"></span></p>
+		</div>
+		<ul style="left: -50">
+			<li>
+			<div class="dead male">
+				?
+				<p class="date">4E?&ndash;4E?</p>
+				<p class="family">Windsong</p>
+			</div>
+			<div class="parents"></div>
+			<div class="dead female">
+				?
+				<p class="date">4E?&ndash;4E?</p>
+				<p class="therian"><span class="note"></span></p>
+			</div>
+			<ul style="left: 35">
+				<li>
+				<div class="dead female" style="background: 0; background-color: rgba( 255, 0, 255, 0.05 )">
+					Alis
+					<p class="date">4E291&ndash;<span style="/*filter: blur( 3px );*/ font-size: 1em">4E303</span></p>
+					<p class="therian"><span class="note"></span></p>
+					<img class="type" src="class_bard.png" alt="Bard" title="Bard">
+				</div>
+				</li>
+			</ul>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: -112; top: -45"> <!-- Kyra's branch -->
+<ul>
+	<li>
+	<div class="female">
+		Kyra
+		<p class="date">4E0</p>
+		<p class="therian"><span class="note"></span></p>
+		<img class="type" src="class_warlock.png" alt="Warlock" title="Warlock">
+	</div>
+	<div class="parents"></div>
+	<div class="dead male">
+		&emsp;
+		<p class="date">3E?&ndash;4E?</p>
+		<p class="wolf"><span class="note"></span></p>
+	</div>
+	<ul>
+		<li>
+		<div class="male">
+			Yiv
+			<p class="date">4E23</p>
+			<p class="therian"><span class="note"></span></p>
+		</div>
+		</li>
+		<li>
+		<div class="female" style="opacity: 0">
+			Gildnan
+			<p class="date">4E80</p>
+		</div>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: 78; opacity: 1; top: 11"> <!-- Luna's branch -->
+<ul>
+	<li>
+	<div class="male">
+		Vaa
+		<p class="date">4E270</p>
+		<p class="wolf"><span class="note"></span></p>
+	</div>
+	<div class="parents"></div>
+	<div class="female" style="opacity: 0">
+		Luna
+		<p class="date">4E273</p>
+	</div>
+	<ul>
+		<li>
+		<div class="female">
+			Cami
+			<p class="date">4E289</p>
+			<p class="wolf"><span class="note"></span></p>
+		</div>
+		</li>
+		<li>
+		<div class="female">
+			Miki
+			<p class="date">4E289</p>
+			<p class="wolf"><span class="note"></span></p>
+			<img class="type" src="class_cleric.png" alt="Cleric" title="Cleric">
+		</div>
+		</li>
+		<li>
+		<div class="male">
+			Shadow
+			<p class="date">4E289</p>
+			<p class="wolf"><span class="note"></span></p>
+			<img class="type" src="class_rogue.png" alt="Rogue" title="Rogue">
+		</div>
+		</li>
+		<li>
+		<div class="male">
+			Kai
+			<p class="date">4E289</p>
+			<p class="wolf"><span class="note"></span></p>
+		</div>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: -95; opacity: 1; top: -70"> <!-- Luna & Grohiik -->
+<ul>
+	<li style="padding-right: 10px">
+	<div class="female">
+		Luna
+		<p class="date">4E273</p>
+		<p class="wolf"><span class="note"></span></p>
+		<img class="type" src="class_cleric.png" alt="Cleric" title="Cleric">
+	</div>
+	</li>
+	<li>
+	<div class="dead male" style="background: 0; opacity: 0">
+		Grohiik
+		<p class="date">4E276&ndash;4E303</p>
+	</div>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: -200; top: -10"> <!-- Aurum's branch -->
+<ul>
+	<li>
+	<div class="dead male" style="background: 0; background-color: rgba( 0, 128, 255, 0.05 ); opacity: 1">
+		Grohiik
+		<p class="date">4E276&ndash;<span style="/*filter: blur( 3px );*/ font-size: 1em">4E303</span></p>
+		<p class="wolf"><span class="note"></span></p>
+		<img class="type" src="class_fighter.png" alt="Fighter" title="Fighter">
+	</div>
+	<div class="parents" style="opacity: 100"></div>
+	<div class="female" style="opacity: 0">
+		Thesa
+		<p class="date">4E231</p>
+	</div>
+	<ul style="left: 65">
+		<li style="opacity: 100">
+		<div class="female">
+			Aurum
+			<p class="date">4E304</p>
+			<p class="therian"><span class="note"></span></p>
+			<img class="type" src="class_paladin.png" alt="Paladin" title="Paladin">
+		</div>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: 357; top: -293"> <!-- Thesa's branch -->
+<ul>
+	<li>
+	<div class="female">
+		Gildnan
+		<p class="date">4E80</p>
+		<p class="therian"><span class="note"></span></p>
+	</div>
+	<div class="parents"></div>
+	<div class="male" style="opacity: 0">
+		Fonah
+		<p class="date">4E123</p>
+	</div>
+	<ul style="left: 54">
+		<li>
+		<div class="male">
+			Parvolen
+			<p class="date">4E153</p>
+			<p class="therian"><span class="note"></span></p>
+			<img class="type" src="class_artificer.png" alt="Artificer" title="Artificer">
+		</div>
+		<div class="parents"></div>
+		<div class="female">
+			Russakynd
+			<p class="date">4E123</p>
+			<p class="family">Leafwalker</p>
+		</div>
+		<ul style="left: 55">
+			<li>
+			<div class="female" style="opacity: 1">
+				Thesa
+				<p class="date">4E231</p>
+				<p class="therian"><span class="note"></span></p>
+				<img class="type" src="class_ranger.png" alt="Ranger" title="Ranger">
+			</div>
+			<div class="spouse" style="opacity: 100"></div>
+			<div class="dead female" style="background: 0; background-color: rgba( 255, 0, 255, 0.05 )">
+				Katja
+				<p class="date">4E138&ndash;<span style="/*filter: blur( 3px );*/ font-size: 1em">4E303</span></p>
+				<p class="family">Meadowgleam</p>
+				<img class="type" src="class_ranger.png" alt="Ranger" title="Ranger">
+			</div>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: 248; top: -423"> <!-- Fonah & Halflar -->
+<ul>
+	<li>
+	<div class="male">
+		Fonah
+		<p class="date">4E123</p>
+		<p class="wolf"><span class="note"></span></p>
+	</div>
+	</li>
+	<li style="padding-left: 35">
+	<div class="male" style="opacity: 0">
+		Halflar
+		<p class="date">4E125</p>
+	</div>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: 158; top: -293"> <!-- Ameria's branch -->
+<ul>
+	<li>
+	<div class="male">
+		Halflar
+		<p class="date">4E125</p>
+		<p class="wolf"><span class="note"></span></p>
+	</div>
+	<div class="parents"></div>
+	<div class="female">
+		Elvira
+		<p class="date">4E91</p>
+		<p class="family">Helekain</p>
+	</div>
+	<ul style="left: 55">
+		<li>
+		<div class="female">
+			Tisha
+			<p class="date">4E?</p>
+			<p class="therian"><span class="note"></span></p>
+		</div>
+		<div class="parents"></div>
+		<div class="male">
+			Vamir
+			<p class="date">4E?</p>
+			<p class="family">Balra</p>
+		</div>
+		<ul style="left: 35">
+			<li>
+			<div class="female">
+				Ameria
+				<p class="date">4E231</p>
+				<p class="therian"><span class="note"></span></p>
+			</div>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+</div>
+
+<!--------------- SILVERHAND FAMILY --------------->
+<div class="container" style="width: 200">
+<div class="family-header">SILVERHAND FAMILY</div>
+<div class="tree" style="left: 55; top: -15"> <!-- Silverhand family -->
+<ul>
+	<li>
+	<div class="male">
+		Mikhail
+		<p class="family">Silverhand</p>
+	</div>
+	</li>
+</ul>
+</div>
+</div>
+
+<!--------------- UNVELDT FAMILY --------------->
+<div class="container" style="height: 180; width: 515">
+<div class="family-header">&Uuml;NVELDT FAMILY</div>
+<div class="tree" style="left: 90"> <!-- Stolovold's branch -->
+<ul>
+	<li>
+	<div class="male">
+		Jonathan
+		<p class="date">4E?</p>
+		<p class="family">&Uuml;nveldt</p>
+	</div>
+	<div class="parents"></div>
+	<div class="female" style="opacity: 0">
+		Isabel
+		<p class="date">4E?</p>
+	</div>
+	<ul style="left: 45">
+		<li>
+		<div class="male">
+			Stolovold
+			<p class="date">4E271</p>
+			<img class="type" src="class_wizard.png" alt="Wizard" title="Wizard">
+		</div>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: 12; top: -59"> <!-- Sunmorning branch -->
+<ul>
+	<li>
+	<div class="female">
+		Isabel
+		<p class="date">4E?</p>
+		<p class="family" style="left: 40; top: -2.25em">Sunmorning</p>
+		<img class="type" src="class_warlock.png" alt="Warlock" title="Warlock">
+	</div>
+	</li>
+	<li>
+	<div class="female" style="opacity: 0">
+		Shirly
+		<p class="date">4E?</p>
+	</div>
+	</li>
+</ul>
+</div>
+<div class="tree" style="left: -67; top: -69"> <!-- Stolovold's aunt & uncle's branch -->
+<ul>
+	<li>
+	<div class="female">
+		Shirly
+		<p class="date">4E?</p>
+	</div>
+	<div class="spouse"></div>
+	<div class="male">
+		Balfrik
+		<p class="date">4E?</p>
+		<p class="family">Forgehammer</p>
+	</div>
+	</li>
+</ul>
+</div>
+</div>
+
+<!--------------- WINTERMOON FAMILY --------------->
+<div class="container" style="height: 180; width: 500">
+<div class="family-header">WINTERMOON FAMILY</div>
+<div class="tree" style="left: 15; top: -15"> <!-- Wintermoon branch -->
+<ul>
+	<li>
+	<div class="dead male">
+		Glavicus the Cruel
+		<p class="date">4E?&ndash;&4E?</p>
+		<p class="family">Wintermoon</p>
+	</div>
+	<div class="parents"></div>
+	<div class="dead female">
+		Elanor the Fair
+		<p class="date">4E?&ndash;4E?</p>
+	</div>
+	<ul>
+		<li>
+		<div class="dead male">
+			Caligula the Sadistic
+			<p class="date">4E167&ndash;4E201</p>
+		</div>
+		</li>
+		<li>
+		<div class="dead male">
+			Tari
+			<p class="date">4E171&ndash;4E196</p>
+		</div>
+		</li>
+		<li>
+		<div class="dead male">
+			Edward
+			<p class="date">4E174&ndash;4E256</p>
+		</div>
+		</li>
+		<li>
+		<div class="dead male">
+			Daniel
+			<p class="date">4E185&ndash;4E258</p>
+		</div>
+		</li>
+	</ul>
+	</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>
