@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>Photography</title>
+		<link type="text/css" rel="stylesheet" href="style.css">
+		<style type="text/css">
+		body{
+			font-size:12px
+		}
+		.collapsible{
+			background-color: rgba( 192, 192, 192, 0.25 );
+			border: none;
+			border-bottom: 1px solid black;
+			color: #000000;
+			font-family: serif;
+			margin: auto;
+			outline: none;
+			text-align: center
+		}
+		.active, .collapsible:hover{
+			background-color: rgba( 192, 192, 192, 0.5 )
+		}
+		.active{
+			color: #0080FF
+		}
+		.content{
+			margin: auto;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.2s ease-out
+		}
+		p.a{
+			line-height: 1.25;
+			margin: auto;
+			max-width: 30em;
+			padding-bottom: 1em;
+			text-align: justify;
+			text-indent: 30pt;
+			vertical-align: text-top
+		}
+		p.b{
+			display: inline-block;
+			font-size: 14px;
+			font-weight: bold;
+			margin-bottom: 0px;
+			margin-top: 0px;
+			text-align: left
+		}
+		div.date{
+			text-align: center;
+			font-weight: normal;
+			font-size: x-small;
+			margin: auto
+		}
+		div.desc{
+			text-align: center;
+			font-weight: normal;
+			width: 100px;
+			margin: 2px
+		}
+		div.desc2{
+			text-align: center;
+			font-weight: normal;
+			width: 150px;
+			margin: 2px
+		}
+		div.img{
+			border: none;
+			height: auto;
+			width: auto;
+			float: left;
+			text-align: center;
+		}
+		div.img a:hover img{
+			border: 10px solid #008040;
+			padding: 3px;
+			background-color: #0000FF;
+		}
+		div.img img{
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+			padding: 3px;
+			display: inline;
+			background-color: #E0E0E0;
+			border: 10px solid #008040;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+		}
+		div.main p{
+			text-indent: 0pt;
+			text-align: left;
+			max-width: 30em;
+			line-height: 1.25;
+			margin: auto;
+			clear: both
+		}
+		h4{
+			margin: auto;
+			width: 50%;
+			outline-style: solid;
+			outline-width: thin;
+			background-color: #C0C0C0;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold
+		}
+		@media only screen and ( max-width: 720px ){
+			button.collapsible{ width: 100% }
+			div.content{ width: 100% }
+			p.a{ font-size: 14px }
+		}
+		@media only screen and ( min-width: 720px ){
+			button.collapsible{ width: 75% }
+			div.content{ width: 75% }
+			p.a{ font-size: calc( 14px + 6 * (( 100vw - 320px) / 680 )) }
+		}
+		@media only screen and ( min-width: 1200px ){
+			button.collapsible{ width: 50% }
+			div.content{ width: 50% }
+			p.a{ font-size: 22px }
+		}
+		</style>
+	</head>
+	<body>
+    <div class="head">
+		<p><a href="index.html"><img src="images/logo2.gif" alt="[logo]" width=128 height=22></a></p>
+		<hr>
+		<h1>Photography</h1>
+	</div>
+	<p class="a">
+These photographs were taken with the <a href="http://en.wikipedia.org/wiki/Mavica">Sony Mavica</a> MVC-CD1000, a
+digital camera with 10x optical zoom and 2.1 Mpixel resolution.
+	</p>
+
+	<div class="main">
+		<table style="margin-left: auto; margin-right: auto">
+		<tr><td>
+		<div class="img">
+			<a href="images/photos/2452982.jpg">
+				<img
+					src="thumbnails/photos/2452982.jpg"
+					alt="Red Moon"
+					height=50
+					width=50
+					title="Red moon rising over the Iowa horizon."
+				>
+			</a>
+			<div class="desc">Red Moon</div>
+		</div>
+		<div class="img">
+			<a href="images/photos/2452979.jpg">
+				<img
+					src="thumbnails/photos/2452979.jpg"
+					alt="Snow"
+					height=50
+					width=50
+					title="Newly&ndash;fallen snow drapes the landscape in Missouri."
+				>
+			</a>
+			<div class="desc">Snow</div>
+		</div>
+		<div class="img">
+			<a href="images/photos/2452793.jpg">
+				<img
+					src="thumbnails/photos/2452793.jpg"
+					alt="Lightning"
+					height=50
+					width=50
+					title="Lightning flickers across the Florida sky before a storm."
+				>
+			</a>
+			<div class="desc">Lightning</div>
+		</div>
+		<div class="img">
+			<a href="images/photos/2452633.jpg">
+				<img
+					src="thumbnails/photos/2452633.jpg"
+					alt="Sunrise"
+					height=50
+					width=50
+					title="Sunrise over the Indian River in Florida."
+				>
+			</a>
+			<div class="desc">Sunrise</div>
+		</div>
+		<div class="img">
+			<a href="images/photos/2452604.jpg">
+				<img
+					src="thumbnails/photos/2452604.jpg"
+					alt="Sunset III"
+					height=50
+					width=50
+					title="A sunset in Rockledge, Florida."
+				>
+			</a>
+			<div class="desc">Sunset III</div>
+		</div>
+		</td></tr>
+		<tr><td>
+		<div class="img">
+			<a href="images/photos/2452285.jpg">
+				<img
+					src="thumbnails/photos/2452285.jpg"
+					alt="Sunset II"
+					height=50
+					width=50
+					title="Bare trees silhouetted against swirling clouds as the sun sets in Batavia, Illinois."
+				>
+			</a>
+			<div class="desc">Sunset II</div>
+		</div>
+		<div class="img">
+			<a href="images/photos/2452282.jpg">
+				<img
+					src="thumbnails/photos/2452282.jpg"
+					alt="Rays"
+					height=50
+					width=50
+					title="Rays of sunlight shine through a bank of clouds."
+				>
+			</a>
+			<div class="desc">Rays</div>
+		</div>
+		<div class="img">
+			<a href="images/photos/2452140.jpg">
+				<img
+					src="thumbnails/photos/2452140.jpg"
+					alt="Sunset I"
+					height=50
+					width=50
+					title="The sky is flooded with brilliant orange before a storm in Cocoa Village, Florida."
+				>
+			</a>
+			<div class="desc">Sunset I</div>
+		</div>
+		<div class="img">
+			<a href="images/photos/2452040b.jpg">
+				<img
+					src="thumbnails/photos/2452040b.jpg"
+					alt="Windmill"
+					height=50
+					width=50
+					title="Batavia, Illinois was once the windmill manufacturing capital of the world; its riverwalk has several models."
+				>
+			</a>
+			<div class="desc">Windmill</div>
+		</div>
+		<div class="img">
+			<a href="images/photos/2452040a.jpg">
+				<img
+					src="thumbnails/photos/2452040a.jpg"
+					alt="Torii"
+					height=50
+					width=50
+					title="Torii in the Japanese Tea Garden at Fabyan Park in Batavia, Illinois."
+				>
+			</a>
+			<div class="desc">Torii</div>
+		</div>
+		</td></tr>
+		</table>
+	</div>
+	</body>
+</html>

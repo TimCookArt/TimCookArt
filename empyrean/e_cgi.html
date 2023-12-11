@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>3D-CGI</title>
+		<link type="text/css" rel="stylesheet" href="style.css">
+		<style type="text/css">
+		body{
+			font-size:12px
+		}
+		.collapsible{
+			background-color: rgba( 192, 192, 192, 0.25 );
+			border: none;
+			border-bottom: 1px solid black;
+			color: #000000;
+			font-family: serif;
+			margin: auto;
+			outline: none;
+			text-align: center
+		}
+		.active, .collapsible:hover{
+			background-color: rgba( 192, 192, 192, 0.5 )
+		}
+		.active{
+			color: #0080FF
+		}
+		.content{
+			margin: auto;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.2s ease-out
+		}
+		p.a{
+			line-height: 1.25;
+			margin: auto;
+			max-width: 30em;
+			padding-bottom: 1em;
+			text-align: justify;
+			text-indent: 30pt;
+			vertical-align: text-top
+		}
+		p.b{
+			display: inline-block;
+			font-size: 14px;
+			font-weight: bold;
+			margin-bottom: 0px;
+			margin-top: 0px;
+			text-align: left
+		}
+		div.date{
+			text-align: center;
+			font-weight: normal;
+			font-size: x-small;
+			margin: auto
+		}
+		div.desc{
+			text-align: center;
+			font-weight: normal;
+			width: 100px;
+			margin: 2px
+		}
+		div.desc2{
+			text-align: center;
+			font-weight: normal;
+			width: 150px;
+			margin: 2px
+		}
+		div.img{
+			border: none;
+			height: auto;
+			width: auto;
+			float: left;
+			text-align: center;
+		}
+		div.img a:hover img{
+			border: 10px solid #008040;
+			padding: 3px;
+			background-color: #0000FF;
+		}
+		div.img img{
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+			padding: 3px;
+			display: inline;
+			background-color: #E0E0E0;
+			border: 10px solid #008040;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+		}
+		div.main p{
+			text-indent: 0pt;
+			text-align: left;
+			max-width: 30em;
+			line-height: 1.25;
+			margin: auto;
+			clear: both
+		}
+		h4{
+			margin: auto;
+			width: 50%;
+			outline-style: solid;
+			outline-width: thin;
+			background-color: #C0C0C0;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold
+		}
+		@media only screen and ( max-width: 720px ){
+			button.collapsible{ width: 100% }
+			div.content{ width: 100% }
+			p.a{ font-size: 14px }
+		}
+		@media only screen and ( min-width: 720px ){
+			button.collapsible{ width: 75% }
+			div.content{ width: 75% }
+			p.a{ font-size: calc( 14px + 6 * (( 100vw - 320px) / 680 )) }
+		}
+		@media only screen and ( min-width: 1200px ){
+			button.collapsible{ width: 50% }
+			div.content{ width: 50% }
+			p.a{ font-size: 22px }
+		}
+		</style>
+	</head>
+	<body>
+	<div class="head">
+		<p><a href="index.html"><img src="images/logo2.gif" alt="[logo]" width=128 height=22></a></p>
+		<hr>
+		<h1>3D-CGI</h1>
+	</div>
+	<p class="a">
+Most of these images were created using Poser and <a href="http://www.stmuc.com/moray/">Moray</a>, then rendered in
+the <a href="http://www.povray.org">Persistence of Vision Raytracer</a>.  The works of
+<a href="http://www.oyonale.com/">Gilles Tran</a> and
+<a href="http://www.ignorancia.org/">Jaime Vives Piqueres</a>
+are impressive examples of what can be accomplished with these tools.
+	</p>
+
+	<div class="main">
+		<table style="margin-left: auto; margin-right: auto">
+		<tr><td>
+		<div class="img">
+			<a href="images/cgi/2459057.png">
+				<img
+					src="thumbnails/cgi/2459057.png"
+					alt="Jottuz"
+					height=50
+					width=50
+					title="Jottuz, a longknife I made as a mod for Skyrim."
+				>
+			</a>
+			<div class="desc">Jottuz</div>
+		</div>
+		<div class="img">
+			<a href="images/cgi/2457843.png">
+				<img
+					src="thumbnails/cgi/2457843.png"
+					alt="Cabinet"
+					height=50
+					width=50
+					title="China cabinet."
+				>
+			</a>
+			<div class="desc">China Cabinet</div>
+		</div>
+		<div class="img">
+			<a href="images/cgi/2453388.jpg">
+				<img
+					src="thumbnails/cgi/2453388.jpg"
+					alt="Angel"
+					height=50
+					width=50
+					title="An angel, inspired by the January 2005 frontspiece of Akemi Takada's website."
+				>
+			</a>
+			<div class="desc">Angel</div>
+		</div>
+		<div class="img">
+			<a href="images/cgi/2453147.jpg">
+				<img
+					src="thumbnails/cgi/2453147.jpg"
+					alt="Blue Mars"
+					height=50
+					width=50
+					title="Valles Marinaras on Mars, visualised here flooded with water."
+				>
+			</a>
+			<div class="desc">Blue Mars</div>
+		</div>
+		<div class="img">
+			<a href="images/cgi/2453047.jpg">
+				<img
+					src="thumbnails/cgi/2453047.jpg"
+					alt="Blue Mars"
+					height=50
+					width=50
+					title="A dragon flying into the sunset.  Entry for the IRTC 'Mythology' round."
+				>
+			</a>
+			<div class="desc">Dragon</div>
+		</div>
+		<div class="img">
+			<a href="images/cgi/2453030.jpg">
+				<img
+					src="thumbnails/cgi/2453030.jpg"
+					alt="Nadia"
+					height=50
+					width=50
+					title="Nadia Quidam."
+				>
+			</a>
+			<div class="desc">Nadia</div>
+		</div>
+		</tr></td>
+		<tr><td>
+		<div class="img">
+			<a href="images/cgi/2452923.jpg">
+				<img
+					src="thumbnails/cgi/2452923.jpg"
+					alt="Winter Dryad"
+					height=50
+					width=50
+					title="An inquisitive horse encounters a dryad in a snowy forest."
+				>
+			</a>
+			<div class="desc">Winter Dryad</div>
+		</div>
+		<div class="img">
+			<a href="images/cgi/2452890.jpg">
+				<img
+					src="thumbnails/cgi/2452890.jpg"
+					alt="Suspended"
+					height=50
+					width=50
+					title="A girl suspended in a fluid-filled chamber."
+				>
+			</a>
+			<div class="desc">Suspended</div>
+		</div>
+		<div class="img">
+			<a href="images/cgi/2452656.jpg">
+				<img
+					src="thumbnails/cgi/2452656.jpg"
+					alt="Photons"
+					height=50
+					width=50
+					title="POV 3.5 added the feature photon mapping."
+				>
+			</a>
+			<div class="desc">Photons</div>
+		</div>
+		<div class="img">
+			<a href="images/cgi/2452106.jpg">
+				<img
+					src="thumbnails/cgi/2452106.jpg"
+					alt="Inside"
+					height=50
+					width=50
+					title="View from inside a fluid-filled chamber."
+				>
+			</a>
+			<div class="desc">Inside</div>
+		</div>
+		<div class="img">
+			<a href="images/cgi/2451914.jpg">
+				<img
+					src="thumbnails/cgi/2451914.jpg"
+					alt="Pentacle"
+					height=50
+					width=50
+					title="The glow around the spheres was caused by a bug in the radiosity feature of POV 3.1g."
+				>
+			</a>
+			<div class="desc">Pentacle</div>
+		</div>
+		<div class="img">
+			<a href="images/cgi/2451724.jpg">
+				<img
+					src="thumbnails/cgi/2451724.jpg"
+					alt="ORCA Logo"
+					height=50
+					width=50
+					title="Logo of the Oceanic Research Centre of Australia (ORCA) from the television series Ocean Girl."
+				>
+			</a>
+			<div class="desc">ORCA Logo</div>
+		</div>
+		</td></tr>
+		</table>
+	</div>
+	</body>
+</html>
