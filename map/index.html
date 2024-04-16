@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+function toggleFunction(){
+	if( document.getElementById( "panel" ).style.display != "block" ){
+		document.getElementById( "panel" ).style.display = "block";
+		document.getElementById( "button" ).innerHTML = "Turn labels off";
+		document.getElementById( "button" ).style = "border:2px solid red;width:100px"
+	}else{
+		document.getElementById( "panel" ).style.display = "none";
+		document.getElementById( "button" ).innerHTML = "Turn labels on";
+		document.getElementById( "button" ).style = "border:2px solid green;width:100px"
+	}
+}
+</script>
+<style> 
+#panel{ display: none }
+#map{
+	position:fixed;
+	top:50px;
+	width:100%
+}
+</style>
+</head>
+<body>
+<p id="button" onclick="toggleFunction()" style="border:2px solid green;width:100px">Turn labels on</p>
+<div id="panel"><img id="map" src="labels.png"></div>
+<img id="map" style="z-index:-1" src="base.png">
+</body>
+</html>
