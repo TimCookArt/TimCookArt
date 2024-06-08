@@ -21,21 +21,32 @@ function toggleMountains(){
 		document.getElementById( "button2" ).innerHTML = "🔴 Mountains";
 	}
 }
+function toggleElevation(){
+	if( document.getElementById( "elevation" ).style.display != "block" ){
+		document.getElementById( "elevation" ).style.display = "block";
+		document.getElementById( "elevation" ).style.opacity = "50%";
+		document.getElementById( "button3" ).innerHTML = "🟢 Elevation";
+	}else{
+		document.getElementById( "elevation" ).style.display = "none";
+		document.getElementById( "button3" ).innerHTML = "🔴 Elevation";
+	}
+}
 function toggleBiomes(){
 	if( document.getElementById( "biomes" ).style.display != "block" ){
 		document.getElementById( "biomes" ).style.display = "block";
 		document.getElementById( "biomes" ).style.opacity = "33%";
-		document.getElementById( "button3" ).innerHTML = "🟢 Biomes";
+		document.getElementById( "button4" ).innerHTML = "🟢 Biomes";
 	}else{
 		document.getElementById( "biomes" ).style.display = "none";
-		document.getElementById( "button3" ).innerHTML = "🔴 Biomes";
+		document.getElementById( "button4" ).innerHTML = "🔴 Biomes";
 	}
 }
 </script>
 <style>
-#button1, #button2, #button3{ border: 1px solid black; width: 100px; background-color: #E0E0E0; cursor: default; position: fixed; top: 0px }
+#button1, #button2, #button3, #button4{ border: 1px solid black; width: 100px; background-color: #E0E0E0; cursor: default; position: fixed; top: 0px }
 #labels{ display: none }
 #mountains{ display: none }
+#elevation{ display: none }
 #biomes{ display: none }
 #map{
 	position:fixed;
@@ -47,9 +58,11 @@ function toggleBiomes(){
 <body>
 <p id="button1" onclick="toggleLabels()" style="left: 0px">🔴 Labels</p>
 <p id="button2" onclick="toggleMountains()" style="left: 100px">🔴 Mountains</p>
-<p id="button3" onclick="toggleBiomes()" style="left: 200px">🔴 Biomes</p>
+<p id="button3" onclick="toggleElevation()" style="left: 200px">🔴 Elevation</p>
+<p id="button4" onclick="toggleBiomes()" style="left: 300px">🔴 Biomes</p>
 <div id="labels"><img id="map" style="z-index:3" src="labels.png"></div>
 <div id="mountains"><img id="map" src="mountains.png"></div>
+<div id="elevation"><img id="map" src="elevation.png"></div>
 <div id="biomes"><img id="map" src="biomes_v1.png"></div>
 <img id="map" style="z-index:-1" src="base.png">
 </body>
