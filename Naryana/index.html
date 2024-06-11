@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+function toggleBiker(){
+	if( document.getElementById( "biker" ).style.display != "block" ){
+		document.getElementById( "biker" ).style.display = "block";
+		document.getElementById( "blackdress" ).style.display = "none";
+		document.getElementById( "scrubs" ).style.display = "none";
+		document.getElementById( "button2" ).innerHTML = "🟢 Biker";
+		document.getElementById( "button3" ).innerHTML = "🔴 Black Dress";
+		document.getElementById( "button1" ).innerHTML = "🔴 Scrubs";
+	}else{
+		document.getElementById( "biker" ).style.display = "none";
+		document.getElementById( "button2" ).innerHTML = "🔴 Biker";
+	}
+}
+function toggleBlackDress(){
+	if( document.getElementById( "blackdress" ).style.display != "block" ){
+		document.getElementById( "biker" ).style.display = "none";
+		document.getElementById( "blackdress" ).style.display = "block";
+		document.getElementById( "scrubs" ).style.display = "none";
+		document.getElementById( "button2" ).innerHTML = "🔴 Biker";
+		document.getElementById( "button3" ).innerHTML = "🟢 Black Dress";
+		document.getElementById( "button1" ).innerHTML = "🔴 Scrubs";
+	}else{
+		document.getElementById( "blackdress" ).style.display = "none";
+		document.getElementById( "button3" ).innerHTML = "🔴 Black Dress";
+	}
+}
+function toggleScrubs(){
+	if( document.getElementById( "scrubs" ).style.display != "block" ){
+		document.getElementById( "biker" ).style.display = "none";
+		document.getElementById( "blackdress" ).style.display = "none";
+		document.getElementById( "scrubs" ).style.display = "block";
+		document.getElementById( "button2" ).innerHTML = "🔴 Biker";
+		document.getElementById( "button3" ).innerHTML = "🔴 Black Dress";
+		document.getElementById( "button1" ).innerHTML = "🟢 Scrubs";
+	}else{
+		document.getElementById( "scrubs" ).style.display = "none";
+		document.getElementById( "button1" ).innerHTML = "🔴 Scrubs";
+	}
+}
+</script>
+<style>
+#button1, #button2, #button3{ border: 1px solid black; width: 120px; background-color: #E0E0E0; cursor: default; position: fixed; top: 0px }
+#scrubs{ display: none }
+#biker{ display: none }
+#blackdress{ display: none }
+#hair, #nude{
+	position:fixed;
+	top:50px;
+	height: 80%
+}
+</style>
+</head>
+<body>
+<p id="button1" onclick="toggleScrubs()" style="left: 0px">🔴 Scrubs</p>
+<p id="button2" onclick="toggleBiker()" style="left: 100px">🔴 Biker</p>
+<p id="button3" onclick="toggleBlackDress()" style="left: 200px">🔴 Black Dress</p>
+<img id="hair" style="z-index:10" src="2460372 Naryana hair back.png"></div>
+<div id="scrubs"><img id="nude" src="2460379 scrubs.png"></div>
+<div id="biker"><img id="nude" src="2460434 biker.png"></div>
+<div id="blackdress"><img id="nude" src="2460469 black dress.png"></div>
+<img id="nude" style="z-index:-1" src="2460372 Naryana.png">
+</body>
+</html>
