@@ -12,58 +12,61 @@ function toggleLabels(){
 		document.getElementById( "button1" ).innerHTML = "🔴 Labels";
 	}
 }
-function toggleMountains(){
-	if( document.getElementById( "mountains" ).style.display != "block" ){
-		document.getElementById( "mountains" ).style.display = "block";
-		document.getElementById( "button2" ).innerHTML = "🟢 Mountains";
-	}else{
-		document.getElementById( "mountains" ).style.display = "none";
-		document.getElementById( "button2" ).innerHTML = "🔴 Mountains";
-	}
-}
 function toggleElevation(){
 	if( document.getElementById( "elevation" ).style.display != "block" ){
 		document.getElementById( "elevation" ).style.display = "block";
-		document.getElementById( "elevation" ).style.opacity = "50%";
-		document.getElementById( "button3" ).innerHTML = "🟢 Elevation";
+		document.getElementById( "button2" ).innerHTML = "🟢 Elevation";
 	}else{
 		document.getElementById( "elevation" ).style.display = "none";
-		document.getElementById( "button3" ).innerHTML = "🔴 Elevation";
+		document.getElementById( "button2" ).innerHTML = "🔴 Elevation";
 	}
 }
-function toggleBiomes(){
-	if( document.getElementById( "biomes" ).style.display != "block" ){
-		document.getElementById( "biomes" ).style.display = "block";
-		document.getElementById( "biomes" ).style.opacity = "33%";
-		document.getElementById( "button4" ).innerHTML = "🟢 Biomes";
+function toggleClimates(){
+	if( document.getElementById( "climates" ).style.display != "block" ){
+		document.getElementById( "climates" ).style.display = "block";
+		document.getElementById( "climates" ).style.opacity = "33%";
+		document.getElementById( "button3" ).innerHTML = "🟢 Climates";
 	}else{
-		document.getElementById( "biomes" ).style.display = "none";
-		document.getElementById( "button4" ).innerHTML = "🔴 Biomes";
+		document.getElementById( "climates" ).style.display = "none";
+		document.getElementById( "button3" ).innerHTML = "🔴 Climates";
 	}
 }
 </script>
 <style>
-#button1, #button2, #button3, #button4{ border: 1px solid black; width: 100px; background-color: #E0E0E0; cursor: default; position: fixed; top: 0px }
+#button1, #button2, #button3{ border: 1px solid black; width: 100px; background-color: #E0E0E0; cursor: default; position: fixed; top: 0px }
 #labels{ display: none }
-#mountains{ display: none }
 #elevation{ display: none }
-#biomes{ display: none }
+#climates{ display: none }
 #map{
-	position:fixed;
-	top:50px;
-	width:100%
+	position:absolute;
+	left:0px;
+	top:50px
 }
 </style>
 </head>
-<body>
+<body style="overflow:scroll">
 <p id="button1" onclick="toggleLabels()" style="left: 0px">🔴 Labels</p>
-<p id="button2" onclick="toggleMountains()" style="left: 100px">🔴 Mountains</p>
-<p id="button3" onclick="toggleElevation()" style="left: 200px">🔴 Elevation</p>
-<p id="button4" onclick="toggleBiomes()" style="left: 300px">🔴 Biomes</p>
-<div id="labels"><img id="map" style="z-index:3" src="labels.png"></div>
-<div id="mountains"><img id="map" src="mountains.png"></div>
-<div id="elevation"><img id="map" src="elevation.png"></div>
-<div id="biomes"><img id="map" src="biomes_v1.png"></div>
+<p id="button2" onclick="toggleElevation()" style="left: 100px">🔴 Elevation</p>
+<p id="button3" onclick="toggleClimates()" style="left: 200px">🔴 Climates</p>
+<div id="labels"><img id="map" style="z-index:17" src="labels.png"></div>
+<div id="climates"><img id="map" style="z-index:16" src="climates.png"></div>
+<div id="elevation">
+	<img id="map" src="elev1.png" style="opacity:  7%;z-index: 1">
+	<img id="map" src="elev2.png" style="opacity: 13%;z-index: 2">
+	<img id="map" src="elev3.png" style="opacity: 20%;z-index: 3">
+	<img id="map" src="elev4.png" style="opacity: 27%;z-index: 4">
+	<img id="map" src="elev5.png" style="opacity: 33%;z-index: 5">
+	<img id="map" src="elev6.png" style="opacity: 40%;z-index: 6">
+	<img id="map" src="elev7.png" style="opacity: 47%;z-index: 7">
+	<img id="map" src="elev8.png" style="opacity: 53%;z-index: 8">
+	<img id="map" src="elev9.png" style="opacity: 60%;z-index: 9">
+	<img id="map" src="elevA.png" style="opacity: 67%;z-index:10">
+	<img id="map" src="elevB.png" style="opacity: 73%;z-index:11">
+	<img id="map" src="elevC.png" style="opacity: 80%;z-index:12">
+	<img id="map" src="elevD.png" style="opacity: 87%;z-index:13">
+	<img id="map" src="elevE.png" style="opacity: 93%;z-index:14">
+	<img id="map" src="elevF.png" style="opacity:100%;z-index:15">
+</div>
 <img id="map" style="z-index:-1" src="base.png">
 </body>
 </html>
