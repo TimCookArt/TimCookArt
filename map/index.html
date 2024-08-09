@@ -3,52 +3,143 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
-function toggleLabels(){
-	if( document.getElementById( "labels" ).style.display != "block" ){
-		document.getElementById( "labels" ).style.display = "block";
-		document.getElementById( "button1" ).innerHTML = "🟢 Labels";
+function toggleClimates(){
+	if( document.getElementById( "climates" ).style.display != "block" ){
+		document.getElementById( "climates" ).style.display = "block";
+		document.getElementById( "climateKey" ).style.display = "block";
+		document.getElementById( "climates" ).style.opacity = "33%";
+		document.getElementById( "button1" ).innerHTML = "🟢&nbsp;Climates";
 	}else{
-		document.getElementById( "labels" ).style.display = "none";
-		document.getElementById( "button1" ).innerHTML = "🔴 Labels";
+		document.getElementById( "climates" ).style.display = "none";
+		document.getElementById( "climateKey" ).style.display = "none";
+		document.getElementById( "button1" ).innerHTML = "🔴&nbsp;Climates";
 	}
 }
 function toggleElevation(){
 	if( document.getElementById( "elevation" ).style.display != "block" ){
 		document.getElementById( "elevation" ).style.display = "block";
-		document.getElementById( "button2" ).innerHTML = "🟢 Elevation";
+		document.getElementById( "button2" ).innerHTML = "🟢&nbsp;Elevation";
 	}else{
 		document.getElementById( "elevation" ).style.display = "none";
-		document.getElementById( "button2" ).innerHTML = "🔴 Elevation";
+		document.getElementById( "button2" ).innerHTML = "🔴&nbsp;Elevation";
 	}
 }
-function toggleClimates(){
-	if( document.getElementById( "climates" ).style.display != "block" ){
-		document.getElementById( "climates" ).style.display = "block";
-		document.getElementById( "climates" ).style.opacity = "33%";
-		document.getElementById( "button3" ).innerHTML = "🟢 Climates";
+function toggleLabels(){
+	if( document.getElementById( "labels" ).style.display != "block" ){
+		document.getElementById( "labels" ).style.display = "block";
+		document.getElementById( "button3" ).innerHTML = "🟢&nbsp;Labels";
 	}else{
-		document.getElementById( "climates" ).style.display = "none";
-		document.getElementById( "button3" ).innerHTML = "🔴 Climates";
+		document.getElementById( "labels" ).style.display = "none";
+		document.getElementById( "button3" ).innerHTML = "🔴&nbsp;Labels";
+	}
+}
+function toggleLeylinesFire(){
+	if( document.getElementById( "leylinesFire" ).style.display != "block" ){
+		document.getElementById( "leylinesFire" ).style.display = "block";
+		document.getElementById( "button4" ).innerHTML = "🟢&nbsp;Fire&nbsp;Leylines";
+	}else{
+		document.getElementById( "leylinesFire" ).style.display = "none";
+		document.getElementById( "button4" ).innerHTML = "🔴&nbsp;Fire&nbsp;Leylines";
 	}
 }
 </script>
 <style>
-#button1, #button2, #button3{ border: 1px solid black; width: 100px; background-color: #E0E0E0; cursor: default; position: fixed; top: 0px }
-#labels{ display: none }
-#elevation{ display: none }
-#climates{ display: none }
-#map{
-	position:absolute;
-	left:0px;
-	top:50px
+#button1, #button2, #button3, #button4{ background-color: #E0E0E0; border: 1px solid black; cursor: default; margin: 0px; padding: 3px 0.5em; top: 0px; z-index: 50 }
+#climates, #climateKey, #elevation, #labels, #leylinesFire{ display: none }
+#map{ left: 0px; position: absolute; top: 50px }
+.tooltip{ border-bottom: 1px dotted black; display: inline-block; position: relative }
+.tooltip .tooltiptext{
+	background-color: black;
+	border-radius: 6px;
+	color: white;
+	left: 105%;
+	padding: 3px 0.5em;
+	position: absolute;
+	text-align: center;
+	top: -3px;
+	visibility: hidden;
+	z-index: 51
 }
+.tooltip:hover .tooltiptext{ visibility: visible }
 </style>
 </head>
 <body style="overflow:scroll">
-<p id="button1" onclick="toggleLabels()" style="left: 0px">🔴 Labels</p>
-<p id="button2" onclick="toggleElevation()" style="left: 100px">🔴 Elevation</p>
-<p id="button3" onclick="toggleClimates()" style="left: 200px">🔴 Climates</p>
-<div id="labels"><img id="map" style="z-index:17" src="labels.png"></div>
+<table style="left: 0px; margin: 0px; padding: 0px; position: fixed; top: 0px; width: 100%; z-index: 51"><tr><td>
+	<span id="button1" onclick="toggleClimates()">🔴&nbsp;Climates</span>
+	<span id="button2" onclick="toggleElevation()">🔴&nbsp;Elevation</span>
+	<span id="button3" onclick="toggleLabels()">🔴&nbsp;Labels</span>
+	<span id="button4" onclick="toggleLeylinesFire()">🔴&nbsp;Fire&nbsp;Leylines</span>
+</td></tr></table>
+<div id="climateKey">
+	<table style="background-color: white; border: 2px solid black; left: 0px; opacity: 75%; position: fixed; top: 50px; z-index: 50"><tbody>
+		<tr valign="top">
+			<td colspan="16" style="font-weight: bold; text-align: center; text-shadow: 0 0 3px black">CLIMATE KEY</td>
+		</tr>
+		<tr>
+		<td>
+			<style>
+				.legend{ break-inside: avoid-column; page-break-inside: avoid }
+				.legend-color{ border: 1px solid black; display: inline-block; height: 1.25em; line-height: 1.25; margin: 1px 0; min-width: 1.25em }
+			</style>
+			<div class="legend"><span class="legend-color" style="background-color:#0000FE">&nbsp;</span>&nbsp;<div class="tooltip">Af<span class="tooltiptext">Tropical&nbsp;rainforest</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#0077FF">&nbsp;</span>&nbsp;<div class="tooltip">Am<span class="tooltiptext">Tropical&nbsp;monsoon</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#46A9FA">&nbsp;</span>&nbsp;<div class="tooltip">Aw<span class="tooltiptext">Tropical&nbsp;savanna</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#79BAEC">&nbsp;</span>&nbsp;<div class="tooltip">As<span class="tooltiptext">Tropical&nbsp;savanna</span></div></div>
+		</td>
+		<td width="10"></td>
+		<td>
+			<div class="legend"><span class="legend-color" style="background-color:#FE0000">&nbsp;</span>&nbsp;<div class="tooltip">BWh<span class="tooltiptext">Hot&nbsp;desert</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#FE9695">&nbsp;</span>&nbsp;<div class="tooltip">BWk<span class="tooltiptext">Cold&nbsp;desert</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#F5A301">&nbsp;</span>&nbsp;<div class="tooltip">BSh<span class="tooltiptext">Hot&nbsp;semi&#x2011;arid</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#FFDB63">&nbsp;</span>&nbsp;<div class="tooltip">BSk<span class="tooltiptext">Cold&nbsp;semi&#x2011;arid</span></div></div>
+		</td>
+		<td width="5"></td>
+		<td>
+			<div class="legend"><span class="legend-color" style="background-color:#FFFF00">&nbsp;</span>&nbsp;<div class="tooltip">Csa<span class="tooltiptext">Hot&#x2011;summer&nbsp;Mediterranean</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#C6C700">&nbsp;</span>&nbsp;<div class="tooltip">Csb<span class="tooltiptext">Warm&#x2011;summer&nbsp;Mediterranean</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#969600">&nbsp;</span>&nbsp;<div class="tooltip">Csc<span class="tooltiptext">Mediterranean</span></div></div>
+		</td>
+		<td width="5"></td>
+		<td>
+			<div class="legend"><span class="legend-color" style="background-color:#96FF96">&nbsp;</span>&nbsp;<div class="tooltip">Cwa<span class="tooltiptext">Humid&nbsp;subtropical</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#63C764">&nbsp;</span>&nbsp;<div class="tooltip">Cwb<span class="tooltiptext">Subtropical&nbsp;highland</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#329633">&nbsp;</span>&nbsp;<div class="tooltip">Cwc<span class="tooltiptext">Subtropical&nbsp;highland</span></div></div>
+		</td>
+		<td width="5"></td>
+		<td>
+			<div class="legend"><span class="legend-color" style="background-color:#C6FF4E">&nbsp;</span>&nbsp;<div class="tooltip">Cfa<span class="tooltiptext">Humid&nbsp;subtropical</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#66FF33">&nbsp;</span>&nbsp;<div class="tooltip">Cfb<span class="tooltiptext">Oceanic</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#33C701">&nbsp;</span>&nbsp;<div class="tooltip">Cfc<span class="tooltiptext">Subpolar&nbsp;oceanic</span></div></div>
+		</td><td width="5"></td>
+		<td>
+			<div class="legend"><span class="legend-color" style="background-color:#FF00FE">&nbsp;</span>&nbsp;<div class="tooltip">Dsa<span class="tooltiptext">Humid&nbsp;continental</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#C600C7">&nbsp;</span>&nbsp;<div class="tooltip">Dsb<span class="tooltiptext">Humid&nbsp;continental</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#963295">&nbsp;</span>&nbsp;<div class="tooltip">Dsc<span class="tooltiptext">Subarctic</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#966495">&nbsp;</span>&nbsp;<div class="tooltip">Dsd<span class="tooltiptext">Subarctic</span></div></div>
+		</td>
+		<td width="5"></td>
+		<td>
+			<div class="legend"><span class="legend-color" style="background-color:#ABB1FF">&nbsp;</span>&nbsp;<div class="tooltip">Dwa<span class="tooltiptext">Humid&nbsp;continental</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#5A77DB">&nbsp;</span>&nbsp;<div class="tooltip">Dwb<span class="tooltiptext">Humid&nbsp;continental</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#4C51B5">&nbsp;</span>&nbsp;<div class="tooltip">Dwc<span class="tooltiptext">Subarctic</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#320087">&nbsp;</span>&nbsp;<div class="tooltip">Dwd<span class="tooltiptext">Subarctic</span></div></div>
+		</td>
+		<td width="5"></td>
+		<td>
+			<div class="legend"><span class="legend-color" style="background-color:#00FFFF">&nbsp;</span>&nbsp;<div class="tooltip">Dfa<span class="tooltiptext">Humid&nbsp;continental</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#38C7FF">&nbsp;</span>&nbsp;<div class="tooltip">Dfb<span class="tooltiptext">Humid&nbsp;continental</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#007E7D">&nbsp;</span>&nbsp;<div class="tooltip">Dfc<span class="tooltiptext">Subarctic</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#00455E">&nbsp;</span>&nbsp;<div class="tooltip">Dfd<span class="tooltiptext">Subarctic</span></div></div>
+		</td>
+		<td width="5"></td>
+		<td>
+			<div class="legend"><span class="legend-color" style="background-color:#B2B2B2">&nbsp;</span>&nbsp;<div class="tooltip">ET<span class="tooltiptext">Tundra</span></div></div>
+			<div class="legend"><span class="legend-color" style="background-color:#686868">&nbsp;</span>&nbsp;<div class="tooltip">EF<span class="tooltiptext">Ice&nbsp;cap</span></div></div>
+		</td>
+	</tr></tbody></table>
+</div>
+<div id="labels"><img id="map" style="z-index:18" src="labels.png"></div>
+<div id="leylinesFire"><img id="map" style="z-index:17" src="leylines_fire.png"></div>
 <div id="climates"><img id="map" style="z-index:16" src="climates.png"></div>
 <div id="elevation">
 	<img id="map" src="elev1.png" style="opacity:  7%;z-index: 1">
