@@ -42,10 +42,19 @@ function toggleLeylinesFire(){
 		document.getElementById( "button4" ).innerHTML = "🔴&nbsp;Fire&nbsp;Leylines";
 	}
 }
+function toggleLeylinesWater(){
+	if( document.getElementById( "leylinesWater" ).style.display != "block" ){
+		document.getElementById( "leylinesWater" ).style.display = "block";
+		document.getElementById( "button5" ).innerHTML = "🟢&nbsp;Water&nbsp;Leylines";
+	}else{
+		document.getElementById( "leylinesWater" ).style.display = "none";
+		document.getElementById( "button5" ).innerHTML = "🔴&nbsp;Water&nbsp;Leylines";
+	}
+}
 </script>
 <style>
-#button1, #button2, #button3, #button4{ background-color: #E0E0E0; border: 1px solid black; cursor: default; margin: 0px; padding: 3px 0.5em; top: 0px; z-index: 50 }
-#climates, #climateKey, #elevation, #labels, #leylinesFire{ display: none }
+#button1, #button2, #button3, #button4, #button5{ background-color: #E0E0E0; border: 1px solid black; cursor: default; margin: 0px; padding: 3px 0.5em; top: 0px; z-index: 50 }
+#climates, #climateKey, #elevation, #labels, #leylinesFire, #leylinesWater{ display: none }
 #map{ left: 0px; position: absolute; top: 50px }
 .tooltip{ border-bottom: 1px dotted black; display: inline-block; position: relative }
 .tooltip .tooltiptext{
@@ -69,6 +78,7 @@ function toggleLeylinesFire(){
 	<span id="button2" onclick="toggleElevation()">🔴&nbsp;Elevation</span>
 	<span id="button3" onclick="toggleLabels()">🔴&nbsp;Labels</span>
 	<span id="button4" onclick="toggleLeylinesFire()">🔴&nbsp;Fire&nbsp;Leylines</span>
+	<span id="button5" onclick="toggleLeylinesWater()">🔴&nbsp;Water&nbsp;Leylines</span>
 </td></tr></table>
 <div id="climateKey">
 	<table style="background-color: white; border: 2px solid black; left: 0px; opacity: 75%; position: fixed; top: 50px; z-index: 50"><tbody>
@@ -138,8 +148,9 @@ function toggleLeylinesFire(){
 		</td>
 	</tr></tbody></table>
 </div>
-<div id="labels"><img id="map" style="z-index:18" src="labels.png"></div>
-<div id="leylinesFire"><img id="map" style="z-index:17" src="leylines_fire.png"></div>
+<div id="labels"><img id="map" style="z-index:19" src="labels.png"></div>
+<div id="leylinesFire"><img id="map" style="z-index:18" src="leylines_fire.png"></div>
+<div id="leylinesWater"><img id="map" style="z-index:17" src="leylines_water.png"></div>
 <div id="climates"><img id="map" style="z-index:16" src="climates.png"></div>
 <div id="elevation">
 	<img id="map" src="elev1.png" style="opacity:  7%;z-index: 1">
