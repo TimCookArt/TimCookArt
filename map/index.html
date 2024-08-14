@@ -153,7 +153,14 @@ function frobClimateEF(){
 #climates, #elevation, #labels, #leylinesFire, #leylinesWater{ display: none }
 #map{ left: 0px; position: absolute; top: 50px }
 #Af,  #Am,  #Aw,  #As, #BWh, #BWk, #BSh, #BSk, #Csa, #Csb, #Csc, #Cwa, #Cwb, #Cwc, #Cfa, #Cfb, #Cfc, #Dsa, #Dsb, #Dsc, #Dsd, #Dwa, #Dwb, #Dwc, #Dwd, #Dfa, #Dfb, #Dfc, #Dfd, #ET, #EF{
-	display: none; left: 0px; opacity: 50%; position: absolute; top: 50px
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-name: fader;
+	display: none;
+	left: 0px;
+	opacity: 50%;
+	position: absolute;
+	top: 50px
 }
 .leg{ break-inside: avoid-column; page-break-inside: avoid }
 .leg-color{ border: 3px double gray; display: inline-block; height: 1.25em; line-height: 1.25; margin: 1px 0; min-width: 1.25em }
@@ -171,6 +178,7 @@ function frobClimateEF(){
 	z-index: 51
 }
 .tip:hover .tiptext{ visibility: visible }
+@keyframes fader{ 0%{ opacity: 0% } 50%{ opacity: 50% } 100%{ opacity: 0% } }
 </style>
 </head>
 <body style="overflow: scroll">
