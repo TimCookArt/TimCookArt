@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Charm">
 <script>
 function frobClimates(){
 	document.getElementById( "button1a" ).innerHTML          = document.getElementById( "climates" ).style.display != "block" ? "🟢"   : "🔴";
@@ -149,8 +150,14 @@ function frobClimateEF(){
 }
 </script>
 <style>
+a:link{ color: black; text-decoration: none }
+a:visited{ color: black; text-decoration: none }
+a:hover{ color: blue }
 #button1, #button2, #button3, #button4, #button5{ background-color: #E0E0E0; border: 1px solid black; cursor: default; margin: 0px; padding: 3px 0.5em; top: 0px; z-index: 50 }
 #climates, #elevation, #labels, #leylinesFire, #leylinesWater{ display: none }
+#labels{ font-family:  "Charm"; text-shadow: -0.5px 0 white, 0.5px 0 white, 0 -0.5px white, 0 0.5px white, 0 0 4px black }
+#labels .lg{ font-size: 1.25em; font-weight: bolder; position: absolute; z-index: 53 }
+#labels .sm{ font-size: 0.8em; position: absolute; z-index: 53 }
 #map{ left: 0px; position: absolute; top: 50px }
 #Af,  #Am,  #Aw,  #As, #BWh, #BWk, #BSh, #BSk, #Csa, #Csb, #Csc, #Cwa, #Cwb, #Cwc, #Cfa, #Cfb, #Cfc, #Dsa, #Dsb, #Dsc, #Dsd, #Dwa, #Dwb, #Dwc, #Dwd, #Dfa, #Dfb, #Dfc, #Dfd, #ET, #EF{
 	animation-duration: 1.5s;
@@ -189,7 +196,27 @@ function frobClimateEF(){
 	<span id="button4" onclick="frobLeylinesFire()"> <span id="button4a">🔴</span>&nbsp;Fire&nbsp;Leylines</span>
 	<span id="button5" onclick="frobLeylinesWater()"><span id="button5a">🔴</span>&nbsp;Water&nbsp;Leylines</span>
 </td></tr></table>
-<div id="labels">       <img id="map" style="z-index: 50" src="labels.png"></div>
+<div id="labels" style="z-index: 52">
+	<p class="sm" style="left: 1820px; top:  315px"><a href="https://en.wikipedia.org/wiki/Agartha" target="blank">Agartha</a></p>
+	<p class="sm" style="left: 3085px; top:  685px"><a href="https://en.wikipedia.org/wiki/Shambhala" target="blank">Shambhala</a></p>
+	<p class="lg" style="left: 1600px; top:  798px"><a href="https://en.wikipedia.org/wiki/Atlantis" target="blank">Atlantis</a></p>
+	<p class="lg" style="left:  155px; top:  305px"><a href="https://en.wikipedia.org/wiki/Beringia" target="blank">Beringia</a></p>
+	<p class="sm" style="left: 3355px; text-align: center; top: 1950px"><a href="https://en.wikipedia.org/wiki/Elder_Thing">City&nbsp;of&nbsp;the Elder&nbsp;Things</a></p>
+	<p class="lg" style="left: 2020px; top:  410px"><a href="https://en.wikipedia.org/wiki/Doggerland" target="blank">Doggerland</a></p>
+	<p class="sm" style="left: 1207px; top: 1008px"><a href="https://en.wikipedia.org/wiki/El_Dorado" target="blank">Eldorado</a></p>
+	<p class="lg" style="left: 1920px; top:   30px"><a href="https://en.wikipedia.org/wiki/Hyperborea" target="blank">Hyperborea</a></p>
+	<p class="lg" style="left: 2910px; top: 1135px"><a href="https://en.wikipedia.org/wiki/Lemuria" target="blank">Lemuria</a></p>
+	<p class="sm" style="left:  280px; top:  815px"><a href="https://en.wikipedia.org/wiki/Mauna_Kea" target="blank">Mauna Kea</a></p>
+	<p class="lg" style="left: 2670px; top: 1120px"><a href="https://en.wikipedia.org/wiki/Mauritia_(microcontinent)" target="blank">Mauritia</a></p>
+	<p class="sm" style="left: 1980px; top:  450px"><a href="https://www.murrayewing.co.uk/mewsings/2022/01/22/star-lord-by-louise-lawrence/" target="blank">Mawrrhyn</a></p>
+	<p class="lg" style="left:  100px; top:  990px"><a href="https://en.wikipedia.org/wiki/Mu_(mythical_lost_continent)" target="parent">Mu</a></p>
+	<p class="sm" style="left:  842px; text-align: center; top: 534px"><a href="https://en.wikipedia.org/wiki/Devils_Tower" target="parent">Ptehé<br>Ǧí</a></p>
+	<p class="sm" style="left:  590px; top: 1580px"><a href="https://en.wikipedia.org/wiki/R%27lyeh" target="parent">R'lyeh</a></p>
+	<p class="sm" style="left: 3530px; top: 1325px"><a href="https://en.wikipedia.org/wiki/Uluru" target="parent">Uluru</a></p>
+	<p class="sm" style="left: 1000px; top:  880px"><a href="https://en.wikipedia.org/wiki/Xibalba" target="parent">Xibalba</a></p>
+	<p class="sm" style="left:  770px; top:  535px"><a href="https://en.wikipedia.org/wiki/Yellowstone_Caldera" target="parent">Yellowstone</a></p>
+	<p class="lg" style="left: 3960px; top: 1500px"><a href="https://en.wikipedia.org/wiki/Zealandia" target="parent">Zealandia</a></p>
+</div>
 <div id="leylinesFire"> <img id="map" style="z-index: 49" src="leylines_fire.png"></div>
 <div id="leylinesWater"><img id="map" style="z-index: 48" src="leylines_water.png"></div>
 <div id="climates">
