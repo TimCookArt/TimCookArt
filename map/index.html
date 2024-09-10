@@ -16,12 +16,16 @@ function frobLabels(){
 	document.getElementById( "button3a" ).innerHTML          = document.getElementById( "labels" ).style.display != "block" ? "🟢"   :  "🔴";
 	document.getElementById( "labels" ).style.display        = document.getElementById( "labels" ).style.display != "block" ? "block" : "none";
 }
+function frobLeylinesEarth(){
+	document.getElementById( "button4a" ).innerHTML          = document.getElementById( "leylinesEarth" ).style.display != "block" ? "🟢"   :  "🔴";
+	document.getElementById( "leylinesEarth" ).style.display  = document.getElementById( "leylinesEarth" ).style.display != "block" ? "block" : "none";
+}
 function frobLeylinesFire(){
-	document.getElementById( "button4a" ).innerHTML          = document.getElementById( "leylinesFire" ).style.display != "block" ? "🟢"   :  "🔴";
+	document.getElementById( "button5a" ).innerHTML          = document.getElementById( "leylinesFire" ).style.display != "block" ? "🟢"   :  "🔴";
 	document.getElementById( "leylinesFire" ).style.display  = document.getElementById( "leylinesFire" ).style.display != "block" ? "block" : "none";
 }
 function frobLeylinesWater(){
-	document.getElementById( "button5a" ).innerHTML          = document.getElementById( "leylinesWater" ).style.display != "block" ? "🟢"   :  "🔴";
+	document.getElementById( "button6a" ).innerHTML          = document.getElementById( "leylinesWater" ).style.display != "block" ? "🟢"   :  "🔴";
 	document.getElementById( "leylinesWater" ).style.display = document.getElementById( "leylinesWater" ).style.display != "block" ? "block" : "none";
 }
 function frobClimateAf(){
@@ -153,8 +157,8 @@ function frobClimateEF(){
 a:link{ color: black; text-decoration: none }
 a:visited{ color: black; text-decoration: none }
 a:hover{ color: blue }
-#button1, #button2, #button3, #button4, #button5{ background-color: #E0E0E0; border: 1px solid black; cursor: default; margin: 0px; padding: 3px 0.5em; top: 0px; z-index: 51 }
-#climates, #elevation, #labels, #leylinesFire, #leylinesWater{ display: none }
+#button1, #button2, #button3, #button4, #button5, #button6{ background-color: #E0E0E0; border: 1px solid black; cursor: default; margin: 0px; padding: 3px 0.5em; top: 0px; z-index: 51 }
+#climates, #elevation, #labels, #leylinesEarth, #leylinesFire, #leylinesWater{ display: none }
 #labels{ font-family:  "Charm"; text-shadow: -0.5px 0 white, 0.5px 0 white, 0 -0.5px white, 0 0.5px white, 0 0 4px black }
 #labels .lg{ font-size: 1.25em; font-weight: bolder; position: absolute; z-index: 54 }
 #labels .sm{ font-size: 0.8em; position: absolute; z-index: 54 }
@@ -189,14 +193,15 @@ a:hover{ color: blue }
 </style>
 </head>
 <body style="overflow: scroll">
-<table style="left: 0px; margin: 0px; padding: 0px; position: fixed; top: 0px; width: 100%; z-index: 53"><tr><td>
+<table style="left: 0px; margin: 0px; padding: 0px; position: fixed; top: 0px; width: 100%; z-index: 60"><tr><td>
 	<span id="button1" onclick="frobClimates()">     <span id="button1a">🔴</span>&nbsp;Climates</span>
 	<span id="button2" onclick="frobElevation()">    <span id="button2a">🔴</span>&nbsp;Elevation</span>
 	<span id="button3" onclick="frobLabels()">       <span id="button3a">🔴</span>&nbsp;Labels</span>
-	<span id="button4" onclick="frobLeylinesFire()"> <span id="button4a">🔴</span>&nbsp;Fire&nbsp;Leylines</span>
-	<span id="button5" onclick="frobLeylinesWater()"><span id="button5a">🔴</span>&nbsp;Water&nbsp;Leylines</span>
+	<span id="button4" onclick="frobLeylinesEarth()"><span id="button4a">🔴</span>&nbsp;Earth&nbsp;Leylines</span>
+	<span id="button4" onclick="frobLeylinesFire()"> <span id="button5a">🔴</span>&nbsp;Fire&nbsp;Leylines</span>
+	<span id="button5" onclick="frobLeylinesWater()"><span id="button6a">🔴</span>&nbsp;Water&nbsp;Leylines</span>
 </td></tr></table>
-<div id="labels" style="z-index: 53">
+<div id="labels" style="z-index: 60">
 	<p class="sm" style="left: 1820px; top:  315px"><a href="https://en.wikipedia.org/wiki/Agartha" target="blank">Agartha</a></p>
 	<p class="sm" style="left: 3085px; top:  685px"><a href="https://en.wikipedia.org/wiki/Shambhala" target="blank">Shambhala</a></p>
 	<p class="lg" style="left: 1600px; top:  798px"><a href="https://en.wikipedia.org/wiki/Atlantis" target="blank">Atlantis</a></p>
@@ -217,13 +222,14 @@ a:hover{ color: blue }
 	<p class="sm" style="left:  770px; top:  535px"><a href="https://en.wikipedia.org/wiki/Yellowstone_Caldera" target="parent">Yellowstone</a></p>
 	<p class="lg" style="left: 3960px; top: 1500px"><a href="https://en.wikipedia.org/wiki/Zealandia" target="parent">Zealandia</a></p>
 </div>
+<div id="leylinesEarth"> <img id="map" style="z-index: 51" src="leylines_earth.png"></div>
 <div id="leylinesFire"> <img id="map" style="z-index: 50" src="leylines_fire.png"></div>
 <div id="leylinesWater">
 	<img id="map" style="z-index: 49" src="leylines_water.png">
 	<img id="map" style="z-index: 48" src="leylines_water2.png">
 </div>
 <div id="climates">
-	<table style="background-color: white; border: 2px solid black; left: 0px; opacity: 75%; position: fixed; top: 50px; z-index: 51"><tbody>
+	<table style="background-color: white; border: 2px solid black; left: 0px; opacity: 75%; position: fixed; top: 50px; z-index: 52"><tbody>
 		<tr valign="top"><td colspan="16" style="font-weight: bold; text-align: center; text-shadow: 0 0 3px black">CLIMATE KEY</td></tr>
 		<tr valign="top"><td>
 			<div class="leg" onclick="frobClimateAf()"><span class="leg-color" id="Af2" style="background-color: #0000FE">&nbsp;</span>&nbsp;<div class="tip">Af<span class="tiptext">Tropical&nbsp;rainforest</span></div></div>
